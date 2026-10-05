@@ -1,0 +1,282 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "杭州",
+  "city_pinyin": "hangzhou",
+  "tier": "新一线",
+  "data_version": 1,
+  "last_updated": "2026-10-06",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 16.86,
+        "unit": "万元/年（2025年城镇非私营单位；由2026公积金缴存基数上限42151元÷3×12反推=168604元。2024年官方公告值162774元；私营单位2024年92054元）",
+        "source": {
+          "url": "https://gjj.hangzhou.gov.cn/col/col1229810545/art/2026/art_a66f73ccb67f4176ab91a1af60b05c1a.html",
+          "title": "杭州市2026年度住房公积金调整工作问题解答（基数上限按2025年全市非私营单位月平均工资3倍确定）+ 2024年杭州市单位就业人员年平均工资统计公报",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "job_density_index": {
+        "value": 83,
+        "unit": "1-100（基准：深圳=100；主观指数，依据：数字经济/电商/云计算/人工智能岗位密度全国前三，仅次北上深）",
+        "source": {
+          "url": "",
+          "title": "自评，待补：需引招聘平台年度人才报告（猎聘/BOSS直聘）",
+          "collected_at": ""
+        }
+      },
+      "unemployment_rate": {
+        "value": null,
+        "unit": "%（城镇调查失业率，待补；2025年政府工作报告预期目标控制在5%以内）",
+        "source": { "url": "", "title": "待补：杭州统计局/杭州调查队月度发布", "collected_at": "" }
+      },
+      "key_industries": {
+        "value": ["数字经济（电商/云计算/AI）", "视觉智能（数字安防）", "集成电路", "生物医药", "高端装备", "新能源汽车"],
+        "source": {
+          "url": "https://tjj.hangzhou.gov.cn/col/col1229279682/art/2026/art_99cf56b3747b44b492375d4b4d4943d3.html",
+          "title": "2025年杭州市国民经济和社会发展统计公报（\"296X\"先进制造业集群：人工智能/视觉智能2个万亿级+集成电路等9个千亿级；计算机通信电子+13.4%、汽车制造+36.7%）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 15.6,
+        "unit": "倍（按新房均价29222元/m² × 90m² ÷ 非私营年均工资16.86万 估算，单职工口径）",
+        "source": {
+          "url": "https://fangjia.gotohui.com/fjdata-37",
+          "title": "全国房价行情：2026年8月杭州新房均价29222元/m²（自算，非官方口径）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "downpayment_median": {
+        "value": 39.4,
+        "unit": "万元（按均价29222元/m² × 90m² × 首套首付15% 估算，2024-05全国首付比例新政后）",
+        "source": {
+          "url": "https://fangjia.gotohui.com/fjdata-37",
+          "title": "2026年杭州新房均价（自算，非官方口径）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 29222,
+        "unit": "元/m²（2026年8月新房均价，全国房价行情平台口径；交叉核验：克而瑞8月成交均价40924元/m²——豪宅集中网签结构性推高，套均624万/152.6m²，两平台口径差异已记录）",
+        "source": {
+          "url": "https://fangjia.gotohui.com/fjdata-37",
+          "title": "全国房价行情：杭州历年房价数据（2026-08新房29222元/m²）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "2024-05-09 起全市全面取消限购（不再审核购房资格，不限套数）；购房即可申请落户（取得合法产权住房的非本市户籍人员可申请落户）；新房限价已全面放开",
+        "source": {
+          "url": "https://www.stcn.com/article/detail/1199764.html",
+          "title": "杭州官宣全面取消住房限购（每日经济新闻/证券时报，引杭州住保房管官方发布；财新、21财经等多源复述）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.05,
+        "unit": "%（首套=二套统一，LPR5年期3.5%-45BP；公积金首套5年以上2.6%、二套3.075%）",
+        "source": {
+          "url": "https://tidenews.com.cn/news.html?id=3423178",
+          "title": "潮新闻：最新LPR出炉，杭州房贷利率维持3.05%不变（2026年；网易/腾讯新闻多期LPR报道交叉一致）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "家庭180万/个人90万（2026-04-01起新政：上限由130万提至180万，个人90万，余额倍数15→20倍；多子女家庭上浮50%、高层次人才+50%、新市民青年+20%、绿建/以旧换新+20%，最高叠加上浮70%；三县市上限130万）",
+        "source": {
+          "url": "https://zfgb.hangzhou.gov.cn/upload/default/bigfile/2026/03/30/20260330_199a2ba4e8beb05bb90bd66a9c658de3.pdf",
+          "title": "杭房公委〔2026〕1号：杭州住房公积金管理委员会关于优化住房公积金使用政策的通知（市政府公报原文；税屋网全文复述）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "全日制大专（35周岁以下+市区落实工作单位+按规定缴纳社保即可落户市区；2023-05-08 施行的杭政办函〔2023〕33号）",
+        "source": {
+          "url": "https://www.hangzhou.gov.cn/art/2023/4/13/art_1229063382_1830952.html",
+          "title": "杭州市人民政府办公厅关于进一步深化户籍制度改革的实施意见（市政府官网原文；央广网/杭州政协网复述）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "social_security_years_required": {
+        "value": "无固定年限（大专/本科仅需已参保在缴状态，约1个月即可；技能人才需6个月；桐庐/淳安/建德三县市全面放开，合法稳定住所或就业即可登记落户；积分落户满100分原则上均可落户）",
+        "source": {
+          "url": "https://www.hangzhou.gov.cn/art/2023/5/8/art_1256349_59079380.html",
+          "title": "杭州市公安局：学历类人才引进落户指南（大专需社保已缴状态证明；技能人才6个月）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "有\"先落户后就业\"：本科毕业2年内、45周岁以下硕士、55周岁以下博士均可先落户后就业；2017年后录取的符合条件的非全日制研究生参照全日制",
+        "source": {
+          "url": "http://hz.bendibao.com/live/202585/165791.shtm",
+          "title": "2025杭州普通毕业生落户指南（杭州本地宝，引杭政办函〔2023〕33号）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 30,
+        "unit": "1-100（越高越难；自评：有学历+年龄门槛但整体宽松，购房即可落户、积分满100基本可落。参照：北京≈95 上海≈85 深圳≈20 成都≈25）",
+        "source": {
+          "url": "https://www.hangzhou.gov.cn/art/2023/4/13/art_1229063382_1830952.html",
+          "title": "自评，基于杭政办函〔2023〕33号+2024购房落户新政",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 5346,
+        "unit": "元/月（浙江省口径，2026年7月起执行新基数；2026年1-6月按2025年度下限4986元）",
+        "source": {
+          "url": "https://www.66zhonglv.com/toutiao/19548.html",
+          "title": "浙江省社保缴费基数2026年最新（全口径社平8910元/月的60%；上半年4986元依据浙人社发〔2025〕52号官方原文）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "pension_base_upper": {
+        "value": 26730,
+        "unit": "元/月（浙江省口径，2026年7月起；2026年1-6月按25299元）",
+        "source": {
+          "url": "https://www.66zhonglv.com/toutiao/19548.html",
+          "title": "浙江省社保缴费基数2026年最新（300%口径；2025年度25299元见浙人社发〔2025〕52号：http://www.canet.com.cn/zhejiang/856680.html）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-12%（单位自主确定，同单位统一比例；灵活就业10%-24%；2026年度缴存基数上限42151元，下限=当地最低工资：市区2660元/桐庐淳安建德2430元；执行期2026-07-01至2027-06-30）",
+        "source": {
+          "url": "https://hznews.hangzhou.com.cn/jingji/content/2026-07/25/content_9263759.htm",
+          "title": "杭州公积金中心：2026年度住房公积金调整通知（杭州网转载官方全文；本地宝同步复述）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": null,
+        "unit": "%（在职职工三甲医院住院报销比例，待精确核实）",
+        "source": { "url": "", "title": "待补：杭州市医疗保障局住院待遇表（浙里办/医保局官网）", "collected_at": "" }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工基本医疗保险（浙政发〔2024〕15号《浙江省生育保险办法》：生育保险费与职工医保合并缴纳，基金并入职工医保基金不再单列；2024-07-01施行）",
+        "source": {
+          "url": "https://zc.51shebao.com/detail/822521",
+          "title": "浙江省人民政府关于印发浙江省生育保险办法的通知（浙政发〔2024〕15号全文）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "单位上年度职工月平均工资（计发基数）÷ 30天 × 产假天数；计发基数与单位职工医保平均缴费基数一致；参保未满6个月的可待缴满后回溯支付",
+        "source": {
+          "url": "https://zc.51shebao.com/detail/822521",
+          "title": "浙江省生育保险办法（浙政发〔2024〕15号）生育津贴计发条款",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 158,
+        "unit": "天（一孩：国家98天+浙江延长60天；二孩三孩188天：98+90；难产+15天，多胞胎每婴+15天）",
+        "source": {
+          "url": "http://hz.bendibao.com/live/20221215/136516.shtm",
+          "title": "杭州生育津贴计发天数及产假天数一览（杭州本地宝；与浙政发〔2024〕15号产假条款一致）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "① 孕产补助（杭州户籍）：二孩一次性2000元、三孩一次性5000元 ② 育儿补贴：3周岁以下每孩每年3600元（2025-01-01起，发至满3周岁） ③ 三孩补助：一次性9200元（子女户籍首次登记在杭）④ 此前旧标准（二孩5000/三孩20000一次性）按就高不重复原则衔接补足 ⑤ 2025年全市实际发放生育补助7.9亿元",
+        "source": {
+          "url": "https://wsjkw.hangzhou.gov.cn/col/col1229319524/art/2025/art_fc82aedb73b94dad89b67b227d249a9c.html",
+          "title": "杭州市卫生健康委员会 杭州市财政局关于印发杭州市生育补助实施方案的通知（市卫健委官网原文；发放额见2025年杭州市统计公报）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 34,
+        "unit": "分钟（单程平均通勤时耗，中规院《2025年中国主要城市通勤监测报告》2024年底数据；平均通勤距离8.1公里，45分钟内通勤比重79%，极端通勤比重11%低于全国均值）",
+        "source": {
+          "url": "https://zjnews.zjol.com.cn/zjnews/202608/t20260823_31864465.shtml",
+          "title": "都市快报：杭州平均通勤距离8.1公里，平均耗时34分钟（浙江在线转载，引中规院报告）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 26,
+        "unit": "家（三甲医院，维基百科杭州市医院列表口径26家；媒体榜单口径24家；官方未公布汇总数，西部县市三甲全覆盖仍在推进中）",
+        "source": {
+          "url": "https://zh.wikipedia.org/wiki/%E6%9D%AD%E5%B7%9E%E5%B8%82%E5%8C%BB%E9%99%A2%E5%88%97%E8%A1%A8",
+          "title": "杭州市医院列表（维基百科三甲名单；交叉源：搜狐全国三甲榜杭州24家 https://www.sohu.com/a/900351392_122086256）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 85.8,
+        "unit": "%（2025年市区空气优良天数313天；PM2.5平均29.3μg/m³，二氧化氮27.4μg/m³）",
+        "source": {
+          "url": "https://tjj.hangzhou.gov.cn/col/col1229279682/art/2026/art_99cf56b3747b44b492375d4b4d4943d3.html",
+          "title": "2025年杭州市国民经济和社会发展统计公报（杭州市统计局）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "education_resources": {
+        "value": "985×1（浙江大学，一校独大）+无其他211；普通高校40所、在校生64.5万（研究生13.6万）；基础教育有杭州二中、学军中学等全国名校，学区竞争激烈",
+        "source": {
+          "url": "https://tjj.hangzhou.gov.cn/col/col1229279682/art/2026/art_99cf56b3747b44b492375d4b4d4943d3.html",
+          "title": "2025年杭州市国民经济和社会发展统计公报（高校数官方；985/211为常识性数据，待补教育部名单链接）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "climate_summary": {
+        "value": "亚热带季风：夏热冬冷（2025年市区年均气温19.6℃），6月梅雨、夏有酷暑（极端可达40℃），冬湿冷偶有霾，年降水1536mm、空气优良率85.8%",
+        "source": {
+          "url": "https://tjj.hangzhou.gov.cn/col/col1229279682/art/2026/art_99cf56b3747b44b492375d4b4d4943d3.html",
+          "title": "2025年杭州市统计公报（气温/降水官方值；体感描述为常识性概括）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "cultural_facilities_index": {
+        "value": 87,
+        "unit": "1-100（主观指数：博物馆80个、公共图书馆15个、Livehouse/音乐节/南宋文化密度新一线前列，仅次北上深蓉）",
+        "source": { "url": "", "title": "自评（博物馆/图书馆数为2025统计公报官方值），待补客观来源", "collected_at": "" }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "应届毕业生生活补贴：本科1万元、硕士3万元、博士10万元（2021-10-14前毕业博士5万），分两笔发放各50%；在富阳/临安/桐庐/淳安/建德等西部区县工作满3年再发相同额度一份；符合条件的非全日制研究生同等享受",
+        "source": {
+          "url": "https://hwyst.hangzhou.com.cn/mtld/content/2025-09/02/content_9074125.htm",
+          "title": "@来杭大学生 补贴补助、人才服务政策收好（杭州网2025-09，引市人社局最新版《杭州市应届毕业生生活补贴申请指南》；财联社等多源复述）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "rent_subsidy": {
+        "value": "新引进应届大学生租房补贴：本科及以上、在杭无房，每户每年1万元、可发3年；期满后收入低于城镇居民人均可支配收入的可续享，最长再3年（合计上限6年）；每年分两笔各50%发放",
+        "source": {
+          "url": "https://hwyst.hangzhou.com.cn/mtld/content/2025-09/02/content_9074125.htm",
+          "title": "杭州市新引进大学生租房补贴指南（杭州网2025-09政策汇总，引官方指南）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "talent_apartment": {
+        "value": "有人才专项租赁住房+公共租赁住房体系（配租面向符合条件的引进人才/新就业职工，租金低于市场价；另青荷礼包：35岁以下新引进大学生电子权益包300元×最多3次）",
+        "source": {
+          "url": "https://hwyst.hangzhou.com.cn/mtld/content/2025-09/02/content_9074125.htm",
+          "title": "杭州大学生来杭就业创业政策攻略（人才公寓具体配租租金标准待补：杭州市住保房管局）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "policy_stability_note": {
+        "value": "近3年持续放宽、方向稳定：2023-05户籍新政（大专35岁以下可落户）→ 2024-05-09全面取消限购+购房落户 → 2025-05公积金利率降至2.6% → 2026-03公积金贷款上限130→180万（多子女+50%）→ 2026-05全市镇街公共集体户全覆盖。抢人+促生育导向明确，年均1-2次重大利好调整",
+        "source": {
+          "url": "https://zfgb.hangzhou.gov.cn/upload/default/bigfile/2026/03/30/20260330_199a2ba4e8beb05bb90bd66a9c658de3.pdf",
+          "title": "杭房公委〔2026〕1号（公积金新政）+ 杭政办函〔2023〕33号 + 2024-05-09楼市新政（时间线综述）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "武汉",
+  "city_pinyin": "wuhan",
+  "tier": "新一线",
+  "data_version": 1,
+  "last_updated": "2026-10-06",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 11.71,
+        "unit": "万元/年（2025年城镇单位在岗职工年平均工资，武汉市统计局2026-06-18公告；湖北全省在岗职工 9.30 万元作参照）",
+        "source": {
+          "url": "https://tjj.wuhan.gov.cn/xwzx/tzgg/202606/t20260618_2778880.shtml",
+          "title": "武汉市统计局关于2025年劳动工资统计数据的公告（T1官方；T2复述：湖北省统计局来信公示2025年全省在岗职工平均工资93007元 http://tjj.hubei.gov.cn/hdjl/lxgs/202605/t20260519_5938848.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "job_density_index": {
+        "value": 72,
+        "unit": "1-100（基准：深圳=100；主观指数，依据：光电子信息/汽车/生物医药岗位密度高，为中部就业第一城，略低于成杭）",
+        "source": {
+          "url": "",
+          "title": "待补：需引招聘平台年度人才报告（猎聘/BOSS直聘）",
+          "collected_at": ""
+        }
+      },
+      "unemployment_rate": {
+        "value": null,
+        "unit": "%（武汉市级城镇调查失业率未单独发布；湖北省2025年平均值5.3%可作参照，来源：湖北省2025年统计公报 https://tjj.hubei.gov.cn/tjsj/tjgb/ndtjgb/qstjgb/202603/t20260318_5894639.shtml）",
+        "source": {
+          "url": "",
+          "title": "待补：武汉调查队/统计局月度发布",
+          "collected_at": ""
+        }
+      },
+      "key_industries": {
+        "value": [
+          "光电子信息",
+          "汽车及零部件（新能源转型）",
+          "生物医药与大健康",
+          "高端装备制造",
+          "航空航天",
+          "网络安全（存储芯片）"
+        ],
+        "source": {
+          "url": "https://cjrb.cjn.cn/html/2026-04/09/content_151733_3316888.htm",
+          "title": "2025年武汉市国民经济和社会发展统计公报（长江日报；GDP 22147.35亿元，高新技术产业增加值占GDP 32.5%，高新技术企业超1.7万家）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 11.8,
+        "unit": "倍（按新房均价15336元/m² × 90m² ÷ 城镇在岗职工年平均工资11.71万 估算）",
+        "source": {
+          "url": "https://www.anjuke.com/xinfang/fj-wh/2026/07/",
+          "title": "安居客：2026年7月武汉新房均价15336元/m²（自算，非官方口径；58爱房同期15467元/m²互核 https://mfang.58.com/wh/xinfang/fangjia-2026/）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "downpayment_median": {
+        "value": 20.8,
+        "unit": "万元（按均价15336元/m² × 90m² × 首套15% 估算；武汉现行首套首付比例15%）",
+        "source": {
+          "url": "https://www.anjuke.com/xinfang/fj-wh/2026/07/",
+          "title": "安居客武汉房价 + 2026年武汉首套房贷政策（首付比例自算口径）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 15336,
+        "unit": "元/m²（2026年7月新房均价；安居客与58爱房两平台互核：15336 vs 15467，差0.8%）",
+        "source": {
+          "url": "https://www.anjuke.com/xinfang/fj-wh/2026/07/",
+          "title": "安居客：2026年7月武汉新房均价15336.29元/m²（T2互核：58爱房2026年武汉新房均价15467元/m²）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "2023-09-19 起全面取消限购（二环线以内区域移出限购范围），不限套数、不审购房资格",
+        "source": {
+          "url": "https://zgj.wuhan.gov.cn/zwdt/tzgg/202309/t20230919_2266566.shtml",
+          "title": "武汉市住更局《关于进一步促进我市房地产市场平稳健康发展的通知》武房发〔2023〕8号（T1官方；T2复述：湖北省住建厅 http://zjt.hubei.gov.cn/bmdt/dtyw/szsm/202309/t20230920_4859730.shtml 及央广网 https://www.cnr.cn/hubei/gstjhubei/20230920/t20230920_526426307.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.05,
+        "unit": "%（首套商贷，LPR-45BP；5年期以上LPR 3.5%，2026-09-20 最新一期持平；首套二套同价）",
+        "source": {
+          "url": "https://news.qq.com/rain/a/20260224A0395900",
+          "title": "武汉最新房贷利率：首套/二套商贷均3.05%（T2复述：武汉市委金融办转发LPR公告 https://jrj.wuhan.gov.cn/ynzx_57/xwzx/202609/t20260920_2850842.shtml 确认2026-09 LPR 3.5%）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "单缴存人120万/双缴存人150万（多子女家庭上浮20%；首套购二星级及以上绿建新房上浮1.1倍；首套公积金利率5年以上2.6%）",
+        "source": {
+          "url": "https://gjj.wuhan.gov.cn/bsfw/ywzl/ywzn/dkyw/202412/t20241219_2504837.html",
+          "title": "武汉住房公积金管理中心：住房公积金贷款指南（T1官方；T2复述：武汉政府门户灵活就业公积金专题 https://www.wuhan.gov.cn/ztzl/ztfw/lhjyzfgjj/index.shtml 确认同口径利率与额度）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "大专（高等学校专科及以上毕业生、年龄不满45周岁，凭毕业证即可落户，配偶及未成年子女可随迁；博士硕士不限年龄）",
+        "source": {
+          "url": "https://www.wuhan.gov.cn/ztzl/23zt/jzwh/zcqd/lh/202308/t20230802_2241614.shtml",
+          "title": "高校毕业生落户（武汉市政府门户，市人社局发布；T2复述：洪山区政府 https://www.hongshan.gov.cn/gzfw/ztfw/zjbl_85384/zctz_85386/202403/t20240307_2368963.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "social_security_years_required": {
+        "value": 0,
+        "unit": "年（大学生落户通道凭毕业证零社保要求；积分落户等一般通道另计；购房落户随2023年限购取消已无实际门槛）",
+        "source": {
+          "url": "https://www.wuhan.gov.cn/zwgk/xxgk/zfwj/bgtwj/202206/t20220608_1983869.shtml",
+          "title": "市人民政府办公厅关于进一步做好高校毕业生留汉就业创业工作的通知（武政办〔2022〕78号：先落户后就业）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "先落户后就业：年龄不满45周岁（研究生不限）的高校毕业生凭毕业证在市内落户，配偶及未成年子女可随迁",
+        "source": {
+          "url": "https://www.wuhan.gov.cn/zwgk/xxgk/zfwj/bgtwj/202206/t20220608_1983869.shtml",
+          "title": "武政办〔2022〕78号（T1官方；T2复述：36氪对武汉全员放开落户的报道 https://www.36kr.com/p/1724110127105）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 22,
+        "unit": "1-100（越高越难；自评指数：大专+45岁以下凭毕业证即落户、门槛接近零，参照北京≈95 上海≈85 深圳≈20 成都≈25）",
+        "source": {
+          "url": "https://www.wuhan.gov.cn/ztzl/23zt/jzwh/zcqd/lh/202308/t20230802_2241614.shtml",
+          "title": "自评，基于武汉现行大学生落户政策（2023-08 政府门户口径）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 4498,
+        "unit": "元/月（2026年度暂沿用2025年度标准，湖北省第1档含武汉市和省直；养老/医疗(生育)/失业/工伤统一口径）",
+        "source": {
+          "url": "https://www.qiaokou.gov.cn/xxgk/jbxxgk/gysyjs/shbxly/zcwj/202510/t20251024_2665635.shtml",
+          "title": "省人社厅等三部门关于我省2025年度社会保险缴费基数标准的通知（硚口区政府转发，T1官方原文；T2复述：m12333政策问答确认2026年度暂按2025标准执行 https://m12333.cn/qa/swsap.html）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "pension_base_upper": {
+        "value": 22488,
+        "unit": "元/月（2026年度暂沿用2025年度标准，湖北第1档个人缴费基数上限）",
+        "source": {
+          "url": "https://www.qiaokou.gov.cn/xxgk/jbxxgk/gysyjs/shbxly/zcwj/202510/t20251024_2665635.shtml",
+          "title": "湖北省2025年度社会保险缴费基数标准通知（第1档：武汉市和省直，月标准7496元、上限22488元、下限4498元）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-12%（单位自主确定；2026年度缴存基数上限36072.25元=2025年武汉城镇非私营月均工资×3，下限2400元=湖北全日制最低工资标准）",
+        "source": {
+          "url": "http://wh.bendibao.com/live/2014619/58332.shtm",
+          "title": "武汉住房公积金管理中心关于调整2026年度住房公积金缴存基数的通知（武公中发〔2026〕6号，本地宝转载全文；T2互核：hrlawol 转载同文号文件 https://www.hrlawol.com/article/unlock?id=111672）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": "86%（在职职工三级医疗机构住院统筹支付比例；退休88.8%；起付线800元；二级89%/一级92%）",
+        "source": {
+          "url": "https://ybj.wuhan.gov.cn/zwgk_52/zcfgyjd/zcwd/202311/t20231120_2303690.shtml",
+          "title": "武汉市基本医疗保险保障政策明白卡（武汉市医保局，T1官方；T2复述：m12333武汉职工医保待遇问答同口径 https://m12333.cn/qa/byse.html）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工医保（2019起全国并轨，湖北/武汉随生育保险并入职工基本医疗保险统一征缴）",
+        "source": {
+          "url": "https://www.qiaokou.gov.cn/xxgk/jbxxgk/gysyjs/shbxly/zcwj/202510/t20251024_2665635.shtml",
+          "title": "湖北省社保缴费基数通知中『职工基本医疗保险（生育保险）』合并表述佐证",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "单位上年度职工月平均工资 ÷ 30 × 产假天数（日支付标准=生育当月所在单位申报缴费的上年度职工月平均工资÷30；换工作单位的按前12个月平均）",
+        "source": {
+          "url": "https://ybj.hubei.gov.cn/bmdt/ztzl/2021/ybzckpzl/hbs/ylbzdy/202209/t20220929_4327259.shtml",
+          "title": "湖北省医疗保障局：生育津贴的核发基数（以武汉为例；T2复述：国家医保局公众号同公式 基数÷30×天数 https://www.nhsa.gov.cn/art/2025/8/9/art_14_17534.html）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 158,
+        "unit": "天（国家规定98天 + 湖北省延长60天；配偶护理假15天；3岁以下婴幼儿父母每人每年10天育儿假）",
+        "source": {
+          "url": "http://www.hubei.gov.cn/zwgk/hbyw/hbywqb/202111/t20211129_3887932.shtml",
+          "title": "《湖北省人口与计划生育条例》修改：增加产假60天（湖北省政府门户，T1官方；T2复述：武汉市卫健委转发 https://wjw.wuhan.gov.cn/whswsjkzx/xxgk/zcwj/202112/t20211214_2348598.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "国家育儿补贴：3周岁以下每孩每年3600元（2025-01起不分孩次，连领3年共10800元）；武汉暂未叠加市级现金育儿补贴（以人才租赁房免租、求职补贴等为主）",
+        "source": {
+          "url": "https://wjw.hubei.gov.cn/hbwsjd/wsfw/kpzs/202507/t20250729_5733928.shtml",
+          "title": "育儿补贴制度政策问答（湖北省卫生健康发展服务中心，T2复述国家方案；T1：中国政府网方案解读 https://www.gov.cn/zhengce/202508/content_7034793.htm + 武汉市政府门户2026年育儿补贴进展 https://www.wuhan.gov.cn/hdjl/rdhy/202606/t20260603_2772653.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 37,
+        "unit": "分钟（单程平均通勤时耗，2024年度报告反映2023年数据：武汉2021-2023年为38/38/37分钟逐年下降）",
+        "source": {
+          "url": "https://huiyan.baidu.com/boswebsite/cms/report/2024tongqin/2024%E5%B9%B4%E5%BA%A6%E4%B8%AD%E5%9B%BD%E4%B8%BB%E8%A6%81%E5%9F%8E%E5%B8%82%E9%80%9A%E5%8B%A4%E7%9B%91%E6%B5%8B%E6%8A%A5%E5%91%8A.pdf",
+          "title": "2024年度中国主要城市通勤监测报告（中规院+百度地图，报告原文PDF列表：武汉市 38 38 37；T2复述：中国网2025年度报告解读 http://www.china.com.cn/txt/2026-01/13/content_118276350.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 61,
+        "unit": "家（三甲医院，武汉卫健委2026-01《武汉地区二三级医疗机构名单》实测计数61家三级甲等，含部队/民营；2025统计公报口径三甲31家为公报统计口径；含同济、协和两大全国十强，中部医疗第一城）",
+        "source": {
+          "url": "https://wjw.wuhan.gov.cn/bsfw_28/bjcx/yljgmd/202601/t20260122_2716488.shtml",
+          "title": "武汉地区二、三级医疗机构名单（武汉市卫健委2026-01-22发布，实测计数三级甲等61家；T2互核：媒体盘点武汉62家 https://yc.meishishwang.com/813453238088.html、2023医疗机构设置规划公立口径29家 https://wjw.wuhan.gov.cn/zwgk_28/zc/gfxwj/202309/t20230907_2260311.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 85.8,
+        "unit": "%（2025年优良天数313天，创2013年现行监测标准以来最优；PM2.5 35μg/m³，六项污染物首次全面达标）",
+        "source": {
+          "url": "https://hbj.wuhan.gov.cn/hjxw/202601/t20260115_2711566.html",
+          "title": "武汉空气质量达12年以来最佳 2025年优良天数313天（武汉市生态环境局官网转发湖北日报，T1官方渠道；T2互核：市生态环境局2025年工作总结 http://hbj.wuhan.gov.cn/fbjd_19/xxgkml/gzjh/202601/t20260114_2711470.html 同口径85.8%）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "education_resources": {
+        "value": "985×2（武大、华科）+211×7所（武大、华科、地大(武汉)、武汉理工、华中农大、华中师大、中南财经政法）；在校大学生超140万（本专科121.87万+研究生22.53万，2025统计公报），全国三大智力密集区之一；基础教育有华师一附中等全国名校",
+        "source": {
+          "url": "https://gaokao.eol.cn/zhiyuan/zhinan/202306/t20230613_2439456.shtml",
+          "title": "湖北的985/211名单（中国教育在线；T2互核：新高考网武汉7所211清单 https://www.hfplg.com/211dx/x142314639.html；在校生数据引2025年武汉统计公报 https://cjrb.cjn.cn/html/2026-04/09/content_151733_3316888.htm）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "climate_summary": {
+        "value": "亚热带季风性湿润：夏季酷热漫长（7-8月常超35℃，传统『火炉』城市）、冬季湿冷（1月均温约3-5℃、无集中供暖）、梅雨季长（6月）、春秋短促；年降水量约1200mm",
+        "source": {
+          "url": "https://weatherspark.com/y/128408/Average-Weather-in-Wuhan-China-Year-Round",
+          "title": "Wuhan Climate, Weather By Month（Weather Spark 气候统计；国内常识性数据，待补气象局官方来源）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "cultural_facilities_index": {
+        "value": 82,
+        "unit": "1-100（主观指数：高校文化/长江文化/历史街区（江汉路、昙华林）/音乐现场密度高，博物馆（省博、武博）、剧场资源中部第一，弱于成杭的市井文化密度）",
+        "source": {
+          "url": "",
+          "title": "自评，待补客观来源",
+          "collected_at": ""
+        }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "市级无普适现金补贴（以人才租赁房免租为主）；困难毕业生一次性求职补贴（低保/零就业/助学贷款等群体，武汉人社按湖北标准发放）；部分区有现金补贴：如青山区大学生一次性租房补贴2000元/人",
+        "source": {
+          "url": "https://www.qingshan.gov.cn/bsfw/qjsyjsfw/zfbt/",
+          "title": "大学毕业生一次性租房补贴（青山区政府，T1官方；T2复述：湖北省2026年高校毕业生就业创业通知 鄂人社发〔2026〕21号 http://rst.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202606/t20260602_5949911.shtml 及武汉市政府门户补贴汇总 https://www.wuhan.gov.cn/hdjl/rdhy/202606/t20260615_2777620.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "rent_subsidy": {
+        "value": "人才租赁房租金减免：全日制大专以上、毕业6年内、在汉就业创业缴社保、家庭在汉无房→按不高于市场租金70%缴租，累计减免≤3年；博士免2年租金（上限2000元/月）、硕士免1年（上限1500元/月）",
+        "source": {
+          "url": "https://www.wuhan.gov.cn/ztzl/23zt/jzwh/zcqd/zf/202308/t20230802_2241617.shtml",
+          "title": "高校毕业生租住人才租赁房租金减免（武汉市政府门户，市人社局发布，T1官方；T2复述：硚口区第十三批配租公告同标准 https://www.qiaokou.gov.cn/qkxw/tzgg/202509/t20250919_2650189.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "talent_apartment": {
+        "value": "有『大学毕业生人才租赁房（人才公寓）』体系：政府限定套型和租金，面向留汉大学生租售；申请门槛=全日制大专以上+毕业6年内+在汉就业创业缴社保+家庭在汉无房，按市场价70%以内计租",
+        "source": {
+          "url": "https://www.wuhan.gov.cn/ztzl/ztfw/sqrczf/",
+          "title": "申请人才住房（武汉市政府门户专题，T1官方；T2复述：江夏区2026-09配租公告按武政办〔2022〕78号执行 http://www.jiangxia.gov.cn/xxgk_22343/xxgkml_22349/ggzypz_71067/zfbz/bzxzffp/202609/t20260902_2842066.shtml）",
+          "collected_at": "2026-10-06"
+        }
+      },
+      "policy_stability_note": {
+        "value": "政策方向长期稳定宽松：2017『百万大学生留汉』→2022-78号文房租七折→2023-09全面取消限购→2025-05公积金利率降至2.6%→2026-04公积金惠民新政（危旧房改造支持、存量房贷款比例优化）。近3年均为放宽方向，变动频率中等",
+        "source": {
+          "url": "https://gjj.wuhan.gov.cn/zwgk/zc/zcjd/202604/t20260407_2749775.html",
+          "title": "武汉住房公积金2026年惠民新政（武汉公积金中心官网，T1官方；历年节点见本文件各字段来源）",
+          "collected_at": "2026-10-06"
+        }
+      }
+    }
+  }
+}
