@@ -1,0 +1,295 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "上海",
+  "city_pinyin": "shanghai",
+  "tier": "一线",
+  "data_version": 1,
+  "last_updated": "2026-09-28",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 23.96,
+        "unit": "万元/年（2024年城镇非私营单位 239557 元；城镇私营单位 113914 元；2025年数据待统计局发布）",
+        "source": {
+          "url": "https://news.qq.com/rain/a/20251103A041JK00",
+          "title": "31省份年平均工资出炉：北京上海超20万（引国家统计局/上海统计年鉴2025）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "job_density_index": {
+        "value": 95,
+        "unit": "1-100（基准：深圳=100；主观指数，依据：金融/外资总部/集成电路/生物医药/人工智能岗位密度全国前二，略低于深圳的互联网/硬科技密度）",
+        "source": {
+          "url": "",
+          "title": "自评：基于上海三大先导产业（集成电路/生物医药/人工智能）+ 金融/总部经济岗位密度，待补猎聘/BOSS直聘年度人才报告复核",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "unemployment_rate": {
+        "value": 4.2,
+        "unit": "%（2025年全市城镇调查失业率平均值）",
+        "source": {
+          "url": "https://tjj.sh.gov.cn/tjgb/20260330/9bc43e0ee9254b198909ad15b43bd79b.html",
+          "title": "上海市统计局：2025年上海市国民经济和社会发展统计公报",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "key_industries": {
+        "value": ["集成电路", "生物医药", "人工智能", "金融", "高端装备/船舶/汽车", "信息服务/软件"],
+        "source": {
+          "url": "https://tjj.sh.gov.cn/tjgb/20260330/9bc43e0ee9254b198909ad15b43bd79b.html",
+          "title": "上海市统计局：2025年上海市国民经济和社会发展统计公报",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 22.2,
+        "unit": "倍（按2026-08新房均价59139元/m² × 90m² ÷ 城镇非私营年均工资23.96万 估算）",
+        "source": {
+          "url": "https://sh.58.com/xinfang/fangjia-2026/",
+          "title": "58爱房：2026年上海房价（自算，非官方口径）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "downpayment_median": {
+        "value": 79.8,
+        "unit": "万元（按新房均价59139元/m² × 90m² × 首付15% 估算，2025-08 上海商贷不再区分首套二套、最低首付15%）",
+        "source": {
+          "url": "https://sh.58.com/xinfang/fangjia-2026/",
+          "title": "58爱房：2026年上海房价（自算，非官方口径）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 59139,
+        "unit": "元/m²（2026年新房均价，58爱房口径；安居客 59848 元/m² 互核，差异 1.2%）",
+        "source": {
+          "url": "https://sh.58.com/xinfang/fangjia-2026/",
+          "title": "58爱房：2026年上海房价查询（安居客 sh.fang.anjuke.com/fangjia/ 互核）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "2026-02-26 起大幅松绑：① 非沪籍连续缴纳社保/个税满1年即可购房（外环外不限套数，外环内限购1套）；② 连续缴纳满3年及以上，外环内限购2套；③ 持《上海市居住证》满5年及以上，全市限购1套，无需社保/个税证明。沪籍家庭按原政策执行。",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/nw31406/20260227/961ca351f504470f90ff4d3d001bb613.html",
+          "title": "上海市住建委等五部门《关于进一步优化调整本市房地产政策的通知》（2026-02-25 印发，2026-02-26 施行）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.05,
+        "unit": "%（首套商贷，LPR-45BP；2026-04 5年期以上LPR 3.5%）",
+        "source": {
+          "url": "https://finance.sina.com.cn/roll/2026-04-28/doc-inhvykns8891318.shtml",
+          "title": "上海房贷利率再创新低（财联社/新浪财经，实测银行报价待核）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "家庭首套最高240万（叠加多子女家庭/绿色建筑最高上浮35%后可达324万；二套最高额度相应提高；2026-02-26 新政）",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/nw4411/20260226/4bd8f85b6a1e4c88aafcb52194c0ebc3.html",
+          "title": "上海楼市“新七条”：公积金贷款最高额度从160万元提高至240万元",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "本科（清华/北大/复旦/交大/同济/华师大6校本科应届直接落户；上海“双一流”高校本科应届在五大新城/南北转型区就业直接落户；硕士：上海各研究所/高校应届硕士、世界一流大学建设高校应届硕士直接落户；博士：所有高校应届博士直接落户；人才引进：重点机构硕士1年/本科2年可落户）",
+        "source": {
+          "url": "http://sh.bendibao.com/zffw/2026513/305923_2.shtm",
+          "title": "上海大学生落户新政2026（附评分办法）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "social_security_years_required": {
+        "value": 7,
+        "unit": "年（居转户：7年居住证+7年社保个税；临港/张江科学城/五大新城重点产业可缩短至5年或3年；人才引进：重点机构硕士1年、本科2年；留学生：世界前50院校直接落户，51-100院校6个月社保）",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/gwk/search/content/60b0fb0e670748a99ce7dd8fdb0e0939",
+          "title": "上海市人民政府《上海市引进人才申办本市常住户口办法》《持有〈上海市居住证〉人员申办本市常住户口办法》（2025-12-01 施行）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "应届生打分落户（2026年标准分72分）+ 直接落户通道（6校本科/双一流硕士/上海高校硕士/博士直接落户；五大新城/南北转型区就业的双一流本科直接落户）",
+        "source": {
+          "url": "http://sh.bendibao.com/zffw/2026513/305923_2.shtm",
+          "title": "上海大学生落户新政2026（附评分办法）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 85,
+        "unit": "1-100（越高越难；基准：北京≈95 深圳≈20 成都≈25。居转户7年为全国最长之一，但人才引进/留学生/应届生通道已大幅放宽）",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/gwk/search/content/60b0fb0e670748a99ce7dd8fdb0e0939",
+          "title": "自评：基于2025-12 人才引进/居转户办法 + 2026-02 应届生落户新政",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 7546,
+        "unit": "元/月（2026年度社保缴费基数下限，含养老/医疗/失业/工伤；全国最高）",
+        "source": {
+          "url": "http://sh.bendibao.com/zffw/2026818/308500.shtm",
+          "title": "上海调整2026年度社保缴费基数上下限（上海人社局公告）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "pension_base_upper": {
+        "value": 37731,
+        "unit": "元/月（2026年度社保缴费基数上限，3倍社平工资；全国最高）",
+        "source": {
+          "url": "http://sh.bendibao.com/zffw/2026818/308500.shtm",
+          "title": "上海调整2026年度社保缴费基数上下限（上海人社局公告）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-7%（单位自主确定；补充公积金 1%-5% 自愿；基数下限2740元，上限37731元）",
+        "source": {
+          "url": "http://sh.bendibao.com/zffw/2026819/308531.shtm",
+          "title": "上海公积金缴存调整通知2026年度（上海市公积金管理中心）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": null,
+        "unit": "%（在职职工三级医院住院报销比例，待精确核实）",
+        "source": {
+          "url": "",
+          "title": "待补：上海市医保局住院待遇表（ybj.sh.gov.cn）",
+          "collected_at": ""
+        }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工医保（2019 起全国并轨，上海执行；2025-01 起灵活就业人员同步纳入生育保险；生育津贴直接发放至个人）",
+        "source": {
+          "url": "https://ybj.sh.gov.cn/zcjd/20250225/964b5505445348168730e3efb1c0eb45.html",
+          "title": "上海市医保局《关于将本市灵活就业人员纳入生育保险有关事项的通知》政策问答",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "单位上年度职工月平均工资 ÷ 30 × 产假天数（上限：上年度本市全口径城镇单位就业人员月平均工资300%，下限60%；缴费满12个月或连续满9个月由医保基金全额支付）",
+        "source": {
+          "url": "https://ybj.sh.gov.cn/gfxwj/20260710/79e981546eaf4727ae47502f4de955b8.html",
+          "title": "上海市医保局《关于进一步完善生育保险有关政策的通知》（2026年修订）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 158,
+        "unit": "天（国家规定98天 + 上海市生育假60天；配偶陪产假10天；育儿假每年各5天至子女3周岁）",
+        "source": {
+          "url": "https://zwgk.shcn.gov.cn/xxgk/ldbzjc-rsjldgx/2026/72/81008.html",
+          "title": "上海市长宁区政务公开：女职工生育及育儿假期指南（引《上海市人口与计划生育条例》）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "① 国家育儿补贴：3周岁以下每孩每年3600元（2025-01 起，上海按国家基础标准执行，中央承担85%，市区各担50%剩余）② 生育医疗费补贴4500元/人（2026-10 起服务包内费用全额保障，个人无自付）③ 女职工产假期间用人单位社保补贴50%（2025-07 起，补贴6个月）",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/gwk/search/content/4033fa8cecda4cf28fcf39b74ff5d788",
+          "title": "上海市卫健委/财政局《上海市育儿补贴制度实施方案》（沪卫人口〔2025〕12号）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 36,
+        "unit": "分钟（2024-2025 上海市第七次综合交通调查：全市平均通勤时耗36分钟/次，中心城43分钟/次；2024 中规院报告：上海单程平均通勤时耗39分钟）",
+        "source": {
+          "url": "https://jtw.sh.gov.cn/xwfb2/20260721/ac97ec8dad10450f8cd85b462f1b06b9.html",
+          "title": "上海市交通委员会：上海市第七次综合交通调查主要成果发布（2026-07-21）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 44,
+        "unit": "家（三甲医院，截至2025年底，官方口径；另有统计含分院区达78家）",
+        "source": {
+          "url": "https://www.thepaper.cn/newsDetail_forward_34042918",
+          "title": "澎湃新闻：城市医疗观察③｜上海医疗（截至2025年底全市44家三甲）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 88.5,
+        "unit": "%（2025年 AQI 优良率；PM2.5 年均浓度26μg/m³，连续5年达国标）",
+        "source": {
+          "url": "https://sthj.sh.gov.cn/cmsres/17/17f73ef0f3474f2896027bb2cc33434b/ab78e00d8a18d52c971dfc2ead9d9a17.pdf",
+          "title": "上海市生态环境局《2025上海市生态环境状况公报》",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "education_resources": {
+        "value": "985×4（复旦、交大、同济、华师大）+211×10（含上财、上外、华东理工、东华、上大、上中医、海军军医大学等）；基础教育有上海中学、华二附中、复旦附中、交大附中等全国顶尖名校，学区竞争激烈",
+        "source": {
+          "url": "",
+          "title": "常识性数据，待补教育部/上海市教委官方名单",
+          "collected_at": ""
+        }
+      },
+      "climate_summary": {
+        "value": "亚热带季风：四季分明，冬湿冷（均温3-8℃）夏闷热（28-35℃），梅雨季6-7月，台风季7-9月，年日照约1800小时，空气质量优良",
+        "source": {
+          "url": "",
+          "title": "常识性数据，待补气象局来源",
+          "collected_at": ""
+        }
+      },
+      "cultural_facilities_index": {
+        "value": 90,
+        "unit": "1-100（主观指数：博物馆/美术馆/剧场/Livehouse/独立书店密度全国第一梯队，仅次北京；国际化程度全国最高）",
+        "source": {
+          "url": "",
+          "title": "自评，待补客观来源（大众点评/美团文化设施数量）",
+          "collected_at": ""
+        }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "无全市统一应届生现金补贴；部分区有租房/安居补贴（如普陀/闵行/静安/虹口等新就业青年租房补贴：高水平大学本科以上、毕业3年内、35岁以下、社保基数≤2倍社平，第一年补贴40%-60%租金、最高2500元/月，第二年退坡50%）",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/nw17239/20260804/97a2b935169f40c38b6a7aae5000846d.html",
+          "title": "上海市政府：@新就业青年，普陀可以申请优惠租房啦（各区政策类似）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "rent_subsidy": {
+        "value": "新就业青年租房补贴（2026 起各区陆续推出）：高水平大学本科及以上、毕业3年内、35岁以下、在沪无房、社保基数≤2倍社平，租住保障性租赁住房可享第一年40%-60%租金补贴（外环内最高2500元/月、外郊环2000元/月、郊环外1500元/月），第二年退坡50%，最长2年",
+        "source": {
+          "url": "https://fgj.sh.gov.cn/gqdt/20260826/696649bbf7f3410e8b7e9a8c1fb2a256.html",
+          "title": "上海市房屋管理局：闵行区新就业青年租房优惠（各区政策类似）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "talent_apartment": {
+        "value": "有（保障性租赁住房体系 + 各区人才公寓，如杨浦区基础性人才公寓：本科及以上/中级职称/技师可申请，基础房价7折，最长3年；静安市北高新人才公寓等区级项目）",
+        "source": {
+          "url": "https://zcbs.shyp.gov.cn/subjectYouthInShanghaiYP/leJu.html",
+          "title": "杨浦区来沪青年乐居一件事（人才公寓申报条件）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "policy_stability_note": {
+        "value": "近3年政策持续放宽但保持克制：2024-05 居转户/人才引进办法修订 → 2025-12 新版《引进人才申办本市常住户口办法》《持有〈上海市居住证〉人员申办本市常住户口办法》施行 → 2026-02 楼市“新七条”大幅松绑限购+公积金提额 → 2026-06 应届生落户直接落户范围扩大至上海所有高校硕士。方向稳定（人才引领+五个新城），变动频率中等，均为渐进式放宽",
+        "source": {
+          "url": "https://www.shanghai.gov.cn/gwk/search/content/60b0fb0e670748a99ce7dd8fdb0e0939",
+          "title": "上海市人民政府新版人才引进/居转户办法（2025-12-01 施行，有效期至2030-11-30）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    }
+  }
+}

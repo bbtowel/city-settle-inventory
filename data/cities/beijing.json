@@ -1,0 +1,295 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "北京",
+  "city_pinyin": "beijing",
+  "tier": "一线",
+  "data_version": 1,
+  "last_updated": "2026-09-28",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 23.27,
+        "unit": "万元/年（2025年城镇非私营单位 232740 元；私营单位 11.05 万元；全口径加权 145391 元/年 用于核定社保）",
+        "source": {
+          "url": "https://rsj.beijing.gov.cn/bm/ywml/202007/t20200717_1950961.html",
+          "title": "北京市人社局：历年北京市全口径城镇单位就业人员平均工资 + 北京市统计局2025年平均工资公告（T2复核：腾讯新闻/ER Club 232740元/110514元）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "job_density_index": {
+        "value": 98,
+        "unit": "1-100（基准：深圳=100；北京互联网/AI/金融/总部经济岗位密度全国第一梯队，仅略低于深圳或并列；自评）",
+        "source": {
+          "url": "",
+          "title": "自评，待补：猎聘/BOSS直聘年度人才报告岗位密度对比",
+          "collected_at": ""
+        }
+      },
+      "unemployment_rate": {
+        "value": 4.1,
+        "unit": "%（2025年城镇调查失业率均值）",
+        "source": {
+          "url": "https://tjj.beijing.gov.cn/zxfbu/202603/t20260324_4564401.html",
+          "title": "北京市2025年国民经济和社会发展统计公报",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "key_industries": {
+        "value": ["信息技术/互联网/AI大模型", "金融", "科技服务/总部经济", "医药健康", "集成电路/智能制造", "文化创意"],
+        "source": {
+          "url": "https://tjj.beijing.gov.cn/zxfbu/202603/t20260324_4564401.html",
+          "title": "北京市2025年国民经济和社会发展统计公报",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 18.8,
+        "unit": "倍（按新房均价 48521 元/m² × 90m² ÷ 城镇非私营年均工资 23.27万 估算）",
+        "source": {
+          "url": "https://www.anjuke.com/xinfang/fj-bj/",
+          "title": "安居客2026北京新房均价 + 北京市统计局2025平均工资（自算，非官方口径）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "downpayment_median": {
+        "value": 65.5,
+        "unit": "万元（按均价 48521 元/m² × 90m² × 首付 15% 估算，2026-08 新政后首套最低首付15%）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260807_4814015.html",
+          "title": "京建发〔2026〕400号《关于进一步优化调整本市房地产政策的通知》（首套首付比例调整）+ 安居客均价自算",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 48521,
+        "unit": "元/m²（2026年新房均价，安居客 1-7 月均值 48521；58爱房 48763 互核一致；中指院 4 月 47203 偏低口径）",
+        "source": {
+          "url": "https://www.anjuke.com/xinfang/fj-bj/",
+          "title": "安居客2026北京房价（复核：58爱房 48763 元/m²）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "京籍家庭限购2套；非京籍家庭社保/个税连续缴纳满1年，五环内限购1套（多子女家庭可+1套），五环外不限套数；通州执行与全市统一政策（原双限购已取消）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260807_4814015.html",
+          "title": "京建发〔2026〕400号《关于进一步优化调整本市房地产政策的通知》（T2复核：北京日报/新华社 2026-08-08）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.05,
+        "unit": "%（首套商贷，LPR-45BP；5年期以上LPR 3.50%）",
+        "source": {
+          "url": "https://bj.leju.com/news/2026-01-20/13507419253810037830098.shtml",
+          "title": "北京乐居：LPR连续8个月不变 5年期3.50%（T2复核：北京本地宝；T1：中国人民银行 LPR 报价）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "首套单人120万/双职工240万；二套单人100万/双职工200万（城六区外首套可再上浮20万；2026-08 新政）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260807_4814015.html",
+          "title": "京建发〔2026〕400号《关于进一步优化调整本市房地产政策的通知》（T2复核：中新网/新华网 2026-08-07）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "本科（应届生引进：全日制本科及以上，需用人单位申请指标；积分落户无学历门槛但需连续7年社保）",
+        "source": {
+          "url": "https://banshi.beijing.gov.cn/pubtask/bhyjs/bylh/bylh.html",
+          "title": "北京市政务服务网：高校毕业生落户一件事 + 京人社毕发〔2021〕22号《北京市引进毕业生管理办法》",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "social_security_years_required": {
+        "value": 7,
+        "unit": "年（积分落户门槛：在京连续缴纳社保 7 年及以上；2026 年实际公示最低分 119.92 分，对应人均约 15-20 年社保）",
+        "source": {
+          "url": "https://rsj.beijing.gov.cn/xxgk/tzgg/202604/t20260415_4582223_ext.html",
+          "title": "北京市人社局：2026年积分落户申报通告（资格条件：连续7年社保）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "应届生引进落户（指标制）：全日制本科及以上 + 用人单位申请落户指标，由区人社初审/市人社终审；指标向重点产业/重点单位倾斜；另有定向选调/优培计划等特殊通道",
+        "source": {
+          "url": "https://banshi.beijing.gov.cn/pubtask/bhyjs/bylh/bylh.html",
+          "title": "北京市政务服务网：高校毕业生落户一件事（京人社毕发〔2021〕22号）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 95,
+        "unit": "1-100（越高越难；全国最难城市，2026年积分落户申报约9万人中仅6003人取得资格；参照：上海≈85 深圳≈20）",
+        "source": {
+          "url": "https://rsj.beijing.gov.cn/xxgk/tzgg/202607/t20260721_4774528.html",
+          "title": "北京市人社局：2026年积分落户名单公示（6003人，最低分119.92分）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 7270,
+        "unit": "元/月（2026年度，自2026-07 起，职工养老/失业/工伤/职工医保含生育 统一下限）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zcjd/202608/t20260821_4831683.html",
+          "title": "北京市人社局等《关于2026年度各项社会保险缴费工资基数上下限的通告》政策解读（T2复核：央视网 2026-08-21）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "pension_base_upper": {
+        "value": 36348,
+        "unit": "元/月（2026年度，自2026-07 起；按2025年全口径月均工资12116元×300% 核定）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zcjd/202608/t20260821_4831683.html",
+          "title": "北京市人社局等《关于2026年度各项社会保险缴费工资基数上下限的通告》政策解读（T2复核：央视网 2026-08-21）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-12%（单位自主确定；2026年度基数下限2540元/上限36348元，月缴存额上限8724元）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260824_4834975.html",
+          "title": "京房公积金管委会办〔2026〕6号《关于2026住房公积金年度缴存有关问题的通知》（T2复核：新京报 2026-08-24）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": null,
+        "unit": "%（在职职工三级医院住院分段报销比例）",
+        "source": {
+          "url": "",
+          "title": "待补：北京市医保局官网 → 职工基本医疗保险住院待遇标准表",
+          "collected_at": ""
+        }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工医保（2019 起全国并轨，北京执行；职工医保单位9.8%+个人2% 中含生育保险）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202507/t20250731_4162855.html",
+          "title": "北京市人民政府办公厅《北京市关于完善生育支持政策体系推动建设生育友好型社会的工作措施》",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "单位月缴费平均工资 ÷ 30 × 产假天数（顺产计发128天，难产+15天，多胞胎每婴+15天；需分娩前连续缴费满9个月，不足则分娩后连续满12个月由基金补支）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zcjd/zcwd/syjt/",
+          "title": "首都之窗：生育津贴计发标准（北京市医保局口径）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 158,
+        "unit": "天（国家规定98天 + 北京市延长生育假60天；难产+15天，多胞胎每婴+15天；男方陪产假15天；子女3周岁前夫妻每人每年5个工作日育儿假）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/fuwu/bmfw/bmzt/nxfw/",
+          "title": "首都之窗：呵护女性 保障权益（含《北京市人口与计划生育条例》延长生育假60日）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "① 国家育儿补贴：3周岁以下每孩每年3600元（2025-01-01 起，不分孩次）② 北京生育友好措施（2025-07 京政办发）：建立生育补贴制度、提高产前检查报销、扩展生育保险覆盖 ③ 区级补贴：各区差异大，部分区对二孩三孩有一次性补贴/托育券",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202507/t20250731_4162855.html",
+          "title": "北京市人民政府办公厅《北京市关于完善生育支持政策体系推动建设生育友好型社会的工作措施》 + 国家育儿补贴方案",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 47,
+        "unit": "分钟（单程平均通勤时耗，2024年数据；全国第一长；45分钟内通勤比重未达80%目标；60分钟以上极端通勤占29%）",
+        "source": {
+          "url": "https://huiyan.baidu.com/reports/landing?id=189",
+          "title": "《2025年度中国主要城市通勤监测报告》（中国城市规划设计研究院；T2复核：澎湃新闻/原创力）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 81,
+        "unit": "家（三甲医院数量，全国第一；三级医院总数142家）",
+        "source": {
+          "url": "https://www.sohu.com/a/900351392_122086256",
+          "title": "全国三甲医院数量排行榜（北京81家领跑）；T1复核：北京市卫健委《2025年北京卫生健康事业发展统计公报》三级医院142家",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 85.2,
+        "unit": "%（2025年优良天数311天；PM2.5 年均 27.0μg/m³ 首次破30；重污染日仅1天）",
+        "source": {
+          "url": "https://www.beijing.gov.cn/ywdt/gzdt/202604/t20260402_4573275.html",
+          "title": "北京市生态环境局《2025年北京市生态环境状况公报》（T2复核：首都之窗新闻发布会实录）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "education_resources": {
+        "value": "985×8（清北人师航理农中民族）+211×26；基础教育：人大附/清华附/北京四中/十一学校等全国顶尖；海淀黄庄为全国教培中心，学区竞争激烈度全国第一",
+        "source": {
+          "url": "",
+          "title": "常识性数据，待补教育部高校名单官方来源",
+          "collected_at": ""
+        }
+      },
+      "climate_summary": {
+        "value": "温带半湿润大陆性季风：四季分明，冬冷（-5~5℃）有暖气，夏热（28-35℃），春秋短；春季偶有沙尘，冬季偶有雾霾（近年显著改善）；年日照约2600小时",
+        "source": {
+          "url": "",
+          "title": "常识性数据，待补北京市气象局气候公报",
+          "collected_at": ""
+        }
+      },
+      "cultural_facilities_index": {
+        "value": 98,
+        "unit": "1-100（主观指数：博物馆/剧场/Livehouse/独立书店/音乐厅密度全国第一；国家博物馆/故宫/国家大剧院/首都剧场等顶级资源，仅电影院银幕数略低于上海）",
+        "source": {
+          "url": "",
+          "title": "自评，待补：北京市文旅局博物馆/演出场所统计",
+          "collected_at": ""
+        }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "分区补贴（示例海淀区2026新政）：经认定重点产业体系内用人单位应届毕业生可申领 1000元/月×最长2年安居补贴；海淀北部四镇额外+500元/月安居奖励；未叠加其他住房保障",
+        "source": {
+          "url": "https://zyk.bjhd.gov.cn/zwdt/zcwj/202602/t20260228_4806584.shtml",
+          "title": "北京市海淀区人才工作局：2026年海淀区青年人才安居补贴申请通知（T1原文）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "rent_subsidy": {
+        "value": "各区差异化：海淀『海青安居』1000元/月×2年（北部+500）；朝阳/丰台/经开区均有区级人才租房补贴，金额500-3000元/月不等；需区重点企业就业+在京无房",
+        "source": {
+          "url": "https://zyk.bjhd.gov.cn/zwdt/szgb/wqgb/202601/202605/t20260515_4815212.shtml",
+          "title": "《海淀区关于支持「海青安居」的若干措施》（区住房保障办/人才工作局/人社局联合印发）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "talent_apartment": {
+        "value": "有人才公寓+青年公寓体系（海淀每年≥2000套可拎包入住公租/保租房，近3年毕业+海淀就业青年人才可配租，前6年梯度折扣6/7/8折）；朝阳/丰台/西城均有区级人才公租房",
+        "source": {
+          "url": "https://zyk.bjhd.gov.cn/zwdt/szgb/wqgb/202601/202605/t20260515_4815212.shtml",
+          "title": "《海淀区关于支持「海青安居」的若干措施》",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "policy_stability_note": {
+        "value": "近3年政策持续放宽：2023-12 公积金首付下调 → 2024-06 商贷首套LPR-45BP → 2024-09 非京籍五环内社保5改2 → 2026-08 非京籍全市统一社保1年+公积金额度提至单人120万/双职工240万；方向稳定（合理放宽），但落户门槛始终全国最严",
+        "source": {
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260807_4814015.html",
+          "title": "京建发〔2026〕400号 + 历年北京市房地产政策时间线（T1原文）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    }
+  }
+}

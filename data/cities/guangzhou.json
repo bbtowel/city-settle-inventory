@@ -1,0 +1,278 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "广州",
+  "city_pinyin": "guangzhou",
+  "tier": "一线",
+  "data_version": 1,
+  "last_updated": "2026-09-28",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 16.68,
+        "unit": "万元/年（2025年城镇非私营单位；在岗职工 17.17 万元；城镇私营单位 8.63 万元）",
+        "source": {
+          "url": "http://tjj.gz.gov.cn/zzfwzq/tjgb/content/post_10894735.html",
+          "title": "广州市统计局：2025年广州市城镇非私营和私营单位就业人员年平均工资情况（2026-07-09 发布）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "job_density_index": {
+        "value": 92,
+        "unit": "1-100（基准：深圳=100；主观指数：互联网/商贸/制造/外贸岗位密集，华南经济中心，仅略低于深圳）",
+        "source": {
+          "url": "",
+          "title": "自评：基于广州作为国家中心城市、珠三角商贸枢纽的岗位密度，待引猎聘/BOSS直聘年度报告复核",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "unemployment_rate": {
+        "value": null,
+        "unit": "%（城镇调查失业率，待补）",
+        "source": { "url": "", "title": "待补：广州市统计局/人社局季度发布；可参考广东省城镇调查失业率", "collected_at": "" }
+      },
+      "key_industries": {
+        "value": ["智能网联和新能源汽车", "数字经济/电子信息", "绿色石化和新材料", "生物医药与健康", "现代高端装备", "商贸会展/跨境电商"],
+        "source": {
+          "url": "https://www.gz.gov.cn/zfjg/gzsrmzfbgt/qtwj/content/post_8318798.html",
+          "title": "广州市工业和信息化发展“十四五”规划（五大支柱产业）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 20.0,
+        "unit": "倍（按新房均价37120元/m² × 90m² ÷ 城镇非私营年均工资16.68万 估算；一线城市中最低）",
+        "source": {
+          "url": "https://mfang.58.com/xf/fj-gz/2026/",
+          "title": "58爱房：2026年广州新房房价（自算，非官方口径；与安居客36949元/m²互核，差异<1%）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "downpayment_median": {
+        "value": 50.1,
+        "unit": "万元（按均价37120元/m² × 90m² × 首付15% 估算，广州现行首套商贷最低首付15%）",
+        "source": {
+          "url": "https://news.southcn.com/node_812903b83a/c465878359.shtml",
+          "title": "南方网：广州主流商业银行首套最低首付15%、利率3%",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 37120,
+        "unit": "元/m²（2026年新房均价，1-7月区间均值；安居客口径36949元/m²，差异0.5%内）",
+        "source": {
+          "url": "https://mfang.58.com/xf/fj-gz/2026/",
+          "title": "58爱房：2026年广州新房均价37120.25元/m²；交叉源：安居客 2026-06 均价36949元/m²",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "2024-09-30 起全面取消限购，一线城市中率先全面放开：户籍/非户籍/单身人士在全市范围内购房不再审核资格、不限套数",
+        "source": {
+          "url": "https://www.gz.gov.cn/zwgk/fggw/sfbgtwj/content/post_9896008.html",
+          "title": "穗府办函〔2024〕65号：广州市人民政府办公厅关于调整我市房地产市场平稳健康发展措施的通知；T2交叉源：新华网 http://www.news.cn/local/20240929/8421266e56bd44a8a3934d83331bad05/c.html",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.0,
+        "unit": "%（首套商贷，LPR-50BP；5年期以上LPR 3.5%；2026-09 LPR维持不变）",
+        "source": {
+          "url": "https://www.lejucaijing.com/news-7507392970355307662.html",
+          "title": "乐居财经：9月LPR保持不变，广州首套房贷利率3%；交叉源：南方网2026-08 主流银行统一执行3.0%",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "单人80万/双职工160万（购新建一星绿建或装配式上浮10%→88万/176万；二星及以上绿建上浮20%→96万/192万；二孩及以上家庭上浮40%→112万/224万）",
+        "source": {
+          "url": "https://gjj.gz.gov.cn/gkmlpt/content/9/9994/post_9994143.html",
+          "title": "广州住房公积金管理中心：关于调整个人住房公积金贷款最高额度有关事项的通知（2024-11）；交叉源：广州市政府门户网站‘你的公积金可以贷多少钱’",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "本科（全日制本科学历+学士学位，40周岁以下，在本市就业/创业+1个月社保记录即可走引进人才入户；硕士45岁/博士50岁）",
+        "source": {
+          "url": "http://www.gzns.gov.cn/zwgk/zdlyxxgk/zylh/wjgk/content/post_10562794.html",
+          "title": "广州市户籍迁入管理规定（有效期至2026-12-31）；T2交叉源：广州本地宝《学历入户广州申办指南（2025）》",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "social_security_years_required": {
+        "value": 4,
+        "unit": "年（积分制入户门槛：持居住证+合法稳定就业+缴纳社保满4年，按年度指标排名；学历入户仅需1个月社保记录）",
+        "source": {
+          "url": "http://www.gzns.gov.cn/zwgk/zdlyxxgk/zylh/wjgk/content/post_10562794.html",
+          "title": "广州市户籍迁入管理规定 第六条（积分制入户）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "应届生专属通道：全日制本科及以上应届毕业生（择业期内，硕士/本科毕业2年内、博士5年内），有接收单位即可入户，走公安人口管理部门办理，不需积分",
+        "source": {
+          "url": "https://gaj.gz.gov.cn/jmhd/zsk/hz/content/post_8014605.html",
+          "title": "广州市公安局：接收普通高校应届毕业生入户办理",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 35,
+        "unit": "1-100（越高越难；参照：北京≈95 上海≈85 深圳≈20 成都≈25；本科即可直接落户但积分制社保4年+指标有限，比深圳/成都略严）",
+        "source": {
+          "url": "http://www.gzns.gov.cn/zwgk/zdlyxxgk/zylh/wjgk/content/post_10562794.html",
+          "title": "自评：基于2025-2026年户籍迁入管理规定",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 5510,
+        "unit": "元/月（2025-07-01 起，广东省企业职工养老保险，广州市/省直口径；其他地市4775元）",
+        "source": {
+          "url": "https://guangdong.chinatax.gov.cn/gdsw/ssfggds/2025-10/27/content_ba2a20bf040648e089f9edf9f557fa2b.shtml",
+          "title": "广东省人社厅/财政厅/税务局：关于公布2025年职工基本养老保险缴费基数上下限的通知；T2交叉源：广州市政府门户网站",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "pension_base_upper": {
+        "value": 27549,
+        "unit": "元/月（2025-07-01 起全省企业职工养老保险上限；2025年度养老金计发基数9493元/月，深圳另行公布）",
+        "source": {
+          "url": "https://guangdong.chinatax.gov.cn/gdsw/ssfggds/2025-10/27/content_ba2a20bf040648e089f9edf9f557fa2b.shtml",
+          "title": "广东省人社厅/财政厅/税务局通知（2025-10-27）；T2交叉源：广州市政府门户网站",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-12%（单位自主确定；2026年度缴存基数下限2500元=最低工资，上限41697元=2025年市职工月均工资3倍）",
+        "source": {
+          "url": "https://gz.bendibao.com/life/202673/369703.shtml",
+          "title": "广州住房公积金管理中心《2026年度住房公积金缴存调整通知》（自2026-07-01至2027-06-30）；T2：本地宝",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": "在职职工：一级90%/二级85%/三级80%（起付线一/二/三级分别为250/500/1000元）；退休人员：93%/89.5%/86%",
+        "source": {
+          "url": "https://www.gz.gov.cn/gfxwj/sbmgfxwj/gzsylbzj/content/post_8689748.html",
+          "title": "广州市医保局等《关于广州市职工医疗保险和生育保险待遇标准的通知》（有效期至2026-12-31）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工医保（按《广东省职工生育保险规定》执行；生育医疗费用由职工医保统筹基金支付）",
+        "source": {
+          "url": "https://www.gz.gov.cn/gfxwj/sbmgfxwj/gzsylbzj/content/post_8689748.html",
+          "title": "广州市职工医疗保险和生育保险待遇标准通知（含生育保险并轨条款）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "用人单位上年度职工月平均工资 ÷ 30 × 津贴假期天数（顺产98天/难产+30天/多胞胎每婴+15天；80天广东奖励假不计入津贴、由单位照发工资）",
+        "source": {
+          "url": "https://news.qq.com/rain/a/20251026A04DS400",
+          "title": "《广东省职工生育保险规定》+《广东省人口与计划生育条例》（媒体转述，T1原条文待医保局原文复核）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 178,
+        "unit": "天（国家规定98天 + 广东省奖励假80天；配偶陪产假15天）",
+        "source": {
+          "url": "https://news.qq.com/rain/a/20251026A04DS400",
+          "title": "《广东省人口与计划生育条例》：女方享受80日奖励假、男方15日陪产假",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "① 国家+广东省育儿补贴：2025-01-01 起每孩每年3600元至3周岁（不分孩次，广东方案已落地）② 部分区有区级补贴/托育券，市级无统一二孩一次性补贴",
+        "source": {
+          "url": "https://wsjkw.gd.gov.cn/zwgk_bmwj/content/post_4834552.html",
+          "title": "《广东省育儿补贴制度实施方案》（粤卫规〔2025〕9号，2025-12-25 印发）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 37,
+        "unit": "分钟（单程平均通勤时耗，2024年数据，超大城市平均39分钟；2023年=37分钟持平）",
+        "source": {
+          "url": "https://huiyan.baidu.com/reports/landing?id=189",
+          "title": "中规院+百度地图《2025年度中国主要城市通勤监测报告》（数据截至2024年底）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 53,
+        "unit": "家（三甲医院，截至2025年末；14五期间新增12家，11区全覆盖；另有口径称67家含省属/民营，待复核）",
+        "source": {
+          "url": "https://finance.sina.com.cn/roll/2026-09-03/doc-iniqpeke7130684.shtml",
+          "title": "新浪财经《城市医疗观察：广州医疗三组前沿动态》（2026-09）；T2交叉源：广州市政府门户《十四五卫生成绩单》（50家口径）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 93.4,
+        "unit": "%（2025年优良天数比例，连续三年超九成；PM2.5 年均21.5μg/m³，国家中心城市中最优）",
+        "source": {
+          "url": "http://sthjj.gz.gov.cn/gkmlpt/content/10/10630/post_10630363.html",
+          "title": "广州市生态环境局《2025年广州空气优良天数比例达93.4%》（2026-01-06）；T2：广州日报/新快报",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "education_resources": {
+        "value": "985×2（中山大学、华南理工）+211×2（暨南大学、华南师大）；基础教育有华附、执信、广雅、省实等名校，学区竞争中等；K12国际化学校密度华南第一",
+        "source": { "url": "", "title": "常识性数据，待补官方来源（广州市教育局高校名单）", "collected_at": "" }
+      },
+      "climate_summary": {
+        "value": "南亚热带季风：长夏短冬，年均温21-23℃，夏季湿热（28-35℃+高湿），冬季温和（10-18℃），回南天3-4月湿度高，年降水量1700mm+，台风季7-9月，无供暖需求",
+        "source": { "url": "", "title": "常识性数据，待补气象局来源（广州气候公报）", "collected_at": "" }
+      },
+      "cultural_facilities_index": {
+        "value": 88,
+        "unit": "1-100（主观指数：博物馆/图书馆密度全国前列，粤语文化中心，美食/夜生活/演出市场体量仅次于北上深；Livehouse 密度稍弱于北京上海）",
+        "source": { "url": "", "title": "自评：基于广州文化设施密度及演艺市场公开报道，待引美团/大众点评数据复核", "collected_at": "" }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "市级无统一补贴，分区执行：① 南沙区吸纳应届生就业补贴 1000元/人/月×6月（给单位）+ B-1/2/3 人才卡应届生入住人才公寓租金优惠比例提至100% ② 黄埔区人才房票 本科10万/硕士15万/博士25万/博士后30万（购房补贴，2026-07-07 起受理）",
+        "source": {
+          "url": "http://www.hp.gov.cn/xwzx/zwyw/content/post_10888298.html",
+          "title": "黄埔区《人才房票申领指引》（2026-07）+ 南沙区《吸纳大学生就业补贴申领通知》（2026-09）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "rent_subsidy": {
+        "value": "分区执行：① 黄埔区人才住房租金补贴 最高2500元/月×5年（人才自住）、1500元/月×5年（人才父母）② 南沙区人才公寓A/B卡按市场评估价50%租金优惠、最长3年，应届生B卡首年100%优惠",
+        "source": {
+          "url": "http://www.hp.gov.cn/xwzx/zwyw/content/post_10888298.html",
+          "title": "黄埔区人才住房租金补贴办事指南（穗开建规字〔2025〕1号）+ 南沙区人才公寓申请指南（2026-04）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "talent_apartment": {
+        "value": "有，区级为主：南沙区人才公寓（A卡可住200m²×3年50%租金）、黄埔区人才住房（租期最长5年）；市级无统一人才公寓，多通过保障性租赁住房对接",
+        "source": {
+          "url": "http://www.gzns.gov.cn/zwgk/zdlyxxgk/bzxzf/wssq/content/post_10786220.html",
+          "title": "南沙区人才公寓申请指南（2026-04-24）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "policy_stability_note": {
+        "value": "近2年持续宽松：2024-09-30 全面取消限购（一线城市首个）→ 2024-11 公积金单人/双人额度提至80/160万 → 2025-07 广东省养老金计发基数上调 → 2026-07 黄埔区人才房票落地（最高30万）→ 2026 南沙人才公寓/就业补贴常态化。户籍迁入办法有效期至2026-12-31，预期续期；方向持续友好，区级竞争（南沙/黄埔/番禺）加码",
+        "source": {
+          "url": "https://www.gz.gov.cn/zwgk/fggw/sfbgtwj/content/post_9896008.html",
+          "title": "综合：广州市政府门户、黄埔区政府、南沙区政府公开政策",
+          "collected_at": "2026-09-28"
+        }
+      }
+    }
+  }
+}

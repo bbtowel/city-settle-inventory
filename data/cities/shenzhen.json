@@ -1,0 +1,282 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "深圳",
+  "city_pinyin": "shenzhen",
+  "tier": "一线",
+  "data_version": 1,
+  "last_updated": "2026-09-28",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 19.14,
+        "unit": "万元/年（2025年城镇非私营单位就业人员年平均工资191367元；城镇私营单位 9.92 万元）",
+        "source": {
+          "url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/tjsj/tjgb/content/post_12907800.html",
+          "title": "2025年深圳市城镇单位就业人员年平均工资情况（深圳市统计局，2026-07-24）；复核：深圳本地宝复述 http://bsy.sz.bendibao.com/bsyDetail/647225.html",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "job_density_index": {
+        "value": 100,
+        "unit": "1-100（基准城：深圳=100；依据：互联网/电子信息/硬科技/金融岗位密度全国第一梯队）",
+        "source": {
+          "url": "",
+          "title": "基准城定义值，无需外部来源；如需佐证可引猎聘/BOSS直聘年度人才报告",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "unemployment_rate": {
+        "value": null,
+        "unit": "%（城镇调查失业率，待补）",
+        "source": { "url": "", "title": "待补：深圳市统计局月度劳动力调查发布路径 tjj.sz.gov.cn 统计数据栏目", "collected_at": "" }
+      },
+      "key_industries": {
+        "value": ["电子信息/通信设备", "互联网/软件信息服务", "先进制造/装备制造（机器人、无人机）", "金融服务", "新能源/新能源汽车", "生物医药/医疗器械"],
+        "source": {
+          "url": "https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html",
+          "title": "深圳市2025年国民经济和社会发展统计公报（战略性新兴产业增加值占GDP 43.0%，高技术制造占规上工业 59.9%）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 25.9,
+        "unit": "倍（按新房均价55083元/m² × 90m² ÷ 城镇非私营年均工资19.14万 估算；全国主要城市中最高之一）",
+        "source": {
+          "url": "https://mfang.58.com/xf/fj-sz/2026/",
+          "title": "58爱房：2026年深圳房价（自算，非官方口径；交叉核：安居客 2026-07 均价 55083元/m²、中指云 2026-04 新建住宅均价 53107元/m²）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "downpayment_median": {
+        "value": 74.4,
+        "unit": "万元（按均价55083元/m² × 90m² × 首付15% 估算；深圳首套商贷最低首付15%）",
+        "source": {
+          "url": "https://mfang.58.com/xf/fj-sz/2026/",
+          "title": "58爱房房价 × 全国层面首套最低首付15%（2024-09-29 央行/金融监管总局政策，深圳执行）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 55083,
+        "unit": "元/m²（2026年新房均价；安居客/58爱房 2026-07 约 55083，中指云 2026-04 新建住宅 53107 互核）",
+        "source": {
+          "url": "https://mobile.anjuke.com/xf/fj-sz/2026/07/",
+          "title": "安居客：深圳2026年07月新房房价（交叉核：58爱房、中指云月报）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "未全面放开但大幅放宽（2026-04-30 新政）：福田/南山/宝安新安街道——深户家庭可购3套、非深户连续1年社保/个税可购2套、持深圳居住证的非深户家庭无需社保即可购1套；其他区域维持原有限购（深户2套、非深户1年社保1套）",
+        "source": {
+          "url": "https://zjj.sz.gov.cn/csml/fdcyc/xxgk/tzgg/content/post_12759887.html",
+          "title": "深圳市住房和建设局《关于进一步优化调整本市房地产相关政策的通知》（深建字〔2026〕86号）；复核：新华网 https://www.news.cn/local/20260430/483a50f389c54dbcac88e159616ff330/c.html",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.05,
+        "unit": "%（首套商贷，LPR-45BP；5年期以上LPR 3.5%，连续16个月未动；公积金首套利率2.6%）",
+        "source": {
+          "url": "http://news.szhome.com/394106.html",
+          "title": "深圳房地产信息网：最新LPR公布（2026-09-20），深圳首套二套统一3.05%；LPR 源：中国银行 LPR 报价表",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "单人70万/家庭130万（2026-04-30 新政；首套上浮60%→112万/208万；多子女家庭上浮70%；多情形累加最高上浮170%：个人189万/家庭351万）",
+        "source": {
+          "url": "https://zjj.sz.gov.cn/csml/fdcyc/xxgk/tzgg/content/post_12759887.html",
+          "title": "深建字〔2026〕86号《关于进一步优化调整本市房地产相关政策的通知》（深圳市住建局官网原文）；复核：光明网转深圳特区报",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "大专（核准入户：全日制大专+35周岁以下+在深社保在缴；本科及以上45周岁以下；中专+中级职称45周岁以下亦可）",
+        "source": {
+          "url": "https://ga.sz.gov.cn/ZT/LHLY/LYZCWJ/content/post_8250936.html",
+          "title": "《深圳市户籍迁入若干规定》（深圳市人民政府/公安局原文第八条）；复核：深圳本地宝 2026 入户五大渠道汇总",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "social_security_years_required": {
+        "value": 1,
+        "unit": "月（核准入户社保要求极低：大专/本科仅需在深社保在缴约1个月；纯积分入户兜底通道要求养老+医疗累计满5年+房产/备案租房满5年，2026年指标约15001个）",
+        "source": {
+          "url": "http://sz.bendibao.com/edu/202666/1004814.shtm",
+          "title": "2026深圳入户五大落户方式条件详解（核准入户社保在缴1个月）；积分入户规则复核：深圳市公安局积分入户专栏 ga.sz.gov.cn",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "应届生秒批通道：全日制大专及以上应届毕业生免社保直接接收（毕业2年内择业期亦可），人才引进系统全流程网办，无需现场报到；本科45岁以下/大专35岁以下",
+        "source": {
+          "url": "http://bsy.sz.bendibao.com/bsyDetail/617356.html",
+          "title": "深圳应届毕业生入户（2026）指南（深圳本地宝）；官方路径：深圳人社局 hrss.sz.gov.cn 人才引进重点业务服务",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 20,
+        "unit": "1-100（越高越难；一线城市中最易落户：大专即可核准入户、应届生免社保秒批；参照：北京≈95 上海≈85 广州≈45）",
+        "source": {
+          "url": "https://ga.sz.gov.cn/ZT/LHLY/LYZCWJ/content/post_8250936.html",
+          "title": "自评，基于《深圳市户籍迁入若干规定》核准入户低门槛",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 4775,
+        "unit": "元/月（企业职工养老/失业/工伤，2025-07-01 起执行的广东省口径下限，深圳执行'其他地区'档，低于广州的5510元；截至2026-09 仍为此值，2026年度新基数待广东省人社厅发文）",
+        "source": {
+          "url": "https://hrss.gd.gov.cn/zwgk/gsgg/content/post_4789648.html",
+          "title": "广东省人社厅等《关于公布2025年职工基本养老保险缴费基数上下限和基本养老金计发基数有关问题的通知》（粤人社发〔2025〕32号）；复核：深圳本地宝 2026 社保缴费基数",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "pension_base_upper": {
+        "value": 27549,
+        "unit": "元/月（2025-07-01 起，广东省上年度全口径城镇单位就业人员月平均工资的300%）",
+        "source": {
+          "url": "https://hrss.gd.gov.cn/zwgk/gsgg/content/post_4789648.html",
+          "title": "粤人社发〔2025〕32号；复核：深圳之窗 2025-10-29 报道",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-12%（单位5%-12%任选，个人可在单位基础上自愿提高至最高12%；基数下限2520元——2026-09-01 起新入职/新调入按新最低工资2700元，上限48471元=2025年度在岗月均工资16157×3）",
+        "source": {
+          "url": "https://zjj.sz.gov.cn/csml/zfgjjtlzx/zmhd/cjwtjd_236/jcyw/content/post_12977412.html",
+          "title": "深圳市住房公积金管理中心：2026-07-01 至 2027-06-30 缴存基数调整要求 + 2026-09-01 起下限调整答问；复核：深圳本地宝",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": "一档在职：三级医院90%、二级92%、一级以下94%；二档/居民：三级90%、二级91%、一级以下92%；退休人员95%；起付线200/400/600元",
+        "source": {
+          "url": "https://hsa.sz.gov.cn/hdjl/ywzsk_1/ylbzdy/content/post_11251895.html",
+          "title": "《深圳市医疗保障办法》住院待遇（深圳市医保局官方答问）；法规原文：深圳市医疗保障办法（司法部备案 moj.gov.cn）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工医保（全国2019年起并轨，深圳执行《广东省职工生育保险规定》粤府令第287号；2025-12-01 起生育津贴直接发放至个人账户，无需单位中转）",
+        "source": {
+          "url": "https://hsa.sz.gov.cn/xwzx/xwdt/content/post_12523157.html",
+          "title": "深圳市医疗保障局：深圳生育津贴将直接发放至个人（2025-11-28 公告）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "单位上年度职工月平均工资 ÷ 30 × 津贴假期天数（顺产98天/难产+30天/多胞胎每婴+15天；广东80天奖励假不在津贴范围，由单位照发工资）；津贴低于原工资的差额由单位补足",
+        "source": {
+          "url": "https://www.sz.gov.cn/hdjlpt/detail?pid=3315999",
+          "title": "深圳市政府互动交流答复（引《广东省职工生育保险规定》粤府令第287号）；复核：深圳市医保局访谈 hsa.sz.gov.cn",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 178,
+        "unit": "天（国家规定98天 + 广东省80天奖励假；男方陪产假15天；奖励假期间工资由单位照发）",
+        "source": {
+          "url": "https://hsa.sz.gov.cn/xwzx/xwdt/content/post_12523157.html",
+          "title": "《广东省人口与计划生育条例》第三十条（深圳市医保局公告中引述）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "国家/广东省育儿补贴：3周岁以下每孩每年3600元（2025-01-01 起，不分孩次，按年发放；广东方案粤卫规〔2025〕9号，深圳按省统一标准执行）",
+        "source": {
+          "url": "https://wsjkw.gd.gov.cn/zwgk_bmwj/content/post_4834552.html",
+          "title": "《广东省育儿补贴制度实施方案》（粤卫规〔2025〕9号）+ 中办国办《育儿补贴制度实施方案》（gov.cn）；深圳落地：坪山区卫健局政策问答（sz.gov.cn）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 35,
+        "unit": "分钟（单程平均通勤时耗约35分钟，超大城市中最优；45分钟内通勤比重81%，全国唯一达80%的超大城市，排名第一）",
+        "source": {
+          "url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_12702202.html",
+          "title": "深圳特区报/深圳政府在线：引中国城市规划研究院《2025年中国主要城市通勤监测报告》；复核：央广网 2026-03-27",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 33,
+        "unit": "家（三甲医院，公立32+民营1，2024-08 起口径；'十四五'新增15家；千人床位4.2张仍低于同类城市，医疗资源是明显短板）",
+        "source": {
+          "url": "https://wjw.sz.gov.cn/wzx/content/post_11530054.html",
+          "title": "深圳市卫健委：深圳新增1家三甲医院（总数33家）；复核：卫健委'十四五'规划年度总结",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 97.5,
+        "unit": "%（2025年空气优良天数比例，其中达优62.0%；PM2.5 年均16.8μg/m³ 全省第一；一线城市空气质量最优）",
+        "source": {
+          "url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/tjsj/tjgb/content/post_12805133.html",
+          "title": "深圳市2025年国民经济和社会发展统计公报 + 深圳市生态环境局《2025年深圳市生态环境状况公报》（深圳新闻网 2026-07-02 报道互核）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "education_resources": {
+        "value": "本土无985/211（靠哈工大深圳、中大深圳、港中深等异地校区补充）；双一流1所（南方科技大学·数学）+深圳大学快速崛起；基础教育学位紧张、中考升学竞争激烈，基础教育是主要短板",
+        "source": {
+          "url": "https://www.sustech.edu.cn/zh/about.html",
+          "title": "南方科技大学概况（2022 入选双一流）；常识性数据，待补教育局口径",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "climate_summary": {
+        "value": "南亚热带海洋性季风气候：长夏短冬（夏季6-7个月、均温28-32℃，冬季温暖均温15-20℃基本无严寒），年均温约23℃，回南天潮湿，夏秋季有台风风险，年日照约1900小时",
+        "source": { "url": "", "title": "常识性数据，待补深圳市气象局官方气候公报", "collected_at": "" }
+      },
+      "cultural_facilities_index": {
+        "value": 88,
+        "unit": "1-100（主观指数：博物馆/美术馆/图书馆密度一线水平，设计之都+读书月品牌，Livehouse/演出市场活跃但本土历史文化积淀弱于京沪深对比中逊于京沪）",
+        "source": { "url": "", "title": "自评，待补客观来源（如剧场/博物馆数量统计）", "collected_at": "" }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "2026-01-01 起青年人才新政：新引进优秀青年人才入户补贴——博士10万/硕士最高5万/本科最高3万（45岁以下、首次在深就业创业并缴社保，'秒批'入户）；另有免费短期住宿（面试/实习最长15天）",
+        "source": {
+          "url": "https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jchgk/content/post_12551437.html",
+          "title": "《关于加强青年人才来深发展服务保障的若干措施》政策解读（深圳市人社局/工信局/住建局联合发文，深圳政府在线原文）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "rent_subsidy": {
+        "value": "经认定青年人才未住过渡房可领安居补贴 1250元/月（税后1000），最长24个月；原'新引进人才租房和生活补贴'（本科1.5万/硕士2.5万/博士3万）已被2026新政取代，另设新引进博士人才生活补贴10万（35岁以下）",
+        "source": {
+          "url": "https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jchgk/content/post_12551437.html",
+          "title": "青年人才若干措施（2026新政）+ 深圳市新引进人才租房和生活补贴工作实施办法（hrss.sz.gov.cn 旧规对照）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "talent_apartment": {
+        "value": "有：青年人才可按市场参考租金60%左右租住过渡性住房（最长36个月）；'深梦扬帆/深梦启航'保租房计划持续供应；2026年计划建设筹集保障房3万套、供应4万套",
+        "source": {
+          "url": "https://www.guandian.cn/m/show/561432",
+          "title": "深圳市2026年住房发展年度计划（观点网全文转载）+ 青年人才若干措施住房保障条款",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "policy_stability_note": {
+        "value": "近3年政策持续向'抢人+稳楼市'双向放宽：2024-05 分区放开限购 → 2025-12 生育津贴直发个人 → 2026-01 青年人才新政（入户补贴+安居补贴）→ 2026-04 核心区限购再松绑+公积金提额至351万 → 2026-06 注册执业证核准入户。方向稳定为放宽，但具体补贴细则迭代快（旧租房生活补贴已废止换新），申报窗口需逐次核对",
+        "source": {
+          "url": "https://zjj.sz.gov.cn/csml/fdcyc/xxgk/tzgg/content/post_12759887.html",
+          "title": "综合深建字〔2026〕86号、青年人才若干措施、深圳医保局2025-11公告整理",
+          "collected_at": "2026-09-28"
+        }
+      }
+    }
+  }
+}
