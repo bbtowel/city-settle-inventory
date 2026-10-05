@@ -39,7 +39,11 @@
       "pension_base_lower": { "value": "元/月（缴费基数下限）", "source": { "url": "", "title": "", "collected_at": "" } },
       "pension_base_upper": { "value": "元/月（缴费基数上限）", "source": { "url": "", "title": "", "collected_at": "" } },
       "provident_fund_ratio_range": { "value": "5%-12%（单位和个人比例区间）", "source": { "url": "", "title": "", "collected_at": "" } },
-      "medical_reimbursement_inpatient": { "value": "%（住院报销比例，在职职工三甲）", "source": { "url": "", "title": "", "collected_at": "" } }
+      "medical_reimbursement_inpatient": { "value": "%（住院报销比例，在职职工三甲）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "maternity_insurance_merged": { "value": "生育保险是否并入职工医保（2019 起全国已并轨，确认本市执行）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "maternity_allowance_standard": { "value": "生育津贴计发标准（如：单位上年度月平均工资 ÷ 30 × 产假天数）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "maternity_leave_days": { "value": "天（产假+地方延长假合计）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "childbirth_subsidy": { "value": "生育/育儿补贴（如二孩三孩一次性补贴、托育补贴）", "source": { "url": "", "title": "", "collected_at": "" } }
     },
 
     "livability": {

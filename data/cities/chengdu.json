@@ -159,6 +159,39 @@
       "medical_reimbursement_inpatient": {
         "value": "约85%-92%（在职职工三级医院分段报销；待精确核实）",
         "source": { "url": "", "title": "待补：成都医保局住院待遇表", "collected_at": "" }
+      },
+      "maternity_insurance_merged": {
+        "value": "已并入职工医保（2019 起全国并轨，成都执行；生育津贴 2025-09 起直发个人）",
+        "source": {
+          "url": "https://www.sc.chinanews.com.cn/ms/2025-09-05/8320.html",
+          "title": "成都市生育津贴将直接发放至个人（成都市医保局公告）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_allowance_standard": {
+        "value": "单位上年度职工月平均工资 × 12 ÷ 365 × 产假天数（顺产98天/难产113天/多胞胎每婴+15天；连续缴费满6个月即可享受）",
+        "source": {
+          "url": "https://www.goldhro.com/news_detail/977.html",
+          "title": "2026年成都生育保险待遇条件及待遇标准（复核：成都市医保局公告）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "maternity_leave_days": {
+        "value": 158,
+        "unit": "天（国家规定98天 + 四川省延长60天；配偶护理假20天）",
+        "source": {
+          "url": "https://www.cdjnbjy.com/newshow.aspx?id=16860&mid=152",
+          "title": "生育保险支付政策（含《女职工劳动保护特别规定》国务院令619号）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "childbirth_subsidy": {
+        "value": "① 国家育儿补贴：3周岁以下每孩每年3600元（2025-01 起，不分孩次）② 成都普惠托育：每人每月最高800元运营补助（2026-05 细则）③ 区级消费券：如高新区 0-3 岁托育券 1000元/孩",
+        "source": {
+          "url": "https://www.sc.gov.cn/10462/13241/2025/7/28/c1695d124b6b46198d53d7ed0c47f604.shtml",
+          "title": "国家育儿补贴方案 + 成都市普惠托育服务机构认定及补助管理实施细则（2026-05）",
+          "collected_at": "2026-09-28"
+        }
       }
     },
     "livability": {
