@@ -1,0 +1,241 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "city": "成都",
+  "city_pinyin": "chengdu",
+  "tier": "新一线",
+  "data_version": 1,
+  "last_updated": "2026-09-28",
+  "dimensions": {
+    "economy_opportunity": {
+      "avg_salary_yearly": {
+        "value": 13.19,
+        "unit": "万元/年（2025年城镇非私营单位；私营单位 6.97 万元）",
+        "source": {
+          "url": "http://cd.bendibao.com/live/202678/210939.shtm",
+          "title": "成都市统计局关于发布2025年全市城镇单位就业人员年平均工资的公告",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "job_density_index": {
+        "value": 78,
+        "unit": "1-100（基准：深圳=100；主观指数，依据：互联网/电子信息/新经济岗位密度，西部第一）",
+        "source": {
+          "url": "",
+          "title": "待补：需引招聘平台年度人才报告（猎聘/BOSS直聘）",
+          "collected_at": ""
+        }
+      },
+      "unemployment_rate": {
+        "value": null,
+        "unit": "%（城镇调查失业率，待补）",
+        "source": { "url": "", "title": "待补：成都统计局月度发布", "collected_at": "" }
+      },
+      "key_industries": {
+        "value": ["电子信息", "装备制造", "医药健康", "新型材料", "绿色食品", "数字经济/游戏电竞"],
+        "source": {
+          "url": "https://finance.sina.com.cn/jjxw/2026-04-15/doc-inhupeis3814625.shtml",
+          "title": "2025年成都市国民经济和社会发展统计公报",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "housing_difficulty": {
+      "price_to_income_ratio": {
+        "value": 10.8,
+        "unit": "倍（按新房均价15866元/m² × 90m² ÷ 城镇非私营年均工资13.19万 估算）",
+        "source": {
+          "url": "https://mfang.58.com/cd/xinfang/fangjia-2026/",
+          "title": "58爱房：2026年成都房价（自算，非官方口径）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "downpayment_median": {
+        "value": 21.4,
+        "unit": "万元（按均价15866元/m² × 90m² × 首付15% 估算，2026-08 公积金新政后）",
+        "source": {
+          "url": "http://sc.people.com.cn/n2/2026/0826/c379471-41677525.html",
+          "title": "成都出台房地产市场十条：公积金贷款首付低至15%",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "avg_price_per_sqm": {
+        "value": 15866,
+        "unit": "元/m²（2026年新房均价，1-3月均值）",
+        "source": {
+          "url": "https://mfang.58.com/cd/xinfang/fangjia-2026/",
+          "title": "58爱房：2026年成都房价查询",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "purchase_restrictions": {
+        "value": "2024-04-29 起全市取消限购，不限套数、不审资格；限售分批放开中（2024-10-15 后购房取证即可交易）",
+        "source": {
+          "url": "http://cd.bendibao.com/fangchan/2025224/194906.shtm",
+          "title": "成都购房限购限售政策",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "mortgage_rate_first": {
+        "value": 3.0,
+        "unit": "%（首套商贷，LPR-50BP；5年期以上LPR 3.5%）",
+        "source": {
+          "url": "https://cd.loupan.com/html/news/202605/5575637.html",
+          "title": "成都房贷利率速看：首套低至3.0%",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_loan_cap": {
+        "value": "单人80万/双职工120万（购绿建一星及以上上浮20%→96万/144万；2026-08 新政另有20%利息补贴，上限2.5万）",
+        "source": {
+          "url": "http://sc.people.com.cn/n2/2026/0826/c379471-41677525.html",
+          "title": "成都房地产市场十条新政",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "hukou_policy": {
+      "min_education_for_direct_hukou": {
+        "value": "无学历门槛（2026-06-05 新政：居住证+连续3年养老保险即可落户，取消积分制）",
+        "source": {
+          "url": "https://chinajob.mohrss.gov.cn/h5/c/2026-06-09/552901.shtml",
+          "title": "四川成都：全面实行合法稳定就业和居住落户",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "social_security_years_required": {
+        "value": 3,
+        "unit": "年（连续城镇职工养老保险；仅养老险即可，不需医疗）",
+        "source": {
+          "url": "https://chinajob.mohrss.gov.cn/h5/c/2026-06-09/552901.shtml",
+          "title": "成都落户新政：安居即落户",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "fresh_graduate_channel": {
+        "value": "应届生可走人才落户通道（大专及以上学历+在蓉就业）；新政后亦可走居住就业落户",
+        "source": {
+          "url": "https://chinajob.mohrss.gov.cn/h5/c/2026-06-09/552901.shtml",
+          "title": "中国就业网",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "hukou_difficulty_score": {
+        "value": 25,
+        "unit": "1-100（越高越难；新政后大幅放宽，参照：北京≈95 上海≈85 深圳≈20）",
+        "source": {
+          "url": "https://chinajob.mohrss.gov.cn/h5/c/2026-06-09/552901.shtml",
+          "title": "自评，基于2026-06新政",
+          "collected_at": "2026-09-28"
+        }
+      }
+    },
+    "social_insurance": {
+      "pension_base_lower": {
+        "value": 4699,
+        "unit": "元/月（2026年度，四川省口径，含养老/失业/工伤）",
+        "source": {
+          "url": "https://cd.bendibao.com/news/201963/103234.shtm",
+          "title": "2026成都最新社保缴费标准",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "pension_base_upper": {
+        "value": 23493,
+        "unit": "元/月（2026年度）",
+        "source": {
+          "url": "https://cd.bendibao.com/news/201963/103234.shtm",
+          "title": "2026成都最新社保缴费标准",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "provident_fund_ratio_range": {
+        "value": "5%-12%（单位自主确定；基数下限中心城区2330元/县市新城2200元，上限32969元）",
+        "source": {
+          "url": "https://xiaoweisuan.cn/policy/chengdu/shebao/jiaofei-jishu-feilv-2026/",
+          "title": "成公积金委〔2026〕5号",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "medical_reimbursement_inpatient": {
+        "value": "约85%-92%（在职职工三级医院分段报销；待精确核实）",
+        "source": { "url": "", "title": "待补：成都医保局住院待遇表", "collected_at": "" }
+      }
+    },
+    "livability": {
+      "avg_commute_minutes": {
+        "value": 38,
+        "unit": "分钟（单程平均通勤时耗，2025年度报告；45分钟内通勤比重71%）",
+        "source": {
+          "url": "https://sc.news.cn/20260113/d1b2eefdbb0d43008b23564d49f4af40/c.html",
+          "title": "新华网：成都通勤结构持续优化（引2025年度中国主要城市通勤报告）",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "tier3_hospitals": {
+        "value": 61,
+        "unit": "家（三甲医院，2024年运营数据，含民营8家）",
+        "source": {
+          "url": "https://news.qq.com/rain/a/20250414A07QO600",
+          "title": "2024年成都市医院运营数据观察",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "aqi_good_days_ratio": {
+        "value": 80.8,
+        "unit": "%（2025年优良天数295天；PM2.5 33μg/m³ 连续两年达国标）",
+        "source": {
+          "url": "https://m.163.com/news/article/KJVMHSKS0514D3UH.html",
+          "title": "2025年成都全年空气质量优良天数达295天",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "education_resources": {
+        "value": "985×2（川大、电子科大）+211×3（西南交大、西南财大、川农）；基础教育有成都七中等全国名校，但学区竞争中等偏上",
+        "source": { "url": "", "title": "常识性数据，待补官方来源", "collected_at": "" }
+      },
+      "climate_summary": {
+        "value": "亚热带湿润：冬暖（均温5-8℃）夏热（28-33℃）多阴天少日照，年日照约1000小时全国偏低，冬有雾霾风险",
+        "source": { "url": "", "title": "常识性数据，待补气象局来源", "collected_at": "" }
+      },
+      "cultural_facilities_index": {
+        "value": 85,
+        "unit": "1-100（主观指数：Livehouse/独立书店/茶馆文化/小酒馆等密度全国前列，仅次于北上深）",
+        "source": { "url": "", "title": "自评，待补客观来源", "collected_at": "" }
+      }
+    },
+    "talent_policy": {
+      "fresh_grad_subsidy": {
+        "value": "分区补贴：如青羊区一次性租房补贴 博士3万/硕士1.2万/本科0.6万（需符合区主导产业目录+3年合同+社保半年）",
+        "source": {
+          "url": "http://cd.bendibao.com/fangchan/2026727/211679.shtm",
+          "title": "成都市青羊区应届毕业生一次性租房补贴申报攻略",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "rent_subsidy": {
+        "value": "人才优租行动（2026-04 起）：A/B类100%、C类70%、D/E类50%租金补贴，上限50m²，累计≤36个月",
+        "source": {
+          "url": "https://e.cdsb.com/html/2026-03/02/content_806033.htm",
+          "title": "成都市人才优租行动实施细则",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "talent_apartment": {
+        "value": "有人才公寓+保障性租赁住房体系（租金≤同地段市场90%），市级人才优先配租",
+        "source": {
+          "url": "https://news.chengdu.cn/2026/0302/69a5a173bda5fc6bcf82ef40.shtml",
+          "title": "《成都市人才优租行动实施细则》政策解读",
+          "collected_at": "2026-09-28"
+        }
+      },
+      "policy_stability_note": {
+        "value": "近2年政策持续放宽：2024-04取消限购 → 2025-07限售分批放开 → 2026-06落户新政取消积分 → 2026-08公积金首付降至15%+利息补贴。方向稳定（抢人+促消费），变动频率高但均为利好方向",
+        "source": {
+          "url": "https://www.sc.chinanews.com.cn/shouye/2026-08-25/248142.html",
+          "title": "成都出台房地产市场新政（2026-08）",
+          "collected_at": "2026-09-28"
+        }
+      }
+    }
+  }
+}

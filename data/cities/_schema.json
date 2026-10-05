@@ -1,0 +1,63 @@
+{
+  "$schema": "city-settle-inventory/city-data/v1",
+  "description": "单城数据 schema。每城一个 JSON 文件（data/cities/<city_pinyin>.json），所有政策类字段必须附 source.url + source.collected_at。",
+  "city": "城市中文名",
+  "city_pinyin": "拼音，作为文件名和代码内 key",
+  "tier": "一线|新一线|二线",
+  "data_version": "数据版本号，政策更新时 +1",
+  "last_updated": "2026-09-28",
+
+  "dimensions": {
+    "economy_opportunity": {
+      "_desc": "经济机会（事业维度对标）",
+      "avg_salary_yearly": { "value": "万元/年（城镇非私营单位平均工资）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "job_density_index": { "value": "1-100 主观指数：该城主流招聘站岗位密度相对基准（深圳=100）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "unemployment_rate": { "value": "%（城镇调查失业率）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "key_industries": { "value": ["支柱产业 top3-5"], "source": { "url": "", "title": "", "collected_at": "" } }
+    },
+
+    "housing_difficulty": {
+      "_desc": "买房难度（经济维度对标）",
+      "price_to_income_ratio": { "value": "房价收入比（房价中位数/家庭年收入中位数）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "downpayment_median": { "value": "万元（首套新房中位首付，按 90m² 均价×30% 估）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "avg_price_per_sqm": { "value": "元/m²（新房均价）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "purchase_restrictions": { "value": "限购门槛描述：户籍/社保年限要求", "source": { "url": "", "title": "", "collected_at": "" } },
+      "mortgage_rate_first": { "value": "%（首套商贷利率，LPR 加点）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "provident_fund_loan_cap": { "value": "万元（公积金贷款上限，单人/双职工）", "source": { "url": "", "title": "", "collected_at": "" } }
+    },
+
+    "hukou_policy": {
+      "_desc": "落户与法规（家庭/风险维度对标）",
+      "min_education_for_direct_hukou": { "value": "直接落户最低学历（如：本科/大专/无）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "social_security_years_required": { "value": "积分落户所需社保年限（近似）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "fresh_graduate_channel": { "value": "应届生通道描述（先落户后就业？）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "hukou_difficulty_score": { "value": "1-100（越高越难；深圳≈20，北京≈95）", "source": { "url": "", "title": "", "collected_at": "" } }
+    },
+
+    "social_insurance": {
+      "_desc": "五险一金（经济维度对标）",
+      "pension_base_lower": { "value": "元/月（缴费基数下限）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "pension_base_upper": { "value": "元/月（缴费基数上限）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "provident_fund_ratio_range": { "value": "5%-12%（单位和个人比例区间）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "medical_reimbursement_inpatient": { "value": "%（住院报销比例，在职职工三甲）", "source": { "url": "", "title": "", "collected_at": "" } }
+    },
+
+    "livability": {
+      "_desc": "宜居条件（生活维度对标）",
+      "avg_commute_minutes": { "value": "分钟（单程通勤中位数）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "tier3_hospitals": { "value": "三甲医院数量", "source": { "url": "", "title": "", "collected_at": "" } },
+      "aqi_good_days_ratio": { "value": "%（空气质量优良天数比例，上年度）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "education_resources": { "value": "985/211 高校数 + 基础教育资源简评", "source": { "url": "", "title": "", "collected_at": "" } },
+      "climate_summary": { "value": "一句话气候描述（供生活维度匹配）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "cultural_facilities_index": { "value": "1-100 文化设施密度主观指数（Livehouse/剧场/博物馆/独立书店）", "source": { "url": "", "title": "", "collected_at": "" } }
+    },
+
+    "talent_policy": {
+      "_desc": "人才政策（风险/经济维度对标）",
+      "fresh_grad_subsidy": { "value": "应届生补贴（金额+形式，如：本科1万/年×3年租房补贴）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "rent_subsidy": { "value": "租房补贴政策简描", "source": { "url": "", "title": "", "collected_at": "" } },
+      "talent_apartment": { "value": "人才公寓（有无+申请门槛）", "source": { "url": "", "title": "", "collected_at": "" } },
+      "policy_stability_note": { "value": "政策变动频率简评（近3年重大调整次数）", "source": { "url": "", "title": "", "collected_at": "" } }
+    }
+  }
+}
