@@ -8,6 +8,8 @@ export function renderResult(answers, rootEl) {
 
   const dimName = { ambition: '事业雄心', lifestyle: '生活偏好', family: '家庭因素', economy: '经济基础', risk: '风险态度' };
   const wName = { opportunity: '经济机会', housing: '买房难度', hukou: '落户易度', livability: '宜居条件', social: '五险一金', talent: '人才政策' };
+  // 显示层格式化: 最多 3 位小数 (计算层保持全精度, 只在展示时四舍五入)
+  const fmt = n => (n == null || Number.isNaN(n)) ? '—' : Math.round(n * 1000) / 1000;
 
   rootEl.innerHTML = `
     <div class="result">
@@ -40,7 +42,7 @@ export function renderResult(answers, rootEl) {
           <div class="cc-name">${r.city.name} <small>${r.city.tier}</small></div>
           <div class="cc-match">${r.match}<small>%</small><span>匹配度</span></div>
           <div class="cc-scores">${Object.entries(wName).map(([k, n]) =>
-            `<span class="chip">${n} ${r.scores[k]}</span>`).join('')}</div>
+            `<span class="chip">${n} ${fmt(r.scores[k])}</span>`).join('')}</div>
           <div class="cc-meta">
             房价 ${r.city.avg_price_per_sqm} 元/m² · 收入比 ${r.city.price_to_income_ratio} 倍 ·
             落户难度 ${r.city.hukou_difficulty_score}/100 · 通勤 ${r.city.avg_commute_minutes} 分钟
@@ -85,7 +87,7 @@ export function renderResult(answers, rootEl) {
     const a = results[+rootEl.querySelector('#cmpA').value].city;
     const b = results[+rootEl.querySelector('#cmpB').value].city;
     rootEl.querySelector('#cmpTable').innerHTML = `<tr><th></th><th>${a.name}</th><th>${b.name}</th></tr>` +
-      cmpFields.map(([n, f]) => `<tr><td>${n}</td><td>${f(a) ?? '—'}</td><td>${f(b) ?? '—'}</td></tr>`).join('');
+      cmpFields.map(([n, f]) => `<tr><td>${n}</td><td>${fmt(f(a))}</td><td>${fmt(f(b))}</td></tr>`).join('');
   };
   rootEl.querySelector('#cmpA').onchange = renderCmp;
   rootEl.querySelector('#cmpB').onchange = renderCmp;
