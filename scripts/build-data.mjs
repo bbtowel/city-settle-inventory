@@ -43,6 +43,8 @@ for (const f of files) {
     social_security_years_required: num(dim.hukou_policy.social_security_years_required.value),
     pension_base_lower: num(dim.social_insurance.pension_base_lower.value),
     maternity_leave_days: num(dim.social_insurance.maternity_leave_days.value),
+    // 离家距离: 城市所在大区 (与 F00 校准题选项对齐)
+    region: { '北京': '华北', '上海': '华东', '深圳': '华南', '广州': '华南', '成都': '西南', '杭州': '华东', '武汉': '华中', '长沙': '华中' }[d.city] || null,
     avg_commute_minutes: num(dim.livability.avg_commute_minutes.value),
     tier3_hospitals: num(dim.livability.tier3_hospitals.value),
     aqi_good_days_ratio: num(dim.livability.aqi_good_days_ratio.value),

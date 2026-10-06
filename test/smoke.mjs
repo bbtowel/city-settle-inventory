@@ -72,5 +72,30 @@ if (!warned.some(c => ['北京', '上海', '深圳'].includes(c))) {
   console.log('❌ 预算过滤未生效于一线'); fail++;
 }
 
+// 家乡校准: 华中家庭 + 要离家近 + 照护需求高 → 武汉/长沙应进 Top3
+const famUser = mkAnswers(q => {
+  if (q.id === 'F00') return 3;   // 华中
+  if (q.id === 'F02') return 0;   // 同城最好
+  if (q.id === 'F03') return 3;   // 照护需求高
+  if (q.dimension === 'ambition') return q.reverse ? 3 : 0;   // 低事业
+  if (q.dimension === 'family') return 3;
+  return 2;
+});
+const t3 = matchAll(famUser, QUESTIONS);
+const top3f = t3.results.slice(0, 3).map(r => `${r.city.name}(${r.match})`).join(' ');
+console.log(`\n【华中家庭·离家近】Top3: ${top3f}`);
+if (t3.results.slice(0, 3).filter(r => ['武汉', '长沙'].includes(r.city.name)).length < 2) {
+  console.log('⚠ 华中家庭 Top3 未占 2 席华中城市, 检查 family_dist 权重'); fail++;
+}
+
+// 反向: 同一用户答"距离无所谓" → 华中偏好应消失 (北京/上海/深圳中至少一个进 Top3)
+const nomad = { ...famUser, F02: 3, F03: 0 };
+const t4 = matchAll(nomad, QUESTIONS);
+const top3n = t4.results.slice(0, 3).map(r => `${r.city.name}(${r.match})`).join(' ');
+console.log(`【同用户·距离无所谓】Top3: ${top3n}`);
+if (JSON.stringify(t3.results.slice(0, 3).map(r => r.city.name)) === JSON.stringify(t4.results.slice(0, 3).map(r => r.city.name))) {
+  console.log('⚠ F02 答案改变但 Top3 未变, family_dist 权重可能未生效'); fail++;
+}
+
 console.log(fail === 0 ? '\n✅ 全部冒烟测试通过' : `\n❌ ${fail} 项失败`);
 process.exit(fail === 0 ? 0 : 1);

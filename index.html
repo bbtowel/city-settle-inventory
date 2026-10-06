@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>归巢 · 城市定居测评 — 5 分钟找到你的城市</title>
-<meta name="description" content="基于霍华德《明日的田园城市》与芒福德《城市发展史》的城市定居测评。32 题, 5 分钟, 用 2026 年最新官方政策数据为你匹配最适合的一二线城市。">
+<meta name="description" content="基于霍华德《明日的田园城市》与芒福德《城市发展史》的城市定居测评。33 题, 5 分钟, 用 2026 年最新官方政策数据为你匹配最适合的一二线城市。">
 <style>
 :root {
   --blue: #002FA7;       /* 克莱因蓝 */
@@ -137,11 +137,11 @@ function renderWelcome() {
     <div class="hero">
       <div class="logo">归巢</div>
       <h1>你该在哪座城市扎根?</h1>
-      <p class="sub">32 道题 · 5 分钟 · 基于 2026 年最新官方政策数据<br>给你一份可执行的定居指引</p>
+      <p class="sub">33 道题 · 5 分钟 · 基于 2026 年最新官方政策数据<br>给你一份可执行的定居指引</p>
       <div class="theory">灵感来自霍华德「三磁体」与芒福德「城市是人的容器」——<br>不止算经济账, 更算生活账。</div>
       <div class="stats">
         <div><b>8</b><span>座一二线城市</span></div>
-        <div><b>32</b><span>道情景题</span></div>
+        <div><b>33</b><span>道情景题</span></div>
         <div><b>26</b><span>项官方数据/城</span></div>
       </div>
       <button class="btn-main" id="btnStart">开始测评 →</button>
@@ -190,7 +190,7 @@ else if (Object.keys(answers).length > 0) {
   if (idx === -1) idx = QUESTIONS.length;
   renderWelcome(); // 先给欢迎页, 点开始后继续
   document.getElementById('btnStart').onclick = () => renderQuestion();
-  document.getElementById('btnStart').textContent = `继续测评 (已答 ${Object.keys(answers).length}/32) →`;
+  document.getElementById('btnStart').textContent = `继续测评 (已答 ${Object.keys(answers).length}/${QUESTIONS.length}) →`;
 } else renderWelcome();
 </script>
 </body>

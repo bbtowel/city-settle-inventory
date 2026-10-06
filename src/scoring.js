@@ -90,8 +90,27 @@ export function budgetOf(answers, questions) {
   return own == null ? null : own + fam;
 }
 
-// ---------- 4. 城市六维得分 (0-100, 越高越好) ----------
-export function cityScores(city) {
+// ---------- 4. 城市七维得分 (0-100, 越高越好) ----------
+// 大区邻接表 (离家距离用)
+const REGION_ADJ = {
+  '华北': ['东北', '华东', '西北'],
+  '东北': ['华北'],
+  '华东': ['华北', '华中', '华南'],
+  '华中': ['华东', '华南', '西南', '西北'],
+  '华南': ['华东', '华中', '西南'],
+  '西南': ['华中', '华南', '西北'],
+  '西北': ['华北', '华中', '西南'],
+};
+
+// 离家距离分: 同区=100, 相邻=65, 远=30 (F00 未答或"海外/其他"=null, 不参与)
+export function regionScore(homeRegion, cityRegion) {
+  if (!homeRegion || !cityRegion || homeRegion === '海外 / 其他') return null;
+  if (homeRegion === cityRegion) return 100;
+  if (REGION_ADJ[homeRegion]?.includes(cityRegion)) return 65;
+  return 30;
+}
+
+export function cityScores(city, homeRegion) {
   return {
     opportunity: norm(city.avg_salary_yearly_wan || 0, 6, 24),        // 经济机会
     housing:     100 - norm(city.price_to_income_ratio || 30, 5, 26), // 买房难度(反向)
@@ -103,12 +122,13 @@ export function cityScores(city) {
     social:      norm(city.maternity_leave_days || 158, 150, 190) * 0.5
                + (city.pension_base_lower ? norm(city.pension_base_lower, 3800, 7600) * 0.5 : 50), // 五险一金
     talent:      city.talentBonus ?? 60,                              // 人才政策(文字型, 暂给基准)
+    family_dist: regionScore(homeRegion, city.region),               // 离家距离(需 F00 校准)
   };
 }
 
 // ---------- 5. 动态权重 ----------
 // 用户敏感度高的维度权重放大, 反之缩小; 总和恒为 1
-export function weightsOf(userDims) {
+export function weightsOf(userDims, answers) {
   const sens = {
     opportunity: 30 + userDims.ambition * 0.9,        // 基础 30 + 事业心放大
     housing:     100 - userDims.economy,              // 经济基础弱 → 买房难度更敏感
@@ -116,6 +136,17 @@ export function weightsOf(userDims) {
     livability:  userDims.lifestyle,
     social:      userDims.family,
     talent:      clamp(100 - userDims.risk, 20, 80),  // 求稳者更吃政策红利
+    // 离家距离: 由 F02(理想距离) + F03(父母照护) 动态决定
+    family_dist: (() => {
+      if (answers == null) return 0;
+      const f02 = answers['F02'], f03 = answers['F03'];
+      if (f02 == null && f03 == null) return 0;
+      // F02: 0=同城最好 1=高铁2小时 2=飞机3小时 3=距离无所谓 (reverse)
+      // F03: 0-3 照护需求
+      const distPref = f02 == null ? 1.5 : [3, 2, 1, 0][f02];   // 越想离家近权重越大
+      const careNeed = f03 == null ? 1.5 : f03;                  // 照护需求 0-3
+      return Math.round(distPref * careNeed * 12);              // 0-108 (同城+高照护≈25% 权重)
+    })(),
   };
   const total = Object.values(sens).reduce((a, b) => a + b, 0);
   const w = {};
@@ -127,20 +158,23 @@ export function weightsOf(userDims) {
 export function matchAll(answers, questions) {
   const userDims = scoreUser(answers, questions);
   const profile = profileOf(userDims);
-  const weights = weightsOf(userDims);
+  const weights = weightsOf(userDims, answers);
+  // F00 家乡校准: 答案索引 → 大区名 (与 questions.json F00 options 对齐)
+  const REGIONS = ['华北', '东北', '华东', '华中', '华南', '西南', '西北', '海外 / 其他'];
+  const homeRegion = REGIONS[answers['F00'] ?? 7] ?? null;
 
   const results = CITIES.map(city => {
-    const scores = cityScores(city);
-    const dims6 = { opportunity: scores.opportunity, housing: scores.housing,
-                    hukou: scores.hukou, livability: scores.livability,
-                    social: scores.social, talent: scores.talent };
+    const scores = cityScores(city, homeRegion);
+    // family_dist 为 null (未答 F00 / 海外) 时该维度跳过, 权重重新归一化
+    const active = Object.keys(weights).filter(k => scores[k] != null);
+    const wsum = active.reduce((s, k) => s + weights[k], 0) || 1;
     let m = 0;
-    for (const k of Object.keys(dims6)) m += dims6[k] * (weights[k] || 0);
+    for (const k of active) m += scores[k] * (weights[k] / wsum);
     // 画像微调: 游牧者偏好宜居, 开拓者偏好机会 (±3)
-    if (profile.name === '游牧者') m += (dims6.livability - 60) * 0.05;
-    if (profile.name === '开拓者') m += (dims6.opportunity - 60) * 0.05;
+    if (profile.name === '游牧者') m += (scores.livability - 60) * 0.05;
+    if (profile.name === '开拓者') m += (scores.opportunity - 60) * 0.05;
     const filterReasons = filterCity(city, userDims, answers, questions);
-    return { city, match: Math.round(clamp(m, 0, 100)), scores: dims6, filterReasons };
+    return { city, match: Math.round(clamp(m, 0, 100)), scores, filterReasons };
   });
 
   // 被过滤的城市排后并标注

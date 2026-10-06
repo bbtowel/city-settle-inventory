@@ -284,6 +284,25 @@
       "maps_to": "weight_family + filter_education"
     },
     {
+      "id": "F00",
+      "dimension": "family",
+      "subdimension": "home_region",
+      "type": "calibration",
+      "text": "你的父母家(家乡)在哪个地区? (用于计算城市离家的实际距离)",
+      "options": [
+        "华北(京津冀/山西/内蒙古)",
+        "东北(黑吉辽)",
+        "华东(江浙沪皖/山东/福建等)",
+        "华中(湖南/湖北/河南/江西)",
+        "华南(广东/广西/海南)",
+        "西南(川渝/云贵)",
+        "西北(陕甘宁/新疆/青海)",
+        "海外 / 其他"
+      ],
+      "reverse": false,
+      "maps_to": "calibration_home_region"
+    },
+    {
       "id": "F02",
       "dimension": "family",
       "subdimension": "parents_distance",
