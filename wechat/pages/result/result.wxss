@@ -1,0 +1,37 @@
+.result { padding: 24rpx 32rpx 64rpx; }
+/* 画像卡 */
+.pcard {
+  background: linear-gradient(135deg, #002FA7 0%, #1A47E8 100%);
+  border-radius: 24rpx; padding: 48rpx 36rpx; color: #fff; margin-bottom: 32rpx;
+}
+.badge { font-size: 22rpx; background: rgba(255,255,255,.18); display: inline-block; padding: 6rpx 20rpx; border-radius: 99rpx; }
+.pname { font-size: 72rpx; font-weight: 700; margin: 24rpx 0 8rpx; }
+.ptag { font-size: 28rpx; color: #F8B500; margin-bottom: 36rpx; }
+.p3 { display: flex; flex-direction: column; gap: 16rpx; }
+.p3row { display: flex; gap: 16rpx; font-size: 24rpx; line-height: 1.6; }
+.p3row .k { color: rgba(255,255,255,.65); flex-shrink: 0; }
+.p3row .v { color: rgba(255,255,255,.95); }
+
+/* 五维 */
+.block { background: #fff; border-radius: 20rpx; padding: 36rpx; margin-bottom: 32rpx; box-shadow: 0 6rpx 40rpx rgba(26,31,54,.05); }
+.h3 { font-size: 32rpx; font-weight: 700; margin-bottom: 28rpx; }
+.dimrow { display: flex; align-items: center; gap: 16rpx; margin-bottom: 20rpx; }
+.dn { width: 128rpx; font-size: 26rpx; color: #6B7085; }
+.dbar { flex: 1; height: 16rpx; background: #E5E8F2; border-radius: 8rpx; overflow: hidden; }
+.dfill { height: 100%; background: #002FA7; border-radius: 8rpx; }
+.dv { width: 64rpx; text-align: right; font-size: 26rpx; font-weight: 600; }
+
+/* 城市卡 */
+.ccard { border: 2rpx solid #E5E8F2; border-radius: 16rpx; padding: 28rpx; margin-bottom: 20rpx; }
+.chead { display: flex; align-items: baseline; gap: 12rpx; margin-bottom: 20rpx; }
+.rank { font-size: 28rpx; font-weight: 800; color: #F8B500; }
+.cname { font-size: 36rpx; font-weight: 700; }
+.ctier { font-size: 22rpx; color: #6B7085; }
+.cmatch { margin-left: auto; font-size: 40rpx; font-weight: 800; color: #002FA7; }
+.chips { display: flex; flex-wrap: wrap; gap: 12rpx; margin-bottom: 16rpx; }
+.chip { font-size: 22rpx; background: #EEF1FB; color: #002FA7; padding: 6rpx 16rpx; border-radius: 99rpx; }
+.cmeta { font-size: 22rpx; color: #6B7085; line-height: 1.7; }
+.cwarn { font-size: 22rpx; color: #B45309; background: #FEF3C7; border-radius: 8rpx; padding: 12rpx 16rpx; margin-top: 12rpx; }
+
+.btns { margin-top: 16rpx; }
+.note { text-align: center; font-size: 20rpx; color: #9CA3AF; margin-top: 32rpx; line-height: 1.6; }

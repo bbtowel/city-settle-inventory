@@ -1,0 +1,48 @@
+<view class="result" wx:if="{{profile}}">
+  <!-- 画像卡 -->
+  <view class="pcard">
+    <view class="badge">你的三磁体画像</view>
+    <view class="pname">{{profile.name}}</view>
+    <view class="ptag">「{{profile.tagline}}」</view>
+    <view class="p3">
+      <view class="p3row"><text class="k">你是谁</text><text class="v">{{profile.who}}</text></view>
+      <view class="p3row"><text class="k">你的矛盾</text><text class="v">{{profile.conflict}}</text></view>
+      <view class="p3row"><text class="k">你的路</text><text class="v">{{profile.path}}</text></view>
+    </view>
+  </view>
+
+  <!-- 五维 -->
+  <view class="block">
+    <view class="h3">你的五维画像</view>
+    <view class="dimrow" wx:for="{{dims}}" wx:key="n">
+      <text class="dn">{{item.n}}</text>
+      <view class="dbar"><view class="dfill" style="width: {{item.v}}%"></view></view>
+      <text class="dv">{{item.v}}</text>
+    </view>
+  </view>
+
+  <!-- Top3 -->
+  <view class="block">
+    <view class="h3">最适合你的 3 座城市</view>
+    <view class="ccard" wx:for="{{top3}}" wx:key="name">
+      <view class="chead">
+        <text class="rank">#{{item.rank}}</text>
+        <text class="cname">{{item.name}}</text>
+        <text class="ctier">{{item.tier}}</text>
+        <text class="cmatch">{{item.match}}%</text>
+      </view>
+      <view class="chips">
+        <text class="chip" wx:for="{{item.chips}}" wx:for-item="c" wx:key="n">{{c.n}} {{c.v}}</text>
+      </view>
+      <view class="cmeta">{{item.meta}}</view>
+      <view class="cwarn" wx:if="{{item.warn}}">⚠ {{item.warn}}</view>
+    </view>
+  </view>
+
+  <view class="btns">
+    <button class="btn-main" open-type="share">分享给朋友</button>
+    <button class="btn-ghost" bindtap="shareCard">复制分享文案</button>
+    <button class="btn-ghost" bindtap="restart">重新测试</button>
+  </view>
+  <view class="note">数据口径: 2026 年各市官方公告(双源交叉验证) · 仅供决策参考</view>
+</view>

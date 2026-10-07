@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/quiz/quiz",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#002FA7",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "归巢 · 城市定居测评",
+    "backgroundColor": "#F4F5FA",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

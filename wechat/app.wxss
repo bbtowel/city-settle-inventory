@@ -1,0 +1,15 @@
+/**app.wxss**/
+page {
+  background: #F4F5FA;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+  color: #1A1F36;
+  font-size: 28rpx;
+}
+.btn-main {
+  background: #002FA7; color: #fff; border-radius: 16rpx;
+  font-size: 32rpx; font-weight: 600; padding: 24rpx 0; margin-top: 40rpx;
+}
+.btn-ghost {
+  background: transparent; color: #002FA7; border: 2rpx solid #002FA7;
+  border-radius: 16rpx; font-size: 30rpx; padding: 20rpx 0; margin-top: 24rpx;
+}

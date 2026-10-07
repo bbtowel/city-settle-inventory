@@ -1,0 +1,14 @@
+<view class="wrap">
+  <view class="progress"><view class="bar" style="width: {{progress}}%"></view></view>
+  <view class="count">{{idx + 1}} / {{total}} · {{dimName}}</view>
+  <view class="card">
+    <view class="qdim">{{dimName}}{{q.reverse ? ' · 逆向题' : ''}}</view>
+    <view class="qtext">{{q.text}}</view>
+    <button wx:for="{{options}}" wx:key="index" class="opt {{selected === index ? 'selected' : ''}}"
+            data-i="{{index}}" bindtap="pick">{{item}}</button>
+  </view>
+  <view class="nav">
+    <button class="navbtn ghost" wx:if="{{idx > 0}}" bindtap="back">← 上一题</button>
+    <button class="navbtn ghost" wx:if="{{selected != null}}" bindtap="next">下一题 →</button>
+  </view>
+</view>

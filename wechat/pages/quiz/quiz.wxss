@@ -1,0 +1,16 @@
+.wrap { padding: 24rpx 32rpx 48rpx; }
+.progress { height: 10rpx; background: #E5E8F2; border-radius: 5rpx; overflow: hidden; margin-top: 16rpx; }
+.progress .bar { height: 100%; background: #002FA7; border-radius: 5rpx; transition: width .3s; }
+.count { text-align: center; font-size: 24rpx; color: #6B7085; margin: 24rpx 0 32rpx; }
+.card { background: #fff; border-radius: 20rpx; padding: 48rpx 36rpx; box-shadow: 0 6rpx 40rpx rgba(26,31,54,.06); }
+.qdim { font-size: 22rpx; color: #002FA7; background: #EEF1FB; display: inline-block; padding: 6rpx 20rpx; border-radius: 99rpx; margin-bottom: 24rpx; }
+.qtext { font-size: 36rpx; font-weight: 600; line-height: 1.5; margin-bottom: 44rpx; }
+.opt {
+  display: block; width: 100%; text-align: left; background: #F4F5FA;
+  border: 2rpx solid transparent; border-radius: 14rpx; color: #1A1F36;
+  font-size: 30rpx; padding: 26rpx 28rpx; margin-bottom: 20rpx; line-height: 1.5;
+}
+.opt.selected { background: #EEF1FB; border-color: #002FA7; color: #002FA7; font-weight: 600; }
+.nav { display: flex; justify-content: space-between; margin-top: 32rpx; }
+.navbtn { font-size: 28rpx; }
+.navbtn.ghost { background: transparent; color: #002FA7; border: none; padding: 8rpx 0; }

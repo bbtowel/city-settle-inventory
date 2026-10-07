@@ -1,0 +1,16 @@
+<view class="hero">
+  <view class="logo">归巢</view>
+  <view class="h1">你该在哪座城市扎根?</view>
+  <view class="sub">33 道题 · 5 分钟 · 基于 2026 年最新官方政策数据</view>
+  <view class="theory">灵感来自霍华德「三磁体」与芒福德「城市是人的容器」</view>
+  <view class="stats">
+    <view class="stat"><text class="n">8</text><text class="t">座一二线城市</text></view>
+    <view class="stat"><text class="n">33</text><text class="t">道情景题</text></view>
+    <view class="stat"><text class="n">26</text><text class="t">项官方数据/城</text></view>
+  </view>
+  <button class="btn-main" bindtap="start" wx:if="{{answered === 0}}">开始测评 →</button>
+  <block wx:else>
+    <button class="btn-main" bindtap="start">继续测评 (已答 {{answered}}/{{total}}) →</button>
+    <button class="btn-ghost" bindtap="restart">重新开始</button>
+  </block>
+</view>
