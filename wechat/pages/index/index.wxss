@@ -16,3 +16,12 @@
 .stat { display: flex; flex-direction: column; }
 .stat .n { font-size: 48rpx; font-weight: 700; color: #002FA7; }
 .stat .t { font-size: 22rpx; color: #6B7085; margin-top: 4rpx; }
+
+/* 支付解锁框 */
+.paybox {
+  margin-top: 48rpx; background: #fff; border-radius: 20rpx;
+  padding: 40rpx 36rpx 36rpx; box-shadow: 0 6rpx 40rpx rgba(26,31,54,.08);
+}
+.pay-price { font-size: 72rpx; font-weight: 800; color: #002FA7; }
+.pay-desc { font-size: 24rpx; color: #6B7085; margin: 12rpx 0 8rpx; }
+.pay-btn { margin-top: 24rpx; }

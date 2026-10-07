@@ -2,6 +2,7 @@
 const app = getApp();
 const { matchAll } = require('../../utils/scoring.js');
 const { QUESTIONS } = require('../../utils/questions.js');
+const pay = require('../../utils/pay.js');
 
 const W = { opportunity: '经济机会', housing: '买房难度', hukou: '落户易度', livability: '宜居条件', social: '五险一金', talent: '人才政策', family_dist: '离家近' };
 const DIM = { ambition: '事业雄心', lifestyle: '生活偏好', family: '家庭因素', economy: '经济基础', risk: '风险态度' };
@@ -11,6 +12,10 @@ Page({
   data: { profile: null, dims: [], top3: [], sharePath: '' },
 
   onLoad() {
+    if (!pay.isPaid()) {           // 未支付绕过 → 弹回首页
+      wx.reLaunch({ url: '/pages/index/index' });
+      return;
+    }
     const { userDims, profile, results } = matchAll(app.answers, QUESTIONS);
     const top3 = results.slice(0, 3).map((r, i) => ({
       rank: i + 1, name: r.city.name, tier: r.city.tier, match: r.match,

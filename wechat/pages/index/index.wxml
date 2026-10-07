@@ -8,9 +8,22 @@
     <view class="stat"><text class="n">33</text><text class="t">道情景题</text></view>
     <view class="stat"><text class="n">26</text><text class="t">项官方数据/城</text></view>
   </view>
-  <button class="btn-main" bindtap="start" wx:if="{{answered === 0}}">开始测评 →</button>
+
+  <!-- 未支付: ¥2 解锁 -->
+  <block wx:if="{{!paid}}">
+    <view class="paybox">
+      <view class="pay-price">{{priceLabel}}</view>
+      <view class="pay-desc">解锁完整测评 · 一次付费永久使用</view>
+      <button class="btn-main pay-btn" bindtap="start">支付 {{priceLabel}} · 开始测评</button>
+    </view>
+  </block>
+
+  <!-- 已支付 -->
   <block wx:else>
-    <button class="btn-main" bindtap="start">继续测评 (已答 {{answered}}/{{total}}) →</button>
-    <button class="btn-ghost" bindtap="restart">重新开始</button>
+    <button class="btn-main" bindtap="start" wx:if="{{answered === 0}}">开始测评 →</button>
+    <block wx:else>
+      <button class="btn-main" bindtap="start">继续测评 (已答 {{answered}}/{{total}}) →</button>
+      <button class="btn-ghost" bindtap="restart">重新开始</button>
+    </block>
   </block>
 </view>

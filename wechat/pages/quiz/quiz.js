@@ -1,12 +1,17 @@
 // 答题页
 const app = getApp();
 const { QUESTIONS } = require('../../utils/questions.js');
+const pay = require('../../utils/pay.js');
 const DIM_NAME = { ambition: '事业雄心', lifestyle: '生活偏好', family: '家庭因素', economy: '经济基础', risk: '风险态度' };
 
 Page({
   data: { idx: 0, total: 0, progress: 0, q: null, dimName: '', selected: null, options: [] },
 
   onLoad() {
+    if (!pay.isPaid()) {           // 未支付绕过首页 → 弹回
+      wx.reLaunch({ url: '/pages/index/index' });
+      return;
+    }
     // 从第一道未答的题开始
     let start = QUESTIONS.findIndex(q => app.answers[q.id] == null);
     if (start === -1) start = QUESTIONS.length;

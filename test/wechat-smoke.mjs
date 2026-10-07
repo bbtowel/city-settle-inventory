@@ -15,6 +15,8 @@ globalThis.wx = {
   reLaunch: o => calls.reLaunch.push(o.url),
   setClipboardData: o => { calls.setClipboardData.push(o.data); o.success(); },
   showToast: () => {},
+  requestPayment: () => {},
+  cloud: { callFunction: () => {} },
 };
 globalThis.getApp = () => globalThis.__app;
 
@@ -32,6 +34,8 @@ function loadPage(relpath, extra) {
   new Function('getApp', 'require', 'Page', src)(globalThis.getApp, (name) => {
     if (name.includes('questions')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/questions.js');
     if (name.includes('scoring')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/scoring.js');
+    if (name.includes('pay.config')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/pay.config.js');
+    if (name.includes('utils/pay')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/pay.js');
     return require(name);
   }, (obj) => Object.assign(page, obj));
   return page;
@@ -41,6 +45,22 @@ const idxPage = loadPage('pages/index/index.js');
 idxPage.onLoad(); idxPage.onShow();
 ok(idxPage.data.total === 33, `index: total=33 (got ${idxPage.data.total})`);
 ok(idxPage.data.answered === 0, 'index: 初始 answered=0');
+
+// ---- 支付门槛: 未支付点开始 → devMode 支付成功 → 跳转 ----
+const payMod = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/pay.js');
+ok(payMod.isPaid() === false, 'pay: 初始未支付');
+idxPage.start();   // devMode: 同步完成支付并跳转
+ok(payMod.isPaid() === true, 'pay: devMode 支付后标记已付');
+ok(calls.navigateTo[0] === '/pages/quiz/quiz', 'pay: 支付成功后跳转答题');
+idxPage.onShow();
+ok(idxPage.data.paid === true, 'index: paid 状态刷新');
+
+// quiz 页未支付防线: 清掉支付标记再进
+store['guichao_paid'] = false;
+const quizGuard = loadPage('pages/quiz/quiz.js');
+quizGuard.onLoad();
+ok(calls.reLaunch.includes('/pages/index/index'), 'quiz: 未支付弹回首页');
+store['guichao_paid'] = true;  // 恢复
 
 // ---- quiz 页: 答西南+同城+高照护 ----
 const quizPage = loadPage('pages/quiz/quiz.js');

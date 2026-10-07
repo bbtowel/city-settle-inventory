@@ -6,6 +6,18 @@
 node scripts/build-data.mjs && node scripts/build-wechat.mjs && node test/wechat-smoke.mjs
 ```
 
+## 支付（¥2 解锁测评）
+
+- 开始测评前需支付 ¥2（`pay.config.js` 的 `priceFen: 200`），支付后本地标记永久解锁
+- **当前 `devMode: true`**：跳过真实支付直接解锁，供开发调试
+- **启用真实支付**（需企业/个体户主体）：
+  1. 正式 AppID（个人/测试号无法开通微信支付）
+  2. 开通云开发环境，`pay.config.js` 填 `envId` + `mchId`（微信支付商户号，与 AppID 绑定）
+  3. `pay.config.js` 置 `devMode: false`
+  4. 云函数目录 `cloudfunctions/`：`createOrder`（云调用统一下单）+ `payCallback`（回写 orders 集合）——开发者工具里右键「上传并部署(云端安装依赖)」
+  5. 云开发数据库建 `orders` 集合
+- 未支付直接访问 quiz/result 页会被弹回首页（双防线）
+
 ## 目录
 
 ```
