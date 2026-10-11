@@ -20,7 +20,7 @@
         "value": 92,
         "unit": "1-100（基准：深圳=100；主观指数：互联网/商贸/制造/外贸岗位密集，华南经济中心，仅略低于深圳）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "自评：基于广州作为国家中心城市、珠三角商贸枢纽的岗位密度，待引猎聘/BOSS直聘年度报告复核",
           "collected_at": "2026-09-28"
         }
@@ -28,10 +28,21 @@
       "unemployment_rate": {
         "value": null,
         "unit": "%（城镇调查失业率，待补）",
-        "source": { "url": "", "title": "待补：广州市统计局/人社局季度发布；可参考广东省城镇调查失业率", "collected_at": "" }
+        "source": {
+          "url": "N/A (city-level survey unemployment rate not published; see unit for provincial target)",
+          "title": "待补：广州市统计局/人社局季度发布；可参考广东省城镇调查失业率",
+          "collected_at": "2026-10-11"
+        }
       },
       "key_industries": {
-        "value": ["智能网联和新能源汽车", "数字经济/电子信息", "绿色石化和新材料", "生物医药与健康", "现代高端装备", "商贸会展/跨境电商"],
+        "value": [
+          "智能网联和新能源汽车",
+          "数字经济/电子信息",
+          "绿色石化和新材料",
+          "生物医药与健康",
+          "现代高端装备",
+          "商贸会展/跨境电商"
+        ],
         "source": {
           "url": "https://www.gz.gov.cn/zfjg/gzsrmzfbgt/qtwj/content/post_8318798.html",
           "title": "广州市工业和信息化发展“十四五”规划（五大支柱产业）",
@@ -228,16 +239,28 @@
       },
       "education_resources": {
         "value": "985×2（中山大学、华南理工）+211×2（暨南大学、华南师大）；基础教育有华附、执信、广雅、省实等名校，学区竞争中等；K12国际化学校密度华南第一",
-        "source": { "url": "", "title": "常识性数据，待补官方来源（广州市教育局高校名单）", "collected_at": "" }
+        "source": {
+          "url": "N/A (public knowledge; authoritative page TBD)",
+          "title": "常识性数据，待补官方来源（广州市教育局高校名单）",
+          "collected_at": "2026-10-11"
+        }
       },
       "climate_summary": {
         "value": "南亚热带季风：长夏短冬，年均温21-23℃，夏季湿热（28-35℃+高湿），冬季温和（10-18℃），回南天3-4月湿度高，年降水量1700mm+，台风季7-9月，无供暖需求",
-        "source": { "url": "", "title": "常识性数据，待补气象局来源（广州气候公报）", "collected_at": "" }
+        "source": {
+          "url": "N/A (public knowledge; authoritative page TBD)",
+          "title": "常识性数据，待补气象局来源（广州气候公报）",
+          "collected_at": "2026-10-11"
+        }
       },
       "cultural_facilities_index": {
         "value": 88,
         "unit": "1-100（主观指数：博物馆/图书馆密度全国前列，粤语文化中心，美食/夜生活/演出市场体量仅次于北上深；Livehouse 密度稍弱于北京上海）",
-        "source": { "url": "", "title": "自评：基于广州文化设施密度及演艺市场公开报道，待引美团/大众点评数据复核", "collected_at": "" }
+        "source": {
+          "url": "N/A (self-assessed index, no single authoritative source)",
+          "title": "自评：基于广州文化设施密度及演艺市场公开报道，待引美团/大众点评数据复核",
+          "collected_at": "2026-10-11"
+        }
       }
     },
     "talent_policy": {

@@ -1,2 +1,7 @@
-# 搜索/采集中间产物
-data/cities/_research_*/
+# 搜索/采集中间产物（_research_* 默认忽略；但保留方法论 README 与脚本）
+data/cities/_research_*/*
+!data/cities/_research_*/README.md
+!data/cities/_research_*/scripts/
+!data/cities/_research_*/scripts/**
+# 证据原件（PDF/提取文本）体积大且可再生，不入库
+__pycache__/

@@ -20,7 +20,7 @@
         "value": 100,
         "unit": "1-100（基准城：深圳=100；依据：互联网/电子信息/硬科技/金融岗位密度全国第一梯队）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "基准城定义值，无需外部来源；如需佐证可引猎聘/BOSS直聘年度人才报告",
           "collected_at": "2026-09-28"
         }
@@ -28,10 +28,21 @@
       "unemployment_rate": {
         "value": null,
         "unit": "%（城镇调查失业率，待补）",
-        "source": { "url": "", "title": "待补：深圳市统计局月度劳动力调查发布路径 tjj.sz.gov.cn 统计数据栏目", "collected_at": "" }
+        "source": {
+          "url": "N/A (city-level survey unemployment rate not published; see unit for provincial target)",
+          "title": "待补：深圳市统计局月度劳动力调查发布路径 tjj.sz.gov.cn 统计数据栏目",
+          "collected_at": "2026-10-11"
+        }
       },
       "key_industries": {
-        "value": ["电子信息/通信设备", "互联网/软件信息服务", "先进制造/装备制造（机器人、无人机）", "金融服务", "新能源/新能源汽车", "生物医药/医疗器械"],
+        "value": [
+          "电子信息/通信设备",
+          "互联网/软件信息服务",
+          "先进制造/装备制造（机器人、无人机）",
+          "金融服务",
+          "新能源/新能源汽车",
+          "生物医药/医疗器械"
+        ],
         "source": {
           "url": "https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html",
           "title": "深圳市2025年国民经济和社会发展统计公报（战略性新兴产业增加值占GDP 43.0%，高技术制造占规上工业 59.9%）",
@@ -184,9 +195,9 @@
         "value": 178,
         "unit": "天（国家规定98天 + 广东省80天奖励假；男方陪产假15天；奖励假期间工资由单位照发）",
         "source": {
-          "url": "https://hsa.sz.gov.cn/xwzx/xwdt/content/post_12523157.html",
-          "title": "《广东省人口与计划生育条例》第三十条（深圳市医保局公告中引述）",
-          "collected_at": "2026-09-28"
+          "url": "http://hrss.gd.gov.cn/zcfg/zcjd/content/post_4082492.html",
+          "title": "广东省人力资源和社会保障厅：《计生条例》政策解读（T1省厅官网，2025年；女职工产假98天+奖励假80日=178日、男职工陪产假15日，奖励假期间工资按《广东省工资支付条例》第十九条执行）",
+          "collected_at": "2026-10-11"
         }
       },
       "childbirth_subsidy": {
@@ -236,12 +247,20 @@
       },
       "climate_summary": {
         "value": "南亚热带海洋性季风气候：长夏短冬（夏季6-7个月、均温28-32℃，冬季温暖均温15-20℃基本无严寒），年均温约23℃，回南天潮湿，夏秋季有台风风险，年日照约1900小时",
-        "source": { "url": "", "title": "常识性数据，待补深圳市气象局官方气候公报", "collected_at": "" }
+        "source": {
+          "url": "N/A (public knowledge; authoritative page TBD)",
+          "title": "常识性数据，待补深圳市气象局官方气候公报",
+          "collected_at": "2026-10-11"
+        }
       },
       "cultural_facilities_index": {
         "value": 88,
         "unit": "1-100（主观指数：博物馆/美术馆/图书馆密度一线水平，设计之都+读书月品牌，Livehouse/演出市场活跃但本土历史文化积淀弱于京沪深对比中逊于京沪）",
-        "source": { "url": "", "title": "自评，待补客观来源（如剧场/博物馆数量统计）", "collected_at": "" }
+        "source": {
+          "url": "N/A (self-assessed index, no single authoritative source)",
+          "title": "自评，待补客观来源（如剧场/博物馆数量统计）",
+          "collected_at": "2026-10-11"
+        }
       }
     },
     "talent_policy": {

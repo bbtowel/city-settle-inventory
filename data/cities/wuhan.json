@@ -20,18 +20,18 @@
         "value": 72,
         "unit": "1-100（基准：深圳=100；主观指数，依据：光电子信息/汽车/生物医药岗位密度高，为中部就业第一城，略低于成杭）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "待补：需引招聘平台年度人才报告（猎聘/BOSS直聘）",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "unemployment_rate": {
         "value": null,
         "unit": "%（武汉市级城镇调查失业率未单独发布；湖北省2025年平均值5.3%可作参照，来源：湖北省2025年统计公报 https://tjj.hubei.gov.cn/tjsj/tjgb/ndtjgb/qstjgb/202603/t20260318_5894639.shtml）",
         "source": {
-          "url": "",
+          "url": "N/A (city-level survey unemployment rate not published; see unit for provincial target)",
           "title": "待补：武汉调查队/统计局月度发布",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "key_industries": {
@@ -257,9 +257,9 @@
         "value": 82,
         "unit": "1-100（主观指数：高校文化/长江文化/历史街区（江汉路、昙华林）/音乐现场密度高，博物馆（省博、武博）、剧场资源中部第一，弱于成杭的市井文化密度）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "自评，待补客观来源",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       }
     },

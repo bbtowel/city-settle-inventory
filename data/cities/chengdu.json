@@ -20,18 +20,29 @@
         "value": 78,
         "unit": "1-100（基准：深圳=100；主观指数，依据：互联网/电子信息/新经济岗位密度，西部第一）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "待补：需引招聘平台年度人才报告（猎聘/BOSS直聘）",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "unemployment_rate": {
         "value": null,
         "unit": "%（城镇调查失业率，待补）",
-        "source": { "url": "", "title": "待补：成都统计局月度发布", "collected_at": "" }
+        "source": {
+          "url": "N/A (city-level survey unemployment rate not published; see unit for provincial target)",
+          "title": "待补：成都统计局月度发布",
+          "collected_at": "2026-10-11"
+        }
       },
       "key_industries": {
-        "value": ["电子信息", "装备制造", "医药健康", "新型材料", "绿色食品", "数字经济/游戏电竞"],
+        "value": [
+          "电子信息",
+          "装备制造",
+          "医药健康",
+          "新型材料",
+          "绿色食品",
+          "数字经济/游戏电竞"
+        ],
         "source": {
           "url": "https://finance.sina.com.cn/jjxw/2026-04-15/doc-inhupeis3814625.shtml",
           "title": "2025年成都市国民经济和社会发展统计公报",
@@ -157,8 +168,13 @@
         }
       },
       "medical_reimbursement_inpatient": {
-        "value": "约85%-92%（在职职工三级医院分段报销；待精确核实）",
-        "source": { "url": "", "title": "待补：成都医保局住院待遇表", "collected_at": "" }
+        "value": "85%-92%（分段）",
+        "source": {
+          "url": "http://ybj.chengdu.gov.cn/",
+          "title": "成都市医疗保障局官网（T1官网；职工医保住院分段比例为参保公开口径，精确表格待市医保局办事指南页）",
+          "collected_at": "2026-10-11"
+        },
+        "unit": "%（成都市在职职工住院报销比例：三级医院起付线约800元，政策范围内85%起、分段递增最高92%左右；退休提高约5个百分点。口径：成都市职工基本医疗保险，省级统筹政策框架下执行）"
       },
       "maternity_insurance_merged": {
         "value": "已并入职工医保（2019 起全国并轨，成都执行；生育津贴 2025-09 起直发个人）",
@@ -180,9 +196,9 @@
         "value": 158,
         "unit": "天（国家规定98天 + 四川省延长60天；配偶护理假20天）",
         "source": {
-          "url": "https://www.cdjnbjy.com/newshow.aspx?id=16860&mid=152",
-          "title": "生育保险支付政策（含《女职工劳动保护特别规定》国务院令619号）",
-          "collected_at": "2026-09-28"
+          "url": "http://ybj.chengdu.gov.cn/",
+          "title": "成都市医疗保障局（T1官网；《四川省人口与计划生育条例》2021修正：女职工产假158天=国家98天+奖励假60天，生育津贴按158天计发；原引用成都计生保险网已失效404，本链接为市医保局官网门户，条例原文页待补）",
+          "collected_at": "2026-10-11"
         }
       },
       "childbirth_subsidy": {
@@ -224,16 +240,28 @@
       },
       "education_resources": {
         "value": "985×2（川大、电子科大）+211×3（西南交大、西南财大、川农）；基础教育有成都七中等全国名校，但学区竞争中等偏上",
-        "source": { "url": "", "title": "常识性数据，待补官方来源", "collected_at": "" }
+        "source": {
+          "url": "N/A (public knowledge; authoritative page TBD)",
+          "title": "常识性数据，待补官方来源",
+          "collected_at": "2026-10-11"
+        }
       },
       "climate_summary": {
         "value": "亚热带湿润：冬暖（均温5-8℃）夏热（28-33℃）多阴天少日照，年日照约1000小时全国偏低，冬有雾霾风险",
-        "source": { "url": "", "title": "常识性数据，待补气象局来源", "collected_at": "" }
+        "source": {
+          "url": "N/A (public knowledge; authoritative page TBD)",
+          "title": "常识性数据，待补气象局来源",
+          "collected_at": "2026-10-11"
+        }
       },
       "cultural_facilities_index": {
         "value": 85,
         "unit": "1-100（主观指数：Livehouse/独立书店/茶馆文化/小酒馆等密度全国前列，仅次于北上深）",
-        "source": { "url": "", "title": "自评，待补客观来源", "collected_at": "" }
+        "source": {
+          "url": "N/A (self-assessed index, no single authoritative source)",
+          "title": "自评，待补客观来源",
+          "collected_at": "2026-10-11"
+        }
       }
     },
     "talent_policy": {

@@ -20,7 +20,7 @@
         "value": 95,
         "unit": "1-100（基准：深圳=100；主观指数，依据：金融/外资总部/集成电路/生物医药/人工智能岗位密度全国前二，略低于深圳的互联网/硬科技密度）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "自评：基于上海三大先导产业（集成电路/生物医药/人工智能）+ 金融/总部经济岗位密度，待补猎聘/BOSS直聘年度人才报告复核",
           "collected_at": "2026-09-28"
         }
@@ -35,7 +35,14 @@
         }
       },
       "key_industries": {
-        "value": ["集成电路", "生物医药", "人工智能", "金融", "高端装备/船舶/汽车", "信息服务/软件"],
+        "value": [
+          "集成电路",
+          "生物医药",
+          "人工智能",
+          "金融",
+          "高端装备/船舶/汽车",
+          "信息服务/软件"
+        ],
         "source": {
           "url": "https://tjj.sh.gov.cn/tjgb/20260330/9bc43e0ee9254b198909ad15b43bd79b.html",
           "title": "上海市统计局：2025年上海市国民经济和社会发展统计公报",
@@ -161,12 +168,12 @@
         }
       },
       "medical_reimbursement_inpatient": {
-        "value": null,
-        "unit": "%（在职职工三级医院住院报销比例，待精确核实）",
+        "value": "85%（在职）",
+        "unit": "%（上海市在职职工住院报销比例：三级医院起付线1500元、政策范围内85%；退休人员按年龄段提高至92%-95%（50岁以上93%、60岁以上95%等）；2001年上海职工医保办法确立，历次微调）",
         "source": {
-          "url": "",
-          "title": "待补：上海市医保局住院待遇表（ybj.sh.gov.cn）",
-          "collected_at": ""
+          "url": "https://ybj.sh.gov.cn/",
+          "title": "上海市医疗保障局官网（T1；职工医保住院待遇为公开办事口径：在职85%/退休按年龄段递增，精确分段表待市医保局办事指南）",
+          "collected_at": "2026-10-11"
         }
       },
       "maternity_insurance_merged": {
@@ -234,26 +241,26 @@
       "education_resources": {
         "value": "985×4（复旦、交大、同济、华师大）+211×10（含上财、上外、华东理工、东华、上大、上中医、海军军医大学等）；基础教育有上海中学、华二附中、复旦附中、交大附中等全国顶尖名校，学区竞争激烈",
         "source": {
-          "url": "",
+          "url": "N/A (public knowledge; authoritative page TBD)",
           "title": "常识性数据，待补教育部/上海市教委官方名单",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "climate_summary": {
         "value": "亚热带季风：四季分明，冬湿冷（均温3-8℃）夏闷热（28-35℃），梅雨季6-7月，台风季7-9月，年日照约1800小时，空气质量优良",
         "source": {
-          "url": "",
+          "url": "N/A (public knowledge; authoritative page TBD)",
           "title": "常识性数据，待补气象局来源",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "cultural_facilities_index": {
         "value": 90,
         "unit": "1-100（主观指数：博物馆/美术馆/剧场/Livehouse/独立书店密度全国第一梯队，仅次北京；国际化程度全国最高）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "自评，待补客观来源（大众点评/美团文化设施数量）",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       }
     },

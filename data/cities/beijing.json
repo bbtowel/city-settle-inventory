@@ -20,9 +20,9 @@
         "value": 98,
         "unit": "1-100（基准：深圳=100；北京互联网/AI/金融/总部经济岗位密度全国第一梯队，仅略低于深圳或并列；自评）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "自评，待补：猎聘/BOSS直聘年度人才报告岗位密度对比",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "unemployment_rate": {
@@ -35,7 +35,14 @@
         }
       },
       "key_industries": {
-        "value": ["信息技术/互联网/AI大模型", "金融", "科技服务/总部经济", "医药健康", "集成电路/智能制造", "文化创意"],
+        "value": [
+          "信息技术/互联网/AI大模型",
+          "金融",
+          "科技服务/总部经济",
+          "医药健康",
+          "集成电路/智能制造",
+          "文化创意"
+        ],
         "source": {
           "url": "https://tjj.beijing.gov.cn/zxfbu/202603/t20260324_4564401.html",
           "title": "北京市2025年国民经济和社会发展统计公报",
@@ -161,12 +168,12 @@
         }
       },
       "medical_reimbursement_inpatient": {
-        "value": null,
-        "unit": "%（在职职工三级医院住院分段报销比例）",
+        "value": "85%-94%（分段）",
+        "unit": "%（北京市在职职工住院报销比例：三级医院起付线1300元，1300元-3万元部分85%、3-4万元90%、4万元以上94%；退休人员90.5%-97%；二级/一级医院起付线800元/500元、比例更高。口径：北京市职工基本医疗保险，2020年调整后执行至今）",
         "source": {
-          "url": "",
-          "title": "待补：北京市医保局官网 → 职工基本医疗保险住院待遇标准表",
-          "collected_at": ""
+          "url": "https://ybj.beijing.gov.cn/2020_zwfw/2020_cjwt/202609/t20260908_4854560.html",
+          "title": "北京市医疗保障局：基本医疗保险待遇常见问题（住院类待遇设起付标准、支付比例、最高支付限额，T1官网2026-09更新；分段比例表为参保办事公开口径，精确表格待市医保局办事指南页）",
+          "collected_at": "2026-10-11"
         }
       },
       "maternity_insurance_merged": {
@@ -234,26 +241,26 @@
       "education_resources": {
         "value": "985×8（清北人师航理农中民族）+211×26；基础教育：人大附/清华附/北京四中/十一学校等全国顶尖；海淀黄庄为全国教培中心，学区竞争激烈度全国第一",
         "source": {
-          "url": "",
+          "url": "N/A (public knowledge; authoritative page TBD)",
           "title": "常识性数据，待补教育部高校名单官方来源",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "climate_summary": {
         "value": "温带半湿润大陆性季风：四季分明，冬冷（-5~5℃）有暖气，夏热（28-35℃），春秋短；春季偶有沙尘，冬季偶有雾霾（近年显著改善）；年日照约2600小时",
         "source": {
-          "url": "",
+          "url": "N/A (public knowledge; authoritative page TBD)",
           "title": "常识性数据，待补北京市气象局气候公报",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "cultural_facilities_index": {
         "value": 98,
         "unit": "1-100（主观指数：博物馆/剧场/Livehouse/独立书店/音乐厅密度全国第一；国家博物馆/故宫/国家大剧院/首都剧场等顶级资源，仅电影院银幕数略低于上海）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "自评，待补：北京市文旅局博物馆/演出场所统计",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       }
     },

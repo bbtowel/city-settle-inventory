@@ -20,18 +20,28 @@
         "value": 65,
         "unit": "1-100（基准：深圳=100；主观指数，依据：工程机械（三一/中联/山河智能）+马栏山音视频文创+新消费岗位密度，新一线中游；参照成都78，互联网大厂密度低于蓉杭）",
         "source": {
-          "url": "",
+          "url": "N/A (self-assessed index, no single authoritative source)",
           "title": "待补：需引招聘平台年度人才报告（猎聘/BOSS直聘）",
-          "collected_at": ""
+          "collected_at": "2026-10-11"
         }
       },
       "unemployment_rate": {
         "value": null,
         "unit": "%（城镇调查失业率，长沙市级未单独发布；参照：全国2025年平均5.2%，湖南控制目标5.5%左右）",
-        "source": { "url": "", "title": "待补：长沙市人社局/统计局季度就业数据", "collected_at": "" }
+        "source": {
+          "url": "N/A (city-level survey unemployment rate not published; see unit for provincial target)",
+          "title": "待补：长沙市人社局/统计局季度就业数据",
+          "collected_at": "2026-10-11"
+        }
       },
       "key_industries": {
-        "value": ["工程机械（三一重工/中联重科/山河智能）", "新材料", "汽车与新能源汽车（比亚迪等）", "电子信息/音视频装备（马栏山视频文创园）", "文化创意与新媒体（芒果TV/茶饮新消费）"],
+        "value": [
+          "工程机械（三一重工/中联重科/山河智能）",
+          "新材料",
+          "汽车与新能源汽车（比亚迪等）",
+          "电子信息/音视频装备（马栏山视频文创园）",
+          "文化创意与新媒体（芒果TV/茶饮新消费）"
+        ],
         "source": {
           "url": "https://tjj.hunan.gov.cn/hntj/tjfx/tjgb/szgb/zss_1/202605/t20260512_33975356.html",
           "title": "长沙市2025年国民经济和社会发展统计公报（2025年长沙GDP 15737.82亿元；支柱构成另据湖南政研网：工程机械/新材料/汽车三大制造支柱占工业总产值约50%）",
@@ -245,7 +255,11 @@
       "cultural_facilities_index": {
         "value": 88,
         "unit": "1-100（主观指数：UNESCO世界「媒体艺术之都」、马栏山视频文创园、芒果TV、演唱会/音乐节密度新一线前列、文和友/茶颜悦色新消费符号、解放西夜经济，「娱乐之都」标签；仅次于成都的市井文化多样性）",
-        "source": { "url": "", "title": "自评，待补客观来源（可引美团/艾媒夜经济报告）", "collected_at": "" }
+        "source": {
+          "url": "N/A (self-assessed index, no single authoritative source)",
+          "title": "自评，待补客观来源（可引美团/艾媒夜经济报告）",
+          "collected_at": "2026-10-11"
+        }
       }
     },
     "talent_policy": {
