@@ -1,0 +1,315 @@
+{
+ "$schema": "city-settle-inventory/city-data/v1",
+ "city": "拉萨",
+ "city_pinyin": "lasa",
+ "tier": "五线",
+ "data_version": 1,
+ "last_updated": "2026-10-12",
+ "dimensions": {
+  "economy_opportunity": {
+   "avg_salary_yearly": {
+    "value": null,
+    "unit": "万元/年（省级数据待补）",
+    "source": {
+     "url": "https://hrss.xizang.gov.cn/",
+     "title": "西藏自治区人社厅：2025年上年度全区职工月平均工资标准",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "job_density_index": {
+    "value": null,
+    "unit": "1-100（基准：深圳=100；主观指数）",
+    "source": {
+     "url": "N/A (self-assessed index, needs talent-report basis)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "unemployment_rate": {
+    "value": null,
+    "unit": "%（城镇调查失业率，市级未单独发布）",
+    "source": {
+     "url": "N/A (city-level survey unemployment rate not published)",
+     "title": "待补：市人社局/统计局季度就业数据",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "key_industries": {
+    "value": [
+     "旅游业",
+     "特色农牧产品加工（青稞/牦牛）",
+     "藏医药",
+     "清洁能源（水电光伏）"
+    ],
+    "unit": "支柱产业（公开产业概况，T2口径，待市统计公报逐条复核）",
+    "source": {
+     "url": "https://tjj.lasa.gov.cn/",
+     "title": "拉萨市统计局：2025年拉萨市国民经济和社会发展统计公报",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "housing_difficulty": {
+   "price_to_income_ratio": {
+    "value": null,
+    "unit": "倍（均价×90m²÷城镇非私营年均工资）",
+    "source": {
+     "url": "N/A (needs both price and salary)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "downpayment_median": {
+    "value": null,
+    "unit": "万元（按均价×90m²×首付15%估算；2024-09起全国商贷首付统一不低于15%）",
+    "source": {
+     "url": "N/A (needs city price)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "avg_price_per_sqm": {
+    "value": null,
+    "unit": "元/m²",
+    "source": {
+     "url": "N/A (fang.com city price not listed on homepage)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "purchase_restrictions": {
+    "value": "不限购",
+    "unit": "（2024-2025全国省会基本全面取消限购；本地限购政策待逐城复核）",
+    "source": {
+     "url": "https://www.thepaper.cn/",
+     "title": "澎湃/每经：省会城市全面取消限购（2024）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "provident_fund_loan_cap": {
+    "value": "2026-04起西藏区内商品住房最高贷款160万元，多孩/绿色建筑上浮10%达176万，\"好房子\"/现房项目180万（多孩购此类196万）；首付统一15%",
+    "unit": "贷款最高额度现行口径",
+    "source": {
+     "url": "https://www.zggjj.com/",
+     "title": "住房公积金网行业新闻",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "mortgage_rate_first": {
+    "value": "3.05%-3.1%（2026年LPR下调后首套主流区间，各城执行有差异）",
+    "unit": "商贷利率",
+    "source": {
+     "url": "https://www.wh.bendibao.com/",
+     "title": "2026年LPR房贷利率一览表（武汉本地宝持续更新，T2）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "hukou_policy": {
+   "min_education_for_direct_hukou": {
+    "value": "合法稳定住所（含租赁）+就业即可申请，西藏籍区外人员回流政策另列",
+    "unit": "落户门槛概述",
+    "source": {
+     "url": "https://www.bendibao.com/",
+     "title": "本地宝各城落户指南（T2汇编）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "social_security_years_required": {
+    "value": 0,
+    "unit": "年（多数省会租房+社保即可，具体以逐城复核为准）",
+    "source": {
+     "url": "N/A (per-city review pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "fresh_graduate_channel": {
+    "value": "先落户后就业通道普遍开放（各城人才落户细则待逐城补强）",
+    "unit": "毕业生落户通道",
+    "source": {
+     "url": "N/A (per-city review pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "hukou_difficulty_score": {
+    "value": 45,
+    "unit": "1-100（越低越易；主观指数：省会基本零门槛/租房可落户，拉萨受高原与户籍管理特殊）",
+    "source": {
+     "url": "N/A (self-assessed index)",
+     "title": "待补：落户政策量化榜单",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "social_insurance": {
+   "pension_base_lower": {
+    "value": null,
+    "unit": "元/月",
+    "source": {
+     "url": "N/A (provincial social-security base pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "pension_base_upper": {
+    "value": null,
+    "unit": "元/月",
+    "source": {
+     "url": "N/A (provincial social-security base pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "provident_fund_ratio_range": {
+    "value": "5%-12%",
+    "unit": "（国务院《住房公积金管理条例》统一区间，单位自选）",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "《住房公积金管理条例》（国务院令第350号）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "medical_reimbursement_inpatient": {
+    "value": "西藏职工医保住院：一级在职90-92%退休93-97%；二级在职87-90%退休92-95%；三级在职85-90%退休90-93%（社保网转载西藏2025标准）",
+    "unit": "职工医保住院报销比例",
+    "source": {
+     "url": "http://shebao.southmoney.com/yiliao/baoxiao/202511/2035411.html",
+     "title": "西藏拉萨2025职工医疗保险报销标准（社保网转载）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_insurance_merged": {
+    "value": "已并入职工医保",
+    "unit": "（全国两险合并实施2019年底前完成，生育待遇随医保经办）",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "国办发〔2019〕10号：全面推进生育保险和职工基本医疗保险合并实施",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_allowance_standard": {
+    "value": "上年度本单位职工月平均工资÷30×产假天数",
+    "unit": "生育津贴计发口径",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "《女职工劳动保护特别规定》及各省市生育保险办法",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_leave_days": {
+    "value": 365,
+    "unit": "日（西藏：1年（365日，西藏自治区条例规定生育女职工产假为一年，全国最长））",
+    "source": {
+     "url": "https://flk.npc.gov.cn/",
+     "title": "各省《人口与计划生育条例》（国家法律法规数据库；canonical对照表核定）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "childbirth_subsidy": {
+    "value": "国家育儿补贴：每孩每年3600元至3周岁（2025-01起全国统一基础标准，各省发放细则略有差异）",
+    "unit": "元/年/孩",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "国家育儿补贴制度实施方案（2025）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "livability": {
+   "avg_commute_minutes": {
+    "value": null,
+    "unit": "分钟（中规院《中国主要城市通勤监测报告》45城口径，多数省会未覆盖）",
+    "source": {
+     "url": "N/A (not in CCPR report coverage)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "tier3_hospitals": {
+    "value": null,
+    "unit": "家（三甲医院数量，市级卫健委名单口径）",
+    "source": {
+     "url": "N/A (needs city health-commission list)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "aqi_good_days_ratio": {
+    "value": 99.7,
+    "unit": "%（2025公报）",
+    "source": {
+     "url": "https://tjj.lasa.gov.cn/",
+     "title": "拉萨市统计局：2025年拉萨市国民经济和社会发展统计公报",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "education_resources": {
+    "value": "西藏大学（211）等；基础教育拉萨中学/江苏实验中学",
+    "unit": "高等教育+基础教育概况（公开名录口径T2）",
+    "source": {
+     "url": "https://tjj.lasa.gov.cn/",
+     "title": "拉萨市统计局：2025年拉萨市国民经济和社会发展统计公报",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "climate_summary": {
+    "value": "高原温带半干旱：日照强（年日照3000小时+，「日光城」）、昼夜温差大，空气稀薄（海拔3650m）",
+    "unit": "气候概况（气象常识口径，待市气象局公报复核）",
+    "source": {
+     "url": "N/A (climate summary, common-knowledge compilation)",
+     "title": "待补：市气象局2025年气候公报",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "cultural_facilities_index": {
+    "value": 85,
+    "unit": "1-100（基准：北京=100；主观指数：lasa文博/演出/文旅资源自评，待权威榜单锚定）",
+    "source": {
+     "url": "N/A (self-assessed index)",
+     "title": "待补：城市文旅消费榜单",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "talent_policy": {
+   "fresh_grad_subsidy": {
+    "value": null,
+    "unit": "毕业生补贴概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "rent_subsidy": {
+    "value": null,
+    "unit": "租房补贴概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "talent_apartment": {
+    "value": null,
+    "unit": "人才公寓概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "policy_stability_note": {
+    "value": "近3年政策单向放宽为主（落户/公积金/补贴均趋宽松）",
+    "unit": "政策趋势",
+    "source": {
+     "url": "N/A (needs per-city policy timeline)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   }
+  }
+ }
+}

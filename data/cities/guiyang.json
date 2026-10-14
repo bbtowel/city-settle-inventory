@@ -1,0 +1,315 @@
+{
+ "$schema": "city-settle-inventory/city-data/v1",
+ "city": "贵阳",
+ "city_pinyin": "guiyang",
+ "tier": "二线",
+ "data_version": 1,
+ "last_updated": "2026-10-12",
+ "dimensions": {
+  "economy_opportunity": {
+   "avg_salary_yearly": {
+    "value": 8.9,
+    "unit": "万元/年（2025年贵州省全口径城镇单位就业人员年平均工资88521元（省人社厅等四部门通知，毕节市政府门户转载））；GDP：5777.41亿 +6.0%（2024公报T1）；2025：6038.15亿+5.1%；常住人口660.25万（2024末，T1公报）；2025：666.89万（T1+T2）；城镇居民人均可支配收入52778元（2025城镇（贵阳融媒））",
+    "source": {
+     "url": "https://stjj.guizhou.gov.cn/",
+     "title": "贵州省人社厅等四部门：2025年贵州省全口径城镇单位就业人员年平均工资通知",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "job_density_index": {
+    "value": null,
+    "unit": "1-100（基准：深圳=100；主观指数）",
+    "source": {
+     "url": "N/A (self-assessed index, needs talent-report basis)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "unemployment_rate": {
+    "value": null,
+    "unit": "%（城镇调查失业率，市级未单独发布）",
+    "source": {
+     "url": "N/A (city-level survey unemployment rate not published)",
+     "title": "待补：市人社局/统计局季度就业数据",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "key_industries": {
+    "value": [
+     "大数据电子信息（数博会/贵安数据中心集群）",
+     "磷化工（开磷等）",
+     "装备制造",
+     "生态食品与中医药"
+    ],
+    "unit": "支柱产业（公开产业概况，T2口径，待市统计公报逐条复核）",
+    "source": {
+     "url": "http://tjj.guiyang.gov.cn/2020_zwgk/2020_zdlygk/2020_sjfb/tjgb/202504/t20250401_87326147.html",
+     "title": "贵阳市统计局：2024年贵阳市国民经济和社会发展统计公报（2025-04-01）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "housing_difficulty": {
+   "price_to_income_ratio": {
+    "value": null,
+    "unit": "倍（均价×90m²÷城镇非私营年均工资）",
+    "source": {
+     "url": "N/A (needs both price and salary)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "downpayment_median": {
+    "value": null,
+    "unit": "万元（按均价×90m²×首付15%估算；2024-09起全国商贷首付统一不低于15%）",
+    "source": {
+     "url": "N/A (needs city price)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "avg_price_per_sqm": {
+    "value": 8590,
+    "unit": "元/m²（房天下10月第1周全市新房价格）",
+    "source": {
+     "url": "https://gy.fang.com/",
+     "title": "房天下城市站首页新房价格",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "purchase_restrictions": {
+    "value": "不限购",
+    "unit": "（2024-2025全国省会基本全面取消限购；本地限购政策待逐城复核）",
+    "source": {
+     "url": "https://www.thepaper.cn/",
+     "title": "澎湃/每经：省会城市全面取消限购（2024）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "provident_fund_loan_cap": {
+    "value": "双缴存最高70万×流动性系数0.9（贵阳住房公积金流动性系数政策）；多子女/高层次人才另行上浮",
+    "unit": "贷款最高额度现行口径",
+    "source": {
+     "url": "https://zfgjj.guiyang.gov.cn/",
+     "title": "贵阳市住房公积金管理中心：关于调整贷款额度流动性调节系数的通知（流动性系数0.9）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "mortgage_rate_first": {
+    "value": "3.05%-3.1%（2026年LPR下调后首套主流区间，各城执行有差异）",
+    "unit": "商贷利率",
+    "source": {
+     "url": "https://www.wh.bendibao.com/",
+     "title": "2026年LPR房贷利率一览表（武汉本地宝持续更新，T2）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "hukou_policy": {
+   "min_education_for_direct_hukou": {
+    "value": "租房可落户社区集体户；人才引进有租房补贴（贵阳人才新政）",
+    "unit": "落户门槛概述",
+    "source": {
+     "url": "https://www.bendibao.com/",
+     "title": "本地宝各城落户指南（T2汇编）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "social_security_years_required": {
+    "value": 0,
+    "unit": "年（多数省会租房+社保即可，具体以逐城复核为准）",
+    "source": {
+     "url": "N/A (per-city review pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "fresh_graduate_channel": {
+    "value": "先落户后就业通道普遍开放（各城人才落户细则待逐城补强）",
+    "unit": "毕业生落户通道",
+    "source": {
+     "url": "N/A (per-city review pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "hukou_difficulty_score": {
+    "value": 20,
+    "unit": "1-100（越低越易；主观指数：省会基本零门槛/租房可落户，拉萨受高原与户籍管理特殊）",
+    "source": {
+     "url": "N/A (self-assessed index)",
+     "title": "待补：落户政策量化榜单",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "social_insurance": {
+   "pension_base_lower": {
+    "value": null,
+    "unit": "元/月",
+    "source": {
+     "url": "N/A (provincial social-security base pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "pension_base_upper": {
+    "value": null,
+    "unit": "元/月",
+    "source": {
+     "url": "N/A (provincial social-security base pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "provident_fund_ratio_range": {
+    "value": "5%-12%",
+    "unit": "（国务院《住房公积金管理条例》统一区间，单位自选）",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "《住房公积金管理条例》（国务院令第350号）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "medical_reimbursement_inpatient": {
+    "value": null,
+    "unit": "%",
+    "source": {
+     "url": "N/A (city medical inpatient ratio pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_insurance_merged": {
+    "value": "已并入职工医保",
+    "unit": "（全国两险合并实施2019年底前完成，生育待遇随医保经办）",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "国办发〔2019〕10号：全面推进生育保险和职工基本医疗保险合并实施",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_allowance_standard": {
+    "value": "上年度本单位职工月平均工资÷30×产假天数",
+    "unit": "生育津贴计发口径",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "《女职工劳动保护特别规定》及各省市生育保险办法",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_leave_days": {
+    "value": 158,
+    "unit": "日（贵州：98+60=158日）",
+    "source": {
+     "url": "https://flk.npc.gov.cn/",
+     "title": "各省《人口与计划生育条例》（国家法律法规数据库；canonical对照表核定）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "childbirth_subsidy": {
+    "value": "国家育儿补贴：每孩每年3600元至3周岁（2025-01起全国统一基础标准，各省发放细则略有差异）",
+    "unit": "元/年/孩",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "国家育儿补贴制度实施方案（2025）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "livability": {
+   "avg_commute_minutes": {
+    "value": null,
+    "unit": "分钟（中规院《中国主要城市通勤监测报告》45城口径，多数省会未覆盖）",
+    "source": {
+     "url": "N/A (not in CCPR report coverage)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "tier3_hospitals": {
+    "value": null,
+    "unit": "家（三甲医院数量，市级卫健委名单口径）",
+    "source": {
+     "url": "N/A (needs city health-commission list)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "aqi_good_days_ratio": {
+    "value": 99.5,
+    "unit": "%（2024公报T1）",
+    "source": {
+     "url": "http://tjj.guiyang.gov.cn/2020_zwgk/2020_zdlygk/2020_sjfb/tjgb/202504/t20250401_87326147.html",
+     "title": "贵阳市统计局：2024年贵阳市国民经济和社会发展统计公报（2025-04-01）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "education_resources": {
+    "value": "贵州大学（211）等38所普通高校（2024公报T1）；基础教育贵阳一中/实验三中",
+    "unit": "高等教育+基础教育概况（公开名录口径T2）",
+    "source": {
+     "url": "http://tjj.guiyang.gov.cn/2020_zwgk/2020_zdlygk/2020_sjfb/tjgb/202504/t20250401_87326147.html",
+     "title": "贵阳市统计局：2024年贵阳市国民经济和社会发展统计公报（2025-04-01）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "climate_summary": {
+    "value": "亚热带湿润：夏无酷暑（7月约24℃，避暑之都）、冬无严寒（1月约5℃），年降水约1200mm",
+    "unit": "气候概况（气象常识口径，待市气象局公报复核）",
+    "source": {
+     "url": "N/A (climate summary, common-knowledge compilation)",
+     "title": "待补：市气象局2025年气候公报",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "cultural_facilities_index": {
+    "value": 70,
+    "unit": "1-100（基准：北京=100；主观指数：guiyang文博/演出/文旅资源自评，待权威榜单锚定）",
+    "source": {
+     "url": "N/A (self-assessed index)",
+     "title": "待补：城市文旅消费榜单",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "talent_policy": {
+   "fresh_grad_subsidy": {
+    "value": null,
+    "unit": "毕业生补贴概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "rent_subsidy": {
+    "value": null,
+    "unit": "租房补贴概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "talent_apartment": {
+    "value": null,
+    "unit": "人才公寓概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "policy_stability_note": {
+    "value": "近3年政策单向放宽为主（落户/公积金/补贴均趋宽松）",
+    "unit": "政策趋势",
+    "source": {
+     "url": "N/A (needs per-city policy timeline)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,315 @@
+{
+ "$schema": "city-settle-inventory/city-data/v1",
+ "city": "太原",
+ "city_pinyin": "taiyuan",
+ "tier": "二线",
+ "data_version": 1,
+ "last_updated": "2026-10-12",
+ "dimensions": {
+  "economy_opportunity": {
+   "avg_salary_yearly": {
+    "value": 10.2,
+    "unit": "万元/年（山西省2025年城镇非私营单位就业人员年平均工资101538元（山西省统计局2026-06-26发布））；GDP：5418.87亿 +1.2%（2024，T2东方财富/华经）；2025：5382.45亿+1.3%；常住人口551万+（2024末，太原文旅局转统计局）（T2）；城镇居民人均可支配收入43036元（2024山西城镇（省口径T2腾讯））",
+    "source": {
+     "url": "https://tjj.shanxi.gov.cn/",
+     "title": "山西省统计局：2025年山西省城镇非私营单位就业人员年平均工资101538元",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "job_density_index": {
+    "value": null,
+    "unit": "1-100（基准：深圳=100；主观指数）",
+    "source": {
+     "url": "N/A (self-assessed index, needs talent-report basis)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "unemployment_rate": {
+    "value": null,
+    "unit": "%（城镇调查失业率，市级未单独发布）",
+    "source": {
+     "url": "N/A (city-level survey unemployment rate not published)",
+     "title": "待补：市人社局/统计局季度就业数据",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "key_industries": {
+    "value": [
+     "煤炭能源与煤化工",
+     "不锈钢/特种金属材料（太钢）",
+     "装备制造",
+     "信息技术应用创新（山西转型综改示范区）"
+    ],
+    "unit": "支柱产业（公开产业概况，T2口径，待市统计公报逐条复核）",
+    "source": {
+     "url": "N/A (city industry briefing pending)",
+     "title": "待补",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "housing_difficulty": {
+   "price_to_income_ratio": {
+    "value": null,
+    "unit": "倍（均价×90m²÷城镇非私营年均工资）",
+    "source": {
+     "url": "N/A (needs both price and salary)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "downpayment_median": {
+    "value": null,
+    "unit": "万元（按均价×90m²×首付15%估算；2024-09起全国商贷首付统一不低于15%）",
+    "source": {
+     "url": "N/A (needs city price)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "avg_price_per_sqm": {
+    "value": null,
+    "unit": "元/m²",
+    "source": {
+     "url": "N/A (fang.com city price not listed on homepage)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "purchase_restrictions": {
+    "value": "不限购",
+    "unit": "（2024-2025全国省会基本全面取消限购；本地限购政策待逐城复核）",
+    "source": {
+     "url": "https://www.thepaper.cn/",
+     "title": "澎湃/每经：省会城市全面取消限购（2024）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "provident_fund_loan_cap": {
+    "value": "现行（2025-01-10起施行，有效期三年）双缴存职工最高100万、单缴存职工70万、缴存三年以下50万；高层次人才/二孩及以上多子女家庭/现役军人家庭上浮30%（双130/单91）；2024-01-01至2025-12-31卖旧买新再上浮30%；不可叠加",
+    "unit": "贷款最高额度现行口径",
+    "source": {
+     "url": "https://www.zggjj.com/",
+     "title": "住房公积金网行业新闻",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "mortgage_rate_first": {
+    "value": "3.05%-3.1%（2026年LPR下调后首套主流区间，各城执行有差异）",
+    "unit": "商贷利率",
+    "source": {
+     "url": "https://www.wh.bendibao.com/",
+     "title": "2026年LPR房贷利率一览表（武汉本地宝持续更新，T2）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "hukou_policy": {
+   "min_education_for_direct_hukou": {
+    "value": "合法稳定就业+住所（含租赁）+参保即可落户；人才落户凭学历（大专/本科），各类人才补贴另申（山西中部城市群户籍互认）",
+    "unit": "落户门槛概述",
+    "source": {
+     "url": "https://www.bendibao.com/",
+     "title": "本地宝各城落户指南（T2汇编）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "social_security_years_required": {
+    "value": 0,
+    "unit": "年（多数省会租房+社保即可，具体以逐城复核为准）",
+    "source": {
+     "url": "N/A (per-city review pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "fresh_graduate_channel": {
+    "value": "先落户后就业通道普遍开放（各城人才落户细则待逐城补强）",
+    "unit": "毕业生落户通道",
+    "source": {
+     "url": "N/A (per-city review pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "hukou_difficulty_score": {
+    "value": 20,
+    "unit": "1-100（越低越易；主观指数：省会基本零门槛/租房可落户，拉萨受高原与户籍管理特殊）",
+    "source": {
+     "url": "N/A (self-assessed index)",
+     "title": "待补：落户政策量化榜单",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "social_insurance": {
+   "pension_base_lower": {
+    "value": null,
+    "unit": "元/月",
+    "source": {
+     "url": "N/A (provincial social-security base pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "pension_base_upper": {
+    "value": null,
+    "unit": "元/月",
+    "source": {
+     "url": "N/A (provincial social-security base pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "provident_fund_ratio_range": {
+    "value": "5%-12%",
+    "unit": "（国务院《住房公积金管理条例》统一区间，单位自选）",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "《住房公积金管理条例》（国务院令第350号）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "medical_reimbursement_inpatient": {
+    "value": "在职职工：一类价格医疗机构（三甲）82%、二类（三乙/二甲）86%、三类（二乙/一级）90%；退休人员各档更高（太原市医保中心FAQ，本地宝2024-07转载）",
+    "unit": "职工医保住院报销比例",
+    "source": {
+     "url": "https://m.ty.bendibao.com/mip/65620.shtm",
+     "title": "太原职工住院费用医保报销比例（太原市医保中心FAQ，本地宝转载）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_insurance_merged": {
+    "value": "已并入职工医保",
+    "unit": "（全国两险合并实施2019年底前完成，生育待遇随医保经办）",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "国办发〔2019〕10号：全面推进生育保险和职工基本医疗保险合并实施",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_allowance_standard": {
+    "value": "上年度本单位职工月平均工资÷30×产假天数",
+    "unit": "生育津贴计发口径",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "《女职工劳动保护特别规定》及各省市生育保险办法",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "maternity_leave_days": {
+    "value": 158,
+    "unit": "日（山西：98+60=158日（《山西省人口与计划生育条例》奖励延长60日））",
+    "source": {
+     "url": "https://flk.npc.gov.cn/",
+     "title": "各省《人口与计划生育条例》（国家法律法规数据库；canonical对照表核定）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "childbirth_subsidy": {
+    "value": "国家育儿补贴：每孩每年3600元至3周岁（2025-01起全国统一基础标准，各省发放细则略有差异）",
+    "unit": "元/年/孩",
+    "source": {
+     "url": "https://www.gov.cn/",
+     "title": "国家育儿补贴制度实施方案（2025）",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "livability": {
+   "avg_commute_minutes": {
+    "value": null,
+    "unit": "分钟（中规院《中国主要城市通勤监测报告》45城口径，多数省会未覆盖）",
+    "source": {
+     "url": "N/A (not in CCPR report coverage)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "tier3_hospitals": {
+    "value": 22,
+    "unit": "家（山西太原市22家优质三甲医院名单，T2 待市卫健委复核）",
+    "source": {
+     "url": "https://www.sohu.com/",
+     "title": "山西太原市22家优质三甲医院名单发布（搜狐号T2）",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "aqi_good_days_ratio": {
+    "value": null,
+    "unit": "%（空气质量优良天数比率）",
+    "source": {
+     "url": "N/A (city eco-bulletin pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "education_resources": {
+    "value": "山西大学（双一流）、太原理工大学（211）等；基础教育山西大学附中/太原五中",
+    "unit": "高等教育+基础教育概况（公开名录口径T2）",
+    "source": {
+     "url": "N/A (education summary pending)",
+     "title": "待补",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "climate_summary": {
+    "value": "温带季风/大陆性过渡：冬冷夏热、春季多风沙，年降水约450mm；夏季避暑一般（7月均温约26℃）",
+    "unit": "气候概况（气象常识口径，待市气象局公报复核）",
+    "source": {
+     "url": "N/A (climate summary, common-knowledge compilation)",
+     "title": "待补：市气象局2025年气候公报",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "cultural_facilities_index": {
+    "value": 70,
+    "unit": "1-100（基准：北京=100；主观指数：taiyuan文博/演出/文旅资源自评，待权威榜单锚定）",
+    "source": {
+     "url": "N/A (self-assessed index)",
+     "title": "待补：城市文旅消费榜单",
+     "collected_at": "2026-10-12"
+    }
+   }
+  },
+  "talent_policy": {
+   "fresh_grad_subsidy": {
+    "value": null,
+    "unit": "毕业生补贴概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "rent_subsidy": {
+    "value": null,
+    "unit": "租房补贴概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "talent_apartment": {
+    "value": null,
+    "unit": "人才公寓概况",
+    "source": {
+     "url": "N/A (city talent policy pending)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   },
+   "policy_stability_note": {
+    "value": "近3年政策单向放宽为主（落户/公积金/补贴均趋宽松）",
+    "unit": "政策趋势",
+    "source": {
+     "url": "N/A (needs per-city policy timeline)",
+     "title": "待补：暂未获取到权威来源",
+     "collected_at": "2026-10-12"
+    }
+   }
+  }
+ }
+}
