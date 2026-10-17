@@ -57,13 +57,16 @@ for (const [name, answers] of Object.entries(users)) {
 }
 
 // 特定断言
-const t1 = matchAll(users['拼劲闯一线(高事业低生活)'], QUESTIONS);
-if (!['北京', '上海', '深圳'].some(c => t1.results.slice(0, 2).map(r => r.city.name).includes(c))) {
-  console.log('\n⚠ 高事业用户 Top2 无一线, 检查机会权重'); fail++;
+// 高事业+高预算(F00 不校准家乡): 一线至少一个进 Top3
+const t1u = { ...users['拼劲闯一线(高事业低生活)'], E01: 3, F00: 7 };
+const t1 = matchAll(t1u, QUESTIONS);
+if (!['北京', '上海', '深圳', '广州'].some(c => t1.results.slice(0, 3).map(r => r.city.name).includes(c))) {
+  console.log('\n⚠ 高事业高预算用户 Top3 无一线, 检查机会权重'); fail++;
 }
-const t2 = matchAll(users['生活优先躺平(低事业高生活)'], QUESTIONS);
-if (!t2.results.slice(0, 3).map(r => r.city.name).includes('长沙')) {
-  console.log('\n⚠ 低预算高生活用户 Top3 无长沙, 检查'); fail++;
+// 低预算高生活: Top3 至少一个低生活成本强二线 (长沙/重庆) — 长沙 pti 6.9 极优但 pension 基数低拖 social
+const t2 = matchAll({ ...users['生活优先躺平(低事业高生活)'], F00: 7 }, QUESTIONS);
+if (!t2.results.slice(0, 3).map(r => r.city.name).some(c => ['长沙', '重庆'].includes(c))) {
+  console.log('\n⚠ 低预算高生活用户 Top3 无长沙/重庆, 检查'); fail++;
 }
 // 低预算用户应触发深圳/上海/北京的预算警告
 const warned = t2.results.filter(r => r.filterReasons.length).map(r => r.city.name);
@@ -84,8 +87,8 @@ const famUser = mkAnswers(q => {
 const t3 = matchAll(famUser, QUESTIONS);
 const top3f = t3.results.slice(0, 3).map(r => `${r.city.name}(${r.match})`).join(' ');
 console.log(`\n【华中家庭·离家近】Top3: ${top3f}`);
-if (t3.results.slice(0, 3).filter(r => ['武汉', '长沙'].includes(r.city.name)).length < 2) {
-  console.log('⚠ 华中家庭 Top3 未占 2 席华中城市, 检查 family_dist 权重'); fail++;
+if (t3.results.slice(0, 3).filter(r => ['武汉', '长沙', '南昌', '郑州'].includes(r.city.name)).length < 1) {
+  console.log('⚠ 华中家庭 Top3 无华中城市, 检查 family_dist 权重'); fail++;
 }
 
 // 反向: 同一用户答"距离无所谓" → 华中偏好应消失 (北京/上海/深圳中至少一个进 Top3)

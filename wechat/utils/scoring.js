@@ -110,19 +110,43 @@ function regionScore(homeRegion, cityRegion) {
   return 30;
 }
 
+// 数据缺失的维度 → null, 不参与计分 (matchAll 会把权重重归一化)。
+// 不用"缺省=50": 那会奖励数据缺失城市、压过有真实短板的城市。
 function cityScores(city, homeRegion) {
+  // livability 四项子分: 有数的按固定权重合成, 全缺才整体 null
+  const livParts = [];
+  if (city.aqi_good_days_ratio != null)        livParts.push(['aqi',   norm(city.aqi_good_days_ratio, 55, 98), 0.35]);
+  if (city.avg_commute_minutes != null)        livParts.push(['comm',  100 - norm(city.avg_commute_minutes, 25, 48), 0.25]);
+  if (city.tier3_hospitals != null)            livParts.push(['hosp',  norm(city.tier3_hospitals, 5, 65), 0.20]);
+  if (city.cultural_facilities_index != null)  livParts.push(['cult',  city.cultural_facilities_index, 0.20]);
+  let livability = null;
+  if (livParts.length) {
+    const wsum = livParts.reduce((s, p) => s + p[2], 0);
+    livability = livParts.reduce((s, p) => s + p[1] * (p[2] / wsum), 0);
+  }
+  // social 两项: 缺项按中性 50 计 (不删权重 — 否则单子项城市吃满双倍项分, 拉萨 365 天产假→social 100)
+  let social = null;
+  {
+    const matern = city.maternity_leave_days != null ? norm(city.maternity_leave_days, 126, 190) : null;  // 158(全国基准)=50
+    const pension = city.pension_base_lower != null ? norm(city.pension_base_lower, 3800, 5300) : null;   // 4550=常见下限=50
+    if (matern != null || pension != null) social = (matern ?? 50) * 0.5 + (pension ?? 50) * 0.5;
+  }
   return {
-    opportunity: norm(city.avg_salary_yearly_wan || 0, 6, 24),        // 经济机会
-    housing:     100 - norm(city.price_to_income_ratio || 30, 5, 26), // 买房难度(反向)
-    hukou:       100 - (city.hukou_difficulty_score ?? 50),           // 落户易度
-    livability:  norm(city.aqi_good_days_ratio || 0, 55, 98) * 0.35
-               + (100 - norm(city.avg_commute_minutes || 50, 25, 48)) * 0.25
-               + norm(city.tier3_hospitals || 0, 5, 65) * 0.20
-               + (city.cultural_facilities_index || 50) * 0.20,       // 宜居综合
-    social:      norm(city.maternity_leave_days || 158, 150, 190) * 0.5
-               + (city.pension_base_lower ? norm(city.pension_base_lower, 3800, 7600) * 0.5 : 50), // 五险一金
-    talent:      city.talentBonus ?? 60,                              // 人才政策(文字型, 暂给基准)
-    family_dist: regionScore(homeRegion, city.region),               // 离家距离(需 F00 校准)
+    // 经济机会 = 工资 + 机会密度 各半 (job_density 37 城全量, 单一工资会低估一线机会优势)
+    opportunity: (() => {
+      const parts = [];
+      if (city.avg_salary_yearly_wan != null) parts.push([norm(city.avg_salary_yearly_wan, 6, 30), 0.5]);
+      if (city.job_density_index != null)     parts.push([city.job_density_index, 0.5]);
+      if (!parts.length) return null;
+      const wsum = parts.reduce((s, p) => s + p[1], 0);
+      return parts.reduce((s, p) => s + p[0] * (p[1] / wsum), 0);
+    })(),
+    housing:     city.price_to_income_ratio != null ? 100 - norm(city.price_to_income_ratio, 5, 26) : null,
+    hukou:       100 - (city.hukou_difficulty_score ?? 50),                                            // 37城全覆盖, 不为 null
+    livability,                                                                                        // 宜居综合
+    social,                                                                                            // 五险一金
+    talent:      city.talentBonus ?? 60,                                                               // 人才政策(文字型, 暂给基准)
+    family_dist: regionScore(homeRegion, city.region),                                                 // 离家距离(需 F00 校准)
   };
 }
 
@@ -130,7 +154,7 @@ function cityScores(city, homeRegion) {
 // 用户敏感度高的维度权重放大, 反之缩小; 总和恒为 1
 function weightsOf(userDims, answers) {
   const sens = {
-    opportunity: 30 + userDims.ambition * 0.9,        // 基础 30 + 事业心放大
+    opportunity: 60 + userDims.ambition * 1.2,        // 事业主导: 高事业 180 vs 房价67/落户40, 低事业 60 仍合理
     housing:     100 - userDims.economy,              // 经济基础弱 → 买房难度更敏感
     hukou:       userDims.risk < 40 ? 70 : 40,        // 求稳者更在意落户确定住
     livability:  userDims.lifestyle,
@@ -163,8 +187,25 @@ function matchAll(answers, questions) {
   const REGIONS = ['华北', '东北', '华东', '华中', '华南', '西南', '西北', '海外 / 其他'];
   const homeRegion = REGIONS[answers['F00'] ?? 7] ?? null;
 
-  const results = CITIES.map(city => {
-    const scores = cityScores(city, homeRegion);
+  // 先算全部城市原始分, 再做"缺维中位数回填": 缺失维度 ≈ 全体已知城市该维中位分 × 0.97
+  // (纯跳过会奖励数据缺失的城市 — 它们只在自己最强的维度上被评分; 回填+微折损最公平)
+  const raw = CITIES.map(city => ({ city, scores: cityScores(city, homeRegion) }));
+  const DIMS = ['opportunity', 'housing', 'hukou', 'livability', 'social', 'talent', 'family_dist'];
+  const median = arr => {
+    const a = [...arr].sort((x, y) => x - y);
+    return a.length % 2 ? a[(a.length - 1) / 2] : (a[a.length / 2 - 1] + a[a.length / 2]) / 2;
+  };
+  for (const dim of DIMS) {
+    const known = raw.map(r => r.scores[dim]).filter(v => v != null);
+    if (!known.length || known.length === raw.length) continue;    // 全缺(如 F00 未答)或无缺失: 不回填
+    const fill = median(known) * 0.97;
+    for (const r of raw) if (r.scores[dim] == null) r.scores[dim] = fill;
+  }
+  // family_dist 特例: F00 未答/海外 → 该维整体不参与 (无"全体中位"概念)
+  const homeUnset = homeRegion == null;
+  if (homeUnset) for (const r of raw) r.scores.family_dist = null;
+
+  const results = raw.map(({ city, scores }) => {
     // family_dist 为 null (未答 F00 / 海外) 时该维度跳过, 权重重新归一化
     const active = Object.keys(weights).filter(k => scores[k] != null);
     const wsum = active.reduce((s, k) => s + weights[k], 0) || 1;

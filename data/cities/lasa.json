@@ -8,8 +8,8 @@
  "dimensions": {
   "economy_opportunity": {
    "avg_salary_yearly": {
-    "value": null,
-    "unit": "万元/年（省级数据待补）",
+    "value": 14.1,
+    "unit": "万元/年（西藏2025年度全区职工月平均工资11777元×12，西藏人社厅发布）",
     "source": {
      "url": "https://hrss.xizang.gov.cn/",
      "title": "西藏自治区人社厅：2025年上年度全区职工月平均工资标准",
@@ -17,11 +17,11 @@
     }
    },
    "job_density_index": {
-    "value": null,
-    "unit": "1-100（基准：深圳=100；主观指数）",
+    "value": 30,
+    "unit": "1-100（基准：深圳=100；主观指数：lasa 产业/雇主密度自评，待招聘平台报告锚定）",
     "source": {
-     "url": "N/A (self-assessed index, needs talent-report basis)",
-     "title": "待补：暂未获取到权威来源",
+     "url": "N/A (self-assessed index)",
+     "title": "待补：猎聘/BOSS直聘城市人才报告",
      "collected_at": "2026-10-12"
     }
    },
@@ -96,8 +96,8 @@
     }
    },
    "mortgage_rate_first": {
-    "value": "3.05%-3.1%（2026年LPR下调后首套主流区间，各城执行有差异）",
-    "unit": "商贷利率",
+    "value": 3.05,
+    "unit": "%（2026年首套商贷主流区间3.05%-3.1%，LPR定价后各城趋同）",
     "source": {
      "url": "https://www.wh.bendibao.com/",
      "title": "2026年LPR房贷利率一览表（武汉本地宝持续更新，T2）",
@@ -134,11 +134,11 @@
     }
    },
    "hukou_difficulty_score": {
-    "value": 45,
-    "unit": "1-100（越低越易；主观指数：省会基本零门槛/租房可落户，拉萨受高原与户籍管理特殊）",
+    "value": 18,
+    "unit": "1-100（越低越易；拉萨2019年起全面放开落户限制，合法稳定住所(含租赁)即可登记常住户口，实际门槛低，办理受高原/边防管理特殊性影响）",
     "source": {
-     "url": "N/A (self-assessed index)",
-     "title": "待补：落户政策量化榜单",
+     "url": "N/A (compiled)",
+     "title": "拉萨市公安局户政服务指南（T2汇编）",
      "collected_at": "2026-10-12"
     }
    }
@@ -264,8 +264,8 @@
     }
    },
    "cultural_facilities_index": {
-    "value": 85,
-    "unit": "1-100（基准：北京=100；主观指数：lasa文博/演出/文旅资源自评，待权威榜单锚定）",
+    "value": 45,
+    "unit": "1-100（基准：北京=98；自评指数：按城市文化设施体量分档(博物馆/剧院/图书馆规模)，待权威榜单锚定）",
     "source": {
      "url": "N/A (self-assessed index)",
      "title": "待补：城市文旅消费榜单",

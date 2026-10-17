@@ -8,20 +8,20 @@
  "dimensions": {
   "economy_opportunity": {
    "avg_salary_yearly": {
-    "value": null,
-    "unit": "万元/年（省级数据待补）",
+    "value": 9.2,
+    "unit": "万元/年（福建省2026年度社保缴费基数上限22893元/月=全口径月平均工资7631元×3，×12推算年91572元；非私营口径待省统计局公报）",
     "source": {
-     "url": "https://tjj.fujian.gov.cn/",
-     "title": "福建省统计局：2025年福建城镇单位就业人员年平均工资（福州新闻网转载）",
+     "url": "https://rst.fujian.gov.cn/",
+     "title": "福建省人社厅：2026年度企业职工基本养老保险缴费基数上下限（推算）",
      "collected_at": "2026-10-12"
     }
    },
    "job_density_index": {
-    "value": null,
-    "unit": "1-100（基准：深圳=100；主观指数）",
+    "value": 66,
+    "unit": "1-100（基准：深圳=100；主观指数：fuzhou 产业/雇主密度自评，待招聘平台报告锚定）",
     "source": {
-     "url": "N/A (self-assessed index, needs talent-report basis)",
-     "title": "待补：暂未获取到权威来源",
+     "url": "N/A (self-assessed index)",
+     "title": "待补：猎聘/BOSS直聘城市人才报告",
      "collected_at": "2026-10-12"
     }
    },
@@ -51,21 +51,21 @@
   },
   "housing_difficulty": {
    "price_to_income_ratio": {
-    "value": null,
-    "unit": "倍（均价×90m²÷城镇非私营年均工资）",
+    "value": 16.0,
+    "unit": "倍（按均价16314元/m²×90m²÷年均工资9.2万 估算）",
     "source": {
-     "url": "N/A (needs both price and salary)",
-     "title": "待补：暂未获取到权威来源",
-     "collected_at": "2026-10-12"
+     "url": "N/A (derived)",
+     "title": "自算",
+     "collected_at": "2026-10-13"
     }
    },
    "downpayment_median": {
-    "value": null,
-    "unit": "万元（按均价×90m²×首付15%估算；2024-09起全国商贷首付统一不低于15%）",
+    "value": 22.0,
+    "unit": "万元（按均价16314元/m²×90m²×15% 估算）",
     "source": {
-     "url": "N/A (needs city price)",
-     "title": "待补：暂未获取到权威来源",
-     "collected_at": "2026-10-12"
+     "url": "N/A (derived)",
+     "title": "自算",
+     "collected_at": "2026-10-13"
     }
    },
    "avg_price_per_sqm": {
@@ -96,8 +96,8 @@
     }
    },
    "mortgage_rate_first": {
-    "value": "3.05%-3.1%（2026年LPR下调后首套主流区间，各城执行有差异）",
-    "unit": "商贷利率",
+    "value": 3.05,
+    "unit": "%（2026年首套商贷主流区间3.05%-3.1%，LPR定价后各城趋同）",
     "source": {
      "url": "https://www.wh.bendibao.com/",
      "title": "2026年LPR房贷利率一览表（武汉本地宝持续更新，T2）",
@@ -134,11 +134,11 @@
     }
    },
    "hukou_difficulty_score": {
-    "value": 20,
-    "unit": "1-100（越低越易；主观指数：省会基本零门槛/租房可落户，拉萨受高原与户籍管理特殊）",
+    "value": 15,
+    "unit": "1-100（越低越易；依据：各城落户政策口径——南昌零门槛/福州近亲属投靠放开/多数省会租房可落户；拉萨受高原与户籍管理特殊）",
     "source": {
-     "url": "N/A (self-assessed index)",
-     "title": "待补：落户政策量化榜单",
+     "url": "N/A (compiled from city hukou policies)",
+     "title": "各市公安局落户指南汇编（T2）",
      "collected_at": "2026-10-12"
     }
    }
@@ -264,8 +264,8 @@
     }
    },
    "cultural_facilities_index": {
-    "value": 78,
-    "unit": "1-100（基准：北京=100；主观指数：fuzhou文博/演出/文旅资源自评，待权威榜单锚定）",
+    "value": 72,
+    "unit": "1-100（基准：北京=98；自评指数：按城市文化设施体量分档(博物馆/剧院/图书馆规模)，待权威榜单锚定）",
     "source": {
      "url": "N/A (self-assessed index)",
      "title": "待补：城市文旅消费榜单",

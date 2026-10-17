@@ -44,8 +44,8 @@ export function renderResult(answers, rootEl) {
           <div class="cc-scores">${Object.entries(wName).map(([k, n]) =>
             r.scores[k] == null ? '' : `<span class="chip">${n} ${fmt(r.scores[k])}</span>`).join('')}</div>
           <div class="cc-meta">
-            房价 ${r.city.avg_price_per_sqm} 元/m² · 收入比 ${r.city.price_to_income_ratio} 倍 ·
-            落户难度 ${r.city.hukou_difficulty_score}/100 · 通勤 ${r.city.avg_commute_minutes} 分钟
+            房价 ${r.city.avg_price_per_sqm ?? '—'} 元/m² · 收入比 ${r.city.price_to_income_ratio ?? '—'} 倍 ·
+            落户难度 ${r.city.hukou_difficulty_score}/100 · 通勤 ${r.city.avg_commute_minutes ?? '—'} 分钟
           </div>
           ${r.filterReasons.length ? `<div class="cc-warn">⚠ ${r.filterReasons.join('；')}</div>` : ''}
         </div>`).join('')}

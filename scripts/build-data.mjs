@@ -14,6 +14,27 @@ function num(v) {
   return m ? parseFloat(m[1]) : null;
 }
 
+// 城市 j 所在大区 (与 F00 校准题选项对齐; 覆盖全部 37 城)
+const CITY_REGION = {
+  // 直辖市
+  '北京': '华北', '上海': '华东', '天津': '华北', '重庆': '西南',
+  // 华北
+  '石家庄': '华北', '太原': '华北', '呼和浩特': '华北',
+  // 东北
+  '沈阳': '东北', '长春': '东北', '哈尔滨': '东北',
+  // 华东 (江西家乡用户按 F00 口径归华中, 故南昌划华中)
+  '南京': '华东', '杭州': '华东', '合肥': '华东', '福州': '华东', '济南': '华东',
+  '苏州': '华东', '宁波': '华东', '青岛': '华东',
+  // 华中
+  '郑州': '华中', '武汉': '华中', '长沙': '华中', '南昌': '华中',
+  // 华南
+  '广州': '华南', '深圳': '华南', '南宁': '华南', '海口': '华南', '东莞': '华南', '佛山': '华南',
+  // 西南
+  '成都': '西南', '贵阳': '西南', '昆明': '西南', '拉萨': '西南',
+  // 西北
+  '西安': '西北', '兰州': '西北', '西宁': '西北', '银川': '西北', '乌鲁木齐': '西北',
+};
+
 // questions
 const q = JSON.parse(readFileSync(join(ROOT, 'data/questions.json'), 'utf8'));
 let js = '// 自动生成: data/questions.json -> src/questions.js (勿手改)\n';
@@ -43,8 +64,7 @@ for (const f of files) {
     social_security_years_required: num(dim.hukou_policy.social_security_years_required.value),
     pension_base_lower: num(dim.social_insurance.pension_base_lower.value),
     maternity_leave_days: num(dim.social_insurance.maternity_leave_days.value),
-    // 离家距离: 城市所在大区 (与 F00 校准题选项对齐)
-    region: { '北京': '华北', '上海': '华东', '深圳': '华南', '广州': '华南', '成都': '西南', '杭州': '华东', '武汉': '华中', '长沙': '华中' }[d.city] || null,
+    region: CITY_REGION[d.city] || null,
     avg_commute_minutes: num(dim.livability.avg_commute_minutes.value),
     tier3_hospitals: num(dim.livability.tier3_hospitals.value),
     aqi_good_days_ratio: num(dim.livability.aqi_good_days_ratio.value),

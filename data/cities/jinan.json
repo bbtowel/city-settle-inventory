@@ -17,11 +17,11 @@
     }
    },
    "job_density_index": {
-    "value": null,
-    "unit": "1-100（基准：深圳=100；主观指数）",
+    "value": 64,
+    "unit": "1-100（基准：深圳=100；主观指数：jinan 产业/雇主密度自评，待招聘平台报告锚定）",
     "source": {
-     "url": "N/A (self-assessed index, needs talent-report basis)",
-     "title": "待补：暂未获取到权威来源",
+     "url": "N/A (self-assessed index)",
+     "title": "待补：猎聘/BOSS直聘城市人才报告",
      "collected_at": "2026-10-12"
     }
    },
@@ -96,8 +96,8 @@
     }
    },
    "mortgage_rate_first": {
-    "value": "3.05%-3.1%（2026年LPR下调后首套主流区间，各城执行有差异）",
-    "unit": "商贷利率",
+    "value": 3.05,
+    "unit": "%（2026年首套商贷主流区间3.05%-3.1%，LPR定价后各城趋同）",
     "source": {
      "url": "https://www.wh.bendibao.com/",
      "title": "2026年LPR房贷利率一览表（武汉本地宝持续更新，T2）",
@@ -134,11 +134,11 @@
     }
    },
    "hukou_difficulty_score": {
-    "value": 20,
-    "unit": "1-100（越低越易；主观指数：省会基本零门槛/租房可落户，拉萨受高原与户籍管理特殊）",
+    "value": 22,
+    "unit": "1-100（越低越易；依据：各城落户政策口径——南昌零门槛/福州近亲属投靠放开/多数省会租房可落户；拉萨受高原与户籍管理特殊）",
     "source": {
-     "url": "N/A (self-assessed index)",
-     "title": "待补：落户政策量化榜单",
+     "url": "N/A (compiled from city hukou policies)",
+     "title": "各市公安局落户指南汇编（T2）",
      "collected_at": "2026-10-12"
     }
    }
@@ -237,11 +237,11 @@
     }
    },
    "aqi_good_days_ratio": {
-    "value": "2025优良天数同比+42天，PM2.5 32μg/m³首达国家二级",
-    "unit": "%（2025）",
+    "value": null,
+    "unit": "%（2025优良天数同比+42天、PM2.5降至32μg/m³首达国家二级——优良率具体百分比未直接公布）",
     "source": {
-     "url": "https://jntj.jinan.gov.cn/",
-     "title": "济南市统计局：2024年济南市国民经济和社会发展统计公报",
+     "url": "N/A (ratio not published; see title for 2025 qualitative)",
+     "title": "济南市2025年空气质量综合指数同比改善11.4%（T2报道）",
      "collected_at": "2026-10-12"
     }
    },
@@ -264,8 +264,8 @@
     }
    },
    "cultural_facilities_index": {
-    "value": 80,
-    "unit": "1-100（基准：北京=100；主观指数：jinan文博/演出/文旅资源自评，待权威榜单锚定）",
+    "value": 74,
+    "unit": "1-100（基准：北京=98；自评指数：按城市文化设施体量分档(博物馆/剧院/图书馆规模)，待权威榜单锚定）",
     "source": {
      "url": "N/A (self-assessed index)",
      "title": "待补：城市文旅消费榜单",
