@@ -264,12 +264,12 @@
     }
    },
    "cultural_facilities_index": {
-    "value": 74,
-    "unit": "1-100（基准：北京=98；自评指数：按城市文化设施体量分档(博物馆/剧院/图书馆规模)，待权威榜单锚定）",
+    "value": 44.2,
+    "unit": "1-100（客观公式：log尺度 图书馆norm(2,25)×0.4 + 博物馆norm(3,250)×0.6；本城公共图书馆12个、公共博物馆12个——2024年市统计公报）",
     "source": {
-     "url": "N/A (self-assessed index)",
-     "title": "待补：城市文旅消费榜单",
-     "collected_at": "2026-10-12"
+     "url": "https://jntj.jinan.gov.cn/",
+     "title": "各市2024年国民经济和社会发展统计公报（文化事业章节）",
+     "collected_at": "2026-10-17"
     }
    }
   },

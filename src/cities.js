@@ -28,7 +28,7 @@ export const CITIES = [
     "tier3_hospitals": 81,
     "aqi_good_days_ratio": 85.2,
     "climate_summary": "温带半湿润大陆性季风：四季分明，冬冷（-5~5℃）有暖气，夏热（28-35℃），春秋短；春季偶有沙尘，冬季偶有雾霾（近年显著改善）；年日照约2600小时",
-    "cultural_facilities_index": 98,
+    "cultural_facilities_index": 95.5,
     "education_resources": "985×8（清北人师航理农中民族）+211×26；基础教育：人大附/清华附/北京四中/十一学校等全国顶尖；海淀黄庄为全国教培中心，学区竞争激烈度全国第一",
     "talent_policy_note": "分区补贴（示例海淀区2026新政）：经认定重点产业体系内用人单位应届毕业生可申领 1000元/月×最长2年安居补贴；海淀北部四镇额外+500元/月安居奖励；未叠加其他住房保障",
     "rent_subsidy_note": "各区差异化：海淀『海青安居』1000元/月×2年（北部+500）；朝阳/丰台/经开区均有区级人才租房补贴，金额500-3000元/月不等；需区重点企业就业+在京无房"
@@ -255,7 +255,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 97.5,
     "climate_summary": "亚热带海洋性季风：温暖湿润，夏长冬短（1月约11℃、7月约29℃），台风影响季7-9月",
-    "cultural_facilities_index": 72,
+    "cultural_facilities_index": 57.2,
     "education_resources": "福州大学（211）、福建师范大学等；基础教育福州一中/师大附中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -288,7 +288,7 @@ export const CITIES = [
     "tier3_hospitals": 53,
     "aqi_good_days_ratio": 93.4,
     "climate_summary": "南亚热带季风：长夏短冬，年均温21-23℃，夏季湿热（28-35℃+高湿），冬季温和（10-18℃），回南天3-4月湿度高，年降水量1700mm+，台风季7-9月，无供暖需求",
-    "cultural_facilities_index": 88,
+    "cultural_facilities_index": 80.8,
     "education_resources": "985×2（中山大学、华南理工）+211×2（暨南大学、华南师大）；基础教育有华附、执信、广雅、省实等名校，学区竞争中等；K12国际化学校密度华南第一",
     "talent_policy_note": "市级无统一补贴，分区执行：① 南沙区吸纳应届生就业补贴 1000元/人/月×6月（给单位）+ B-1/2/3 人才卡应届生入住人才公寓租金优惠比例提至100% ② 黄埔区人才房票 本科10万/硕士15万/博士25万/博士后30万（购房补贴，2026-07-07 起受理）",
     "rent_subsidy_note": "分区执行：① 黄埔区人才住房租金补贴 最高2500元/月×5年（人才自住）、1500元/月×5年（人才父母）② 南沙区人才公寓A/B卡按市场评估价50%租金优惠、最长3年，应届生B卡首年100%优惠"
@@ -479,7 +479,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 92.9,
     "climate_summary": "中温带半干旱：冬长寒冷（1月均温约-11℃）、夏短凉爽（7月约23℃），年降水约400mm",
-    "cultural_facilities_index": 58,
+    "cultural_facilities_index": 53.7,
     "education_resources": "内蒙古大学（211）等；基础教育呼市二中/师大附中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -510,7 +510,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": null,
     "climate_summary": "暖温带季风：夏热多雨、冬冷干燥（1月约0℃、7月约27℃）；泉水之城（趵突泉群）",
-    "cultural_facilities_index": 74,
+    "cultural_facilities_index": 44.2,
     "education_resources": "山东大学（985/211）等；基础教育省实验中学/山大附中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -541,7 +541,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 99.2,
     "climate_summary": "「春城」高原亚热带：四季如春（年均约15℃，最冷月约9℃），干湿季分明（5-10月雨季）",
-    "cultural_facilities_index": 70,
+    "cultural_facilities_index": 65.4,
     "education_resources": "云南大学（211）、昆明理工大学等53所高校（2025公报）；基础教育云师大附中/昆一中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -603,7 +603,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 99.7,
     "climate_summary": "高原温带半干旱：日照强（年日照3000小时+，「日光城」）、昼夜温差大，空气稀薄（海拔3650m）",
-    "cultural_facilities_index": 45,
+    "cultural_facilities_index": 23.3,
     "education_resources": "西藏大学（211）等；基础教育拉萨中学/江苏实验中学",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -698,7 +698,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 96.2,
     "climate_summary": "亚热带季风：长夏无冬（1月约13℃），湿热多雨，年降水约1300mm",
-    "cultural_facilities_index": 66,
+    "cultural_facilities_index": 58,
     "education_resources": "广西大学（211）等；基础教育南宁二中/三中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -796,7 +796,7 @@ export const CITIES = [
     "tier3_hospitals": 44,
     "aqi_good_days_ratio": 88.5,
     "climate_summary": "亚热带季风：四季分明，冬湿冷（均温3-8℃）夏闷热（28-35℃），梅雨季6-7月，台风季7-9月，年日照约1800小时，空气质量优良",
-    "cultural_facilities_index": 90,
+    "cultural_facilities_index": 90.6,
     "education_resources": "985×4（复旦、交大、同济、华师大）+211×10（含上财、上外、华东理工、东华、上大、上中医、海军军医大学等）；基础教育有上海中学、华二附中、复旦附中、交大附中等全国顶尖名校，学区竞争激烈",
     "talent_policy_note": "无全市统一应届生现金补贴；部分区有租房/安居补贴（如普陀/闵行/静安/虹口等新就业青年租房补贴：高水平大学本科以上、毕业3年内、35岁以下、社保基数≤2倍社平，第一年补贴40%-60%租金、最高2500元/月，第二年退坡50%）",
     "rent_subsidy_note": "新就业青年租房补贴（2026 起各区陆续推出）：高水平大学本科及以上、毕业3年内、35岁以下、在沪无房、社保基数≤2倍社平，租住保障性租赁住房可享第一年40%-60%租金补贴（外环内最高2500元/月、外郊环2000元/月、郊环外1500元"
@@ -827,7 +827,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 89.9,
     "climate_summary": "温带季风：四季分明，冬季寒冷（1月均温约-11℃）、夏季炎热多雨（7月约25℃）",
-    "cultural_facilities_index": 76,
+    "cultural_facilities_index": 66.6,
     "education_resources": "东北大学（985/211）、辽宁大学（211）、中国医科大学等45所高校；基础教育省实验/育才/东北育才",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -1053,7 +1053,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 87.1,
     "climate_summary": "中温带大陆性干旱：冬长严寒（1月约-12℃）、夏热（7月约24℃），距海最远的大城市",
-    "cultural_facilities_index": 60,
+    "cultural_facilities_index": 24.1,
     "education_resources": "新疆大学（211）、新疆医科大学等24所高校（2025公报）；基础教育乌鲁木齐一中/兵团二中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -1117,7 +1117,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": null,
     "climate_summary": "高原温带：夏凉（7月约17℃，避暑）、冬无严寒（1月约-7℃），海拔2260m，紫外线强",
-    "cultural_facilities_index": 48,
+    "cultural_facilities_index": 42.4,
     "education_resources": "青海大学（211）、青海师范大学等11所高校（2024公报）；基础教育湟川中学/五中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
@@ -1148,7 +1148,7 @@ export const CITIES = [
     "tier3_hospitals": null,
     "aqi_good_days_ratio": 88.2,
     "climate_summary": "温带大陆性干旱：日照充足、昼夜温差大（年降水约200mm），黄河灌溉「塞上江南」",
-    "cultural_facilities_index": 55,
+    "cultural_facilities_index": 47.4,
     "education_resources": "宁夏大学（211）、北方民族大学等17所高校（2025公报）；基础教育银川一中/唐徕回中",
     "talent_policy_note": "null",
     "rent_subsidy_note": "null"
