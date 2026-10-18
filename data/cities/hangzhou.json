@@ -255,12 +255,12 @@
     }
    },
    "cultural_facilities_index": {
-    "value": 87,
-    "unit": "1-100（主观指数：博物馆80个、公共图书馆15个、Livehouse/音乐节/南宋文化密度新一线前列，仅次北上深蓉）",
+    "value": 76.9,
+    "unit": "1-100（客观公式：log尺度 图书馆norm(2,25)×0.4 + 博物馆norm(3,250)×0.6；本城公共图书馆16个、博物馆87个——2024年市统计公报）",
     "source": {
-     "url": "N/A (self-assessed index, no single authoritative source)",
-     "title": "自评（博物馆/图书馆数为2025统计公报官方值），待补客观来源",
-     "collected_at": "2026-10-11"
+     "url": "https://www.sohu.com/a/873429164_121106832",
+     "title": "各市2024年国民经济和社会发展统计公报（文化事业章节）",
+     "collected_at": "2026-10-17"
     }
    }
   },
