@@ -1,0 +1,32 @@
+<view class="page" wx:if="{{city}}">
+  <!-- 头卡 -->
+  <view class="head">
+    <view class="head-left">
+      <view class="head-name">{{city.name}}</view>
+      <view class="head-tier">{{city.tier}} · {{city.pinyin}}</view>
+    </view>
+    <view class="head-cmp {{inCompare ? 'on' : ''}}" bindtap="toggleCompare">
+      {{inCompare ? '✓ 已加入对比' : '+ 加入对比'}}
+    </view>
+  </view>
+
+  <!-- 六维度 -->
+  <view wx:for="{{dims}}" wx:key="key" wx:for-item="dim">
+    <view class="dim-title">{{dim.name}}</view>
+    <view class="card">
+      <view class="field-row" wx:for="{{dim.fields}}" wx:key="key" wx:for-item="f">
+        <view class="field-label">{{f.label}}</view>
+        <view class="field-value">
+          <block wx:if="{{f.value != null}}">{{f.value}}</block>
+          <block wx:else><text class="na">— 暂无数据</text></block>
+          <text class="unit" wx:if="{{f.unit}}">{{f.unit}}</text>
+          <view class="src" wx:if="{{f.src}}" data-url="{{f.src}}" bindtap="copySrc">
+            来源: {{SRC_TITLE}} → 点击复制链接
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="foot">数据口径：2026 年各市官方公告（双源交叉验证）· 仅供决策参考</view>
+</view>

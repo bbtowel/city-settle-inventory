@@ -1,0 +1,33 @@
+.empty { text-align: center; padding: 200rpx 40rpx; }
+.empty-icon { font-size: 96rpx; color: #B0B7C3; }
+.empty-t { color: #646A73; margin: 30rpx 0; }
+.empty-btn {
+  display: inline-block; background: #002FA7; color: #fff;
+  border-radius: 999rpx; padding: 18rpx 60rpx; font-size: 28rpx;
+}
+
+.cmp-head {
+  display: flex; position: sticky; top: 0; z-index: 10;
+  background: #F4F5FA; padding: 16rpx 20rpx 0;
+}
+.cmp-cell { flex: 1; padding: 12rpx 10rpx; font-size: 24rpx; }
+.label-cell { flex: 0 0 170rpx; color: #646A73; }
+.city-head {
+  background: #002FA7; color: #fff; margin: 0 6rpx;
+  border-radius: 16rpx 16rpx 0 0; text-align: center; position: relative;
+}
+.ch-name { font-size: 30rpx; font-weight: 700; }
+.ch-tier { font-size: 20rpx; opacity: .75; }
+.ch-rm {
+  position: absolute; top: -10rpx; right: -4rpx; width: 40rpx; height: 40rpx;
+  background: #F8B500; color: #002FA7; border-radius: 50%;
+  font-size: 28rpx; line-height: 40rpx; text-align: center; font-weight: 700;
+}
+
+.row { display: flex; border-bottom: 1rpx solid #F0F1F5; }
+.val-cell { flex: 1; margin: 0 6rpx; border-radius: 8rpx; word-break: break-all; }
+.val-cell.best { background: rgba(248, 181, 0, .18); font-weight: 700; color: #8F6500; }
+.val-cell .u { font-size: 18rpx; color: #8A8F99; font-weight: 400; margin-top: 2rpx; }
+.val-cell .na { color: #B0B7C3; }
+
+.foot { text-align: center; color: #B0B7C3; font-size: 20rpx; padding: 40rpx 20rpx; }

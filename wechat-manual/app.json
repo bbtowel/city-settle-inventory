@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/city/city",
+    "pages/compare/compare"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#002FA7",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "归巢小手册",
+    "backgroundColor": "#F4F5FA",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8A8F99",
+    "selectedColor": "#002FA7",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "城市名录" },
+      { "pagePath": "pages/compare/compare", "text": "对比" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

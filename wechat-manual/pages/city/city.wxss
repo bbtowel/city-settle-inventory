@@ -1,0 +1,20 @@
+.head {
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(160deg, #002FA7, #1A4DC4);
+  padding: 40rpx 32rpx;
+}
+.head-name { color: #fff; font-size: 48rpx; font-weight: 800; }
+.head-tier { color: rgba(255,255,255,.75); font-size: 24rpx; margin-top: 8rpx; }
+.head-cmp {
+  color: #fff; font-size: 24rpx; padding: 12rpx 24rpx;
+  border: 2rpx solid rgba(255,255,255,.5); border-radius: 999rpx;
+}
+.head-cmp.on { background: #F8B500; border-color: #F8B500; color: #002FA7; font-weight: 700; }
+
+.src {
+  margin-top: 8rpx; font-size: 20rpx; color: #002FA7;
+  background: rgba(0,47,167,.06); padding: 6rpx 14rpx; border-radius: 8rpx;
+  display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.src-na { color: #8A8F99; }
+.foot { text-align: center; color: #B0B7C3; font-size: 20rpx; padding: 40rpx 20rpx; }

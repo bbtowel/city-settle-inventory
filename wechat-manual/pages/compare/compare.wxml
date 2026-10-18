@@ -1,0 +1,38 @@
+<view class="page">
+  <!-- 空态 -->
+  <view class="empty" wx:if="{{cities.length < 2}}">
+    <view class="empty-icon">⇄</view>
+    <view class="empty-t">在名录页选择 2-3 座城市对比</view>
+    <button class="empty-btn" bindtap="goPick">去选择城市</button>
+  </view>
+
+  <block wx:else>
+    <!-- 城市头 -->
+    <view class="cmp-head">
+      <view class="cmp-cell label-cell"></view>
+      <view class="cmp-cell city-head" wx:for="{{cities}}" wx:key="pinyin">
+        <view class="ch-name">{{item.name}}</view>
+        <view class="ch-tier">{{item.tier}}</view>
+        <view class="ch-rm" data-pinyin="{{item.pinyin}}" catchtap="remove">×</view>
+      </view>
+    </view>
+
+    <!-- 矩阵 -->
+    <view wx:for="{{matrix}}" wx:key="dimKey" wx:for-item="dim">
+      <view class="dim-title">{{dim.dimName}}</view>
+      <view class="card">
+        <view class="row" wx:for="{{dim.rows}}" wx:key="key" wx:for-item="r">
+          <view class="cmp-cell label-cell">{{r.label}}</view>
+          <view class="cmp-cell val-cell {{r.best === idx ? 'best' : ''}}"
+                wx:for="{{r.vals}}" wx:for-item="v" wx:for-index="idx" wx:key="idx">
+            <block wx:if="{{v != null}}">{{v}}</block>
+            <block wx:else><text class="na">—</text></block>
+            <view class="u" wx:if="{{v != null && r.units[idx]}}">{{r.units[idx]}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="foot">金色高亮 = 该项最优（数值型字段自动判定）· 数据口径 2026 年各市官方公告</view>
+  </block>
+</view>

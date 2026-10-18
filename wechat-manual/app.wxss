@@ -1,0 +1,58 @@
+/* 归巢小手册 — 全局样式 (克莱因蓝主色, 与测评小程序一致) */
+page {
+  background: #F4F5FA;
+  font-family: "PingFang SC", -apple-system, sans-serif;
+  font-size: 28rpx;
+  color: #1F2329;
+}
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 47, 167, .06);
+}
+.chip {
+  display: inline-block;
+  padding: 4rpx 16rpx;
+  border-radius: 999rpx;
+  background: rgba(0, 47, 167, .08);
+  color: #002FA7;
+  font-size: 22rpx;
+  margin-right: 10rpx;
+}
+.dim-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #002FA7;
+  margin: 36rpx 24rpx 8rpx;
+  padding-left: 16rpx;
+  border-left: 8rpx solid #002FA7;
+}
+.field-row {
+  display: flex;
+  padding: 20rpx 24rpx;
+  border-bottom: 1rpx solid #F0F1F5;
+  align-items: flex-start;
+}
+.field-label {
+  width: 200rpx;
+  color: #646A73;
+  font-size: 24rpx;
+  flex-shrink: 0;
+  padding-top: 4rpx;
+}
+.field-value {
+  flex: 1;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+.field-value .unit {
+  display: block;
+  color: #8A8F99;
+  font-size: 22rpx;
+  margin-top: 4rpx;
+}
+.field-value .na {
+  color: #B0B7C3;
+}

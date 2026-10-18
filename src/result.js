@@ -138,16 +138,31 @@ function drawShareCard(profile, top3, userDims) {
     ctx.fillText(`${r.match}%`, W - 140, y + 66);
   });
 
-  // 底部
-  ctx.fillStyle = 'rgba(255,255,255,.65)';
-  ctx.font = '24px "PingFang SC", sans-serif';
-  ctx.fillText('扫码测测你该去哪座城市 →', 48, H - 60);
+  // 底部: 手册小程序二维码 (加载成功才画, 失败退回纯文字)
+  const qr = new Image();
+  qr.crossOrigin = 'anonymous';
+  qr.onload = () => {
+    // 右侧圆形白底 + 手册码, 左侧引导文字
+    const qx = W - 240, qy = H - 260, qs = 200;
+    ctx.fillStyle = '#FFFFFF';
+    ctx.beginPath(); ctx.arc(qx + qs / 2, qy + qs / 2, qs / 2 + 18, 0, Math.PI * 2); ctx.fill();
+    ctx.drawImage(qr, qx, qy, qs, qs);
+    finish();
+  };
+  qr.onerror = finish; // 无码图也不阻塞出图
+  qr.src = 'assets/manual-qrcode.jpg'; // 手册小程序码 (微信公众后台生成, 上线后替换为真实 appid 码)
 
-  const img = document.getElementById('shareImg');
-  img.src = cv.toDataURL('image/png');
-  img.style.display = 'block';
-  cv.style.display = 'none';
-  // 尝试下载
-  const a = document.createElement('a');
-  a.href = img.src; a.download = `归巢-${profile.name}.png`; a.click();
+  function finish() {
+    ctx.fillStyle = 'rgba(255,255,255,.65)';
+    ctx.font = '24px "PingFang SC", sans-serif';
+    ctx.fillText('扫码打开「归巢小手册」查 37 城详细数据 →', 48, H - 60);
+
+    const img = document.getElementById('shareImg');
+    img.src = cv.toDataURL('image/png');
+    img.style.display = 'block';
+    cv.style.display = 'none';
+    // 尝试下载
+    const a = document.createElement('a');
+    a.href = img.src; a.download = `归巢-${profile.name}.png`; a.click();
+  }
 }
