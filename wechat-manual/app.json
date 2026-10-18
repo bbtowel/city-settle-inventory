@@ -1,13 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/quiz/quiz",
+    "pages/result/result",
+    "pages/manual-home/index",
     "pages/city/city",
     "pages/compare/compare"
   ],
   "window": {
     "navigationBarBackgroundColor": "#002FA7",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "归巢小手册",
+    "navigationBarTitleText": "归巢 · 城市定居测评",
     "backgroundColor": "#F4F5FA",
     "backgroundTextStyle": "dark"
   },
@@ -16,7 +19,8 @@
     "selectedColor": "#002FA7",
     "backgroundColor": "#FFFFFF",
     "list": [
-      { "pagePath": "pages/index/index", "text": "城市名录" },
+      { "pagePath": "pages/index/index", "text": "测评" },
+      { "pagePath": "pages/manual-home/index", "text": "城市名录" },
       { "pagePath": "pages/compare/compare", "text": "对比" }
     ]
   },

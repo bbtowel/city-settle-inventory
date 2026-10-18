@@ -1,32 +1,27 @@
-.hero { background: linear-gradient(160deg, #002FA7, #1A4DC4); padding: 48rpx 32rpx 40rpx; }
-.hero-name { color: #fff; font-size: 44rpx; font-weight: 800; }
-.hero-sub { color: rgba(255,255,255,.75); font-size: 24rpx; margin-top: 10rpx; }
+/* 欢迎页 */
+.hero { text-align: center; padding: 96rpx 48rpx 64rpx; }
+.logo {
+  display: inline-block; background: #002FA7; color: #fff;
+  font-size: 44rpx; font-weight: 700; letter-spacing: 8rpx;
+  padding: 16rpx 36rpx; border-radius: 16rpx; margin-bottom: 40rpx;
+}
+.h1 { font-size: 44rpx; font-weight: 700; margin-bottom: 20rpx; }
+.sub { font-size: 26rpx; color: #6B7085; line-height: 1.7; }
+.theory {
+  margin: 32rpx auto 0; font-size: 24rpx; color: #6B7085;
+  background: #EEF1FB; border-radius: 12rpx; padding: 20rpx 28rpx;
+  width: fit-content; line-height: 1.7;
+}
+.stats { display: flex; justify-content: center; gap: 48rpx; margin: 48rpx 0 16rpx; }
+.stat { display: flex; flex-direction: column; }
+.stat .n { font-size: 48rpx; font-weight: 700; color: #002FA7; }
+.stat .t { font-size: 22rpx; color: #6B7085; margin-top: 4rpx; }
 
-.filter-bar { white-space: nowrap; padding: 20rpx 16rpx 8rpx; }
-.filter-item {
-  display: inline-block; padding: 10rpx 30rpx; margin: 0 8rpx;
-  border-radius: 999rpx; background: #fff; color: #646A73; font-size: 24rpx;
+/* 支付解锁框 */
+.paybox {
+  margin-top: 48rpx; background: #fff; border-radius: 20rpx;
+  padding: 40rpx 36rpx 36rpx; box-shadow: 0 6rpx 40rpx rgba(26,31,54,.08);
 }
-.filter-item.on { background: #002FA7; color: #fff; font-weight: 600; }
-
-.city-list { padding: 8rpx 20rpx; }
-.city-item {
-  display: flex; justify-content: space-between; align-items: center;
-  background: #fff; border-radius: 16rpx; padding: 24rpx 28rpx; margin-bottom: 14rpx;
-  box-shadow: 0 2rpx 8rpx rgba(0,47,167,.05);
-}
-.city-item.in-compare { outline: 3rpx solid #002FA7; outline-offset: -3rpx; }
-.ci-name { font-size: 32rpx; font-weight: 600; }
-.ci-tier { font-size: 22rpx; color: #8A8F99; margin-left: 14rpx; }
-.ci-cmp {
-  font-size: 22rpx; color: #002FA7; padding: 8rpx 20rpx;
-  border: 2rpx solid rgba(0,47,167,.3); border-radius: 999rpx;
-}
-
-.cmp-bar {
-  position: fixed; left: 20rpx; right: 20rpx; bottom: 40rpx;
-  background: #002FA7; color: #fff; text-align: center;
-  padding: 24rpx; border-radius: 999rpx; font-size: 28rpx; font-weight: 600;
-  box-shadow: 0 8rpx 24rpx rgba(0,47,167,.3);
-}
-.foot { text-align: center; color: #B0B7C3; font-size: 20rpx; padding: 40rpx 20rpx 120rpx; }
+.pay-price { font-size: 72rpx; font-weight: 800; color: #002FA7; }
+.pay-desc { font-size: 24rpx; color: #6B7085; margin: 12rpx 0 8rpx; }
+.pay-btn { margin-top: 24rpx; }

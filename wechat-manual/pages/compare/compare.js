@@ -1,5 +1,5 @@
 // 对比页 — 最多 3 城并排, 维度→字段矩阵, 数值最优高亮
-const { CITIES } = require('../../utils/cities.js');
+const { CITIES } = require('../../utils/manual-cities.js');
 const app = getApp();
 
 Page({
@@ -47,7 +47,7 @@ Page({
   },
 
   goPick() {
-    wx.switchTab({ url: '/pages/index/index' });
+    wx.switchTab({ url: '/pages/manual-home/index' });
   },
 });
 

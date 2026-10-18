@@ -28,20 +28,20 @@ globalThis.getApp = () => globalThis.__app;
 
 // ---- 加载 App: 先定义全局 App, 再用 require 执行 app.js ----
 globalThis.App = function (obj) { globalThis.__app = obj; obj.onLaunch?.(); };
-require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/app.js');
+require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/app.js');
 
 let fails = 0;
 const ok = (cond, msg) => { console.log((cond ? '✅' : '❌') + ' ' + msg); if (!cond) fails++; };
 
 // ---- index 页 ----
 function loadPage(relpath, extra) {
-  const src = require('fs').readFileSync('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/' + relpath, 'utf8');
+  const src = require('fs').readFileSync('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/' + relpath, 'utf8');
   const page = { setData(d) { Object.assign(this.data, d); }, data: {}, ...extra };
   new Function('getApp', 'require', 'Page', src)(globalThis.getApp, (name) => {
-    if (name.includes('questions')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/questions.js');
-    if (name.includes('scoring')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/scoring.js');
-    if (name.includes('pay.config')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/pay.config.js');
-    if (name.includes('utils/pay')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/pay.js');
+    if (name.includes('questions')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/questions.js');
+    if (name.includes('scoring')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/scoring.js');
+    if (name.includes('pay.config')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/pay.config.js');
+    if (name.includes('utils/pay')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/pay.js');
     return require(name);
   }, (obj) => Object.assign(page, obj));
   return page;
@@ -53,8 +53,8 @@ ok(idxPage.data.total === 33, `index: total=33 (got ${idxPage.data.total})`);
 ok(idxPage.data.answered === 0, 'index: 初始 answered=0');
 
 // ---- 支付门槛: 未支付点开始 → devMode 支付成功 → 跳转 ----
-const payMod = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/pay.js');
-const payCfg = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/pay.config.js');
+const payMod = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/pay.js');
+const payCfg = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/pay.config.js');
 ok(payMod.isPaid() === false, 'pay: 初始未支付');
 ok(payCfg.devMode === true, 'config: devMode=true (默认)');
 ok(payCfg.priceBean === 20, `config: priceBean=20 (got ${payCfg.priceBean})`);
@@ -113,7 +113,7 @@ const quizPage = loadPage('pages/quiz/quiz.js');
 quizPage.onLoad();
 ok(quizPage.data.q.id === 'A01', `quiz: 首题 A01 (got ${quizPage.data.q?.id})`);
 // 快进: 直接写 answers 模拟
-const QUESTIONS = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat/utils/questions.js').QUESTIONS;
+const QUESTIONS = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/questions.js').QUESTIONS;
 const app = globalThis.getApp();
 for (const q of QUESTIONS) {
   let i = 1;

@@ -1,0 +1,32 @@
+.hero { background: linear-gradient(160deg, #002FA7, #1A4DC4); padding: 48rpx 32rpx 40rpx; }
+.hero-name { color: #fff; font-size: 44rpx; font-weight: 800; }
+.hero-sub { color: rgba(255,255,255,.75); font-size: 24rpx; margin-top: 10rpx; }
+
+.filter-bar { white-space: nowrap; padding: 20rpx 16rpx 8rpx; }
+.filter-item {
+  display: inline-block; padding: 10rpx 30rpx; margin: 0 8rpx;
+  border-radius: 999rpx; background: #fff; color: #646A73; font-size: 24rpx;
+}
+.filter-item.on { background: #002FA7; color: #fff; font-weight: 600; }
+
+.city-list { padding: 8rpx 20rpx; }
+.city-item {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #fff; border-radius: 16rpx; padding: 24rpx 28rpx; margin-bottom: 14rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,47,167,.05);
+}
+.city-item.in-compare { outline: 3rpx solid #002FA7; outline-offset: -3rpx; }
+.ci-name { font-size: 32rpx; font-weight: 600; }
+.ci-tier { font-size: 22rpx; color: #8A8F99; margin-left: 14rpx; }
+.ci-cmp {
+  font-size: 22rpx; color: #002FA7; padding: 8rpx 20rpx;
+  border: 2rpx solid rgba(0,47,167,.3); border-radius: 999rpx;
+}
+
+.cmp-bar {
+  position: fixed; left: 20rpx; right: 20rpx; bottom: 40rpx;
+  background: #002FA7; color: #fff; text-align: center;
+  padding: 24rpx; border-radius: 999rpx; font-size: 28rpx; font-weight: 600;
+  box-shadow: 0 8rpx 24rpx rgba(0,47,167,.3);
+}
+.foot { text-align: center; color: #B0B7C3; font-size: 20rpx; padding: 40rpx 20rpx 120rpx; }

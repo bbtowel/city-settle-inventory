@@ -1,0 +1,42 @@
+<view class="page">
+  <!-- 头部 -->
+  <view class="hero">
+    <view class="hero-name">归巢小手册</view>
+    <view class="hero-sub">37 座城市 × 6 大维度定居数据速查</view>
+  </view>
+
+  <!-- 层级过滤 -->
+  <scroll-view class="filter-bar" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="filter-item {{filter === t ? 'on' : ''}}"
+          wx:for="{{tiers}}" wx:key="*this"
+          data-tier="{{item}}" bindtap="onFilter">
+      {{item === 'all' ? '全部' : item}}
+    </view>
+  </scroll-view>
+
+  <!-- 城市列表 -->
+  <view class="city-list">
+    <view class="city-item {{compare.indexOf(item.pinyin) >= 0 ? 'in-compare' : ''}}"
+          wx:for="{{cities}}" wx:key="pinyin"
+          wx:if="{{filter === 'all' || item.tier === filter}}"
+          data-pinyin="{{item.pinyin}}" bindtap="openCity"
+          bindlongpress="toggleCompare">
+      <view class="ci-main">
+        <text class="ci-name">{{item.name}}</text>
+        <text class="ci-tier">{{item.tier}}</text>
+      </view>
+      <view class="ci-side">
+        <view class="ci-cmp" data-pinyin="{{item.pinyin}}" catchtap="toggleCompare">
+          {{compare.indexOf(item.pinyin) >= 0 ? '✓ 已选' : '+ 对比'}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部对比浮条 -->
+  <view class="cmp-bar" wx:if="{{compare.length > 0}}" bindtap="goCompare">
+    <text>已选 {{compare.length}} 城 · 去对比 →</text>
+  </view>
+
+  <view class="foot">数据口径：2026 年各市官方公告（双源交叉验证）· 仅供决策参考</view>
+</view>

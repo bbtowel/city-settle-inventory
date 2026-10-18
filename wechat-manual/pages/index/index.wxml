@@ -1,42 +1,29 @@
-<view class="page">
-  <!-- 头部 -->
-  <view class="hero">
-    <view class="hero-name">归巢小手册</view>
-    <view class="hero-sub">37 座城市 × 6 大维度定居数据速查</view>
+<view class="hero">
+  <view class="logo">归巢</view>
+  <view class="h1">你该在哪座城市扎根?</view>
+  <view class="sub">33 道题 · 5 分钟 · 基于 2026 年最新官方政策数据</view>
+  <view class="theory">灵感来自霍华德「三磁体」与芒福德「城市是人的容器」</view>
+  <view class="stats">
+    <view class="stat"><text class="n">8</text><text class="t">座一二线城市</text></view>
+    <view class="stat"><text class="n">33</text><text class="t">道情景题</text></view>
+    <view class="stat"><text class="n">26</text><text class="t">项官方数据/城</text></view>
   </view>
 
-  <!-- 层级过滤 -->
-  <scroll-view class="filter-bar" scroll-x enhanced show-scrollbar="{{false}}">
-    <view class="filter-item {{filter === t ? 'on' : ''}}"
-          wx:for="{{tiers}}" wx:key="*this"
-          data-tier="{{item}}" bindtap="onFilter">
-      {{item === 'all' ? '全部' : item}}
+  <!-- 未支付: ¥2 解锁 -->
+  <block wx:if="{{!paid}}">
+    <view class="paybox">
+      <view class="pay-price">{{priceLabel}}</view>
+      <view class="pay-desc">解锁完整测评 · 一次付费永久使用</view>
+      <button class="btn-main pay-btn" bindtap="start">支付 {{priceLabel}} · 开始测评</button>
     </view>
-  </scroll-view>
+  </block>
 
-  <!-- 城市列表 -->
-  <view class="city-list">
-    <view class="city-item {{compare.indexOf(item.pinyin) >= 0 ? 'in-compare' : ''}}"
-          wx:for="{{cities}}" wx:key="pinyin"
-          wx:if="{{filter === 'all' || item.tier === filter}}"
-          data-pinyin="{{item.pinyin}}" bindtap="openCity"
-          bindlongpress="toggleCompare">
-      <view class="ci-main">
-        <text class="ci-name">{{item.name}}</text>
-        <text class="ci-tier">{{item.tier}}</text>
-      </view>
-      <view class="ci-side">
-        <view class="ci-cmp" data-pinyin="{{item.pinyin}}" catchtap="toggleCompare">
-          {{compare.indexOf(item.pinyin) >= 0 ? '✓ 已选' : '+ 对比'}}
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <!-- 底部对比浮条 -->
-  <view class="cmp-bar" wx:if="{{compare.length > 0}}" bindtap="goCompare">
-    <text>已选 {{compare.length}} 城 · 去对比 →</text>
-  </view>
-
-  <view class="foot">数据口径：2026 年各市官方公告（双源交叉验证）· 仅供决策参考</view>
+  <!-- 已支付 -->
+  <block wx:else>
+    <button class="btn-main" bindtap="start" wx:if="{{answered === 0}}">开始测评 →</button>
+    <block wx:else>
+      <button class="btn-main" bindtap="start">继续测评 (已答 {{answered}}/{{total}}) →</button>
+      <button class="btn-ghost" bindtap="restart">重新开始</button>
+    </block>
+  </block>
 </view>

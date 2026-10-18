@@ -1,42 +1,47 @@
-// 城市名录页 — 按拼音/层级浏览 37 城, 点击进入详情, 长按加入对比
-const { CITIES } = require('../../utils/cities.js');
+// 欢迎页 — ¥2 解锁测评
 const app = getApp();
+const pay = require('../../utils/pay.js');
+const config = require('../../pay.config.js');
 
 Page({
   data: {
-    cities: [],
-    filter: 'all',      // all | 一线 | 新一线 | 二线 | 三线 | 四线 | 五线
-    tiers: ['all', '一线', '新一线', '二线', '三线', '四线', '五线'],
-    compare: [],
+    answered: 0,
+    total: 0,
+    paid: false,
+    priceLabel: config.priceLabel,
   },
 
   onLoad() {
-    this.setData({ cities: CITIES });
+    const { QUESTIONS } = require('../../utils/questions.js');
+    this.setData({ total: QUESTIONS.length });
   },
 
   onShow() {
-    this.setData({ compare: app.compare });
+    this.setData({
+      answered: Object.keys(app.answers).length,
+      paid: pay.isPaid(),
+    });
   },
 
-  onFilter(e) {
-    this.setData({ filter: e.currentTarget.dataset.tier });
-  },
-
-  openCity(e) {
-    const pinyin = e.currentTarget.dataset.pinyin;
-    wx.navigateTo({ url: `/pages/city/city?pinyin=${pinyin}` });
-  },
-
-  toggleCompare(e) {
-    const pinyin = e.currentTarget.dataset.pinyin;
-    if (!app.toggleCompare(pinyin)) {
-      wx.showToast({ title: `最多对比${app.maxCompare}城`, icon: 'none' });
+  start() {
+    if (!pay.isPaid()) {
+      this.doPay();
       return;
     }
-    this.setData({ compare: app.compare });
+    wx.navigateTo({ url: '/pages/quiz/quiz' });
   },
 
-  goCompare() {
-    wx.switchTab({ url: '/pages/compare/compare' });
+  doPay() {
+    pay.pay((ok) => {
+      if (ok) {
+        this.setData({ paid: true });
+        wx.navigateTo({ url: '/pages/quiz/quiz' });
+      }
+    });
+  },
+
+  restart() {
+    app.reset();
+    this.setData({ answered: 0 });
   },
 });

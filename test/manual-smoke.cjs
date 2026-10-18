@@ -1,6 +1,6 @@
 // 手册小程序冒烟测试: node test/manual-smoke.cjs (CJS — wechat-manual/utils 是 CommonJS)
 // 校验: cities.js 结构 / index/city/compare 页面逻辑
-const { CITIES, SRC_TITLE } = require('../wechat-manual/utils/cities.js');
+const { CITIES, SRC_TITLE } = require('../wechat-manual/utils/manual-cities.js');
 
 let fail = 0;
 const check = (cond, msg) => { if (!cond) { console.log('❌', msg); fail++; } };

@@ -35,7 +35,7 @@
 ```
 city-settle-inventory/
 ├── index.html / src/ / data/    # Web 版
-├── wechat/                       # 小程序版
+├── wechat-manual/                # 小程序版 (测评+手册合并)
 └── scripts/ / test/              # 数据生成 + 冒烟测试
 ```
 
@@ -104,12 +104,12 @@ curl -sI https://bbtowel.github.io/city-settle-inventory/ | head -1   # 200 OK
 
 2. **修改配置**：
    ```bash
-   # wechat/project.config.json
+   # wechat-manual/project.config.json
    "appid": "wx你的AppID"   # 替换占位
    ```
 
 3. **微信开发者工具** https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
-   - 导入项目 → 选 `wechat/` 目录
+   - 导入项目 → 选 `wechat-manual/` 目录
    - AppID 填你的
    - 项目名称：归巢
 
@@ -134,7 +134,7 @@ curl -sI https://bbtowel.github.io/city-settle-inventory/ | head -1   # 200 OK
 
 3. **填入配置**：
    ```bash
-   # wechat/pay.config.js
+   # wechat-manual/pay.config.js
    devMode: false,
    offerId: '你的offerId',   # 后台复制粘贴
    ```

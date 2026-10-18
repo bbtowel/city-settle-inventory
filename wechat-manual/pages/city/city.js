@@ -1,5 +1,5 @@
 // 单城详情页 — 6 维度分卡展示全部字段, 含单位与来源
-const { CITIES, SRC_TITLE } = require('../../utils/cities.js');
+const { CITIES, SRC_TITLE } = require('../../utils/manual-cities.js');
 const app = getApp();
 
 Page({

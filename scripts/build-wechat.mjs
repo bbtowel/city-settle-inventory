@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// src/*.js (ESM) -> wechat/utils/*.js (CommonJS)
+// src/*.js (ESM) -> wechat-manual/utils/*.js (CommonJS)
 // 用法: node scripts/build-wechat.mjs  (在 build-data.mjs 之后运行)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = join(ROOT, 'wechat', 'utils');
+const OUT = join(ROOT, 'wechat-manual', 'utils');
 mkdirSync(OUT, { recursive: true });
 
 // ---- scoring.js: import -> require, export function -> function, 尾部追加 module.exports ----
@@ -29,4 +29,4 @@ c = c.replace(/^export const (\w+)/gm, 'const $1');
 c += '\nmodule.exports = { CITIES };\n';
 writeFileSync(join(OUT, 'cities.js'), c);
 
-console.log('wechat/utils/: scoring.js questions.js cities.js 生成完毕');
+console.log('wechat-manual/utils/: scoring.js questions.js cities.js 生成完毕');
