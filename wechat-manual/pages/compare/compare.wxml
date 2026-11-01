@@ -1,6 +1,6 @@
 <view class="page">
   <!-- 空态 -->
-  <view class="empty" wx:if="{{cities.length < 2}}">
+  <view class="empty" wx:if="{{isEmpty}}">
     <view class="empty-icon">⇄</view>
     <view class="empty-t">在名录页选择 2-3 座城市对比</view>
     <button class="empty-btn" bindtap="goPick">去选择城市</button>

@@ -7,22 +7,37 @@ Page({
     city: null,
     dims: [],
     inCompare: false,
+    error: '',
     SRC_TITLE,
   },
 
   onLoad(query) {
-    const city = CITIES.find(c => c.pinyin === query.pinyin);
-    if (!city) { wx.showToast({ title: '城市不存在', icon: 'none' }); return; }
-    this.setData({ city, dims: city.dims, inCompare: app.compare.includes(city.pinyin) });
+    const pinyin = query && query.pinyin ? String(query.pinyin) : '';
+    const city = pinyin ? CITIES.find(c => c.pinyin === pinyin) : null;
+    if (!city) {
+      // 兜底: 无参数/参数错误时不再白屏, 给出空态与返回入口
+      this.setData({ error: pinyin ? `城市「${pinyin}」不存在` : '缺少城市参数' });
+      return;
+    }
+    this.setData({
+      city,
+      dims: city.dims || [],
+      inCompare: (app.compare || []).includes(city.pinyin),
+    });
     wx.setNavigationBarTitle({ title: city.name });
   },
 
+  goHome() {
+    wx.switchTab({ url: '/pages/manual-home/index' });
+  },
+
   toggleCompare() {
+    if (!this.data.city) return;
     if (!app.toggleCompare(this.data.city.pinyin)) {
       wx.showToast({ title: `最多对比${app.maxCompare}城`, icon: 'none' });
       return;
     }
-    this.setData({ inCompare: app.compare.includes(this.data.city.pinyin) });
+    this.setData({ inCompare: (app.compare || []).includes(this.data.city.pinyin) });
   },
 
   copySrc(e) {

@@ -30,3 +30,10 @@
 
   <view class="foot">数据口径：2026 年各市官方公告（双源交叉验证）· 仅供决策参考</view>
 </view>
+
+<!-- 空态兜底: 参数缺失/城市不存在时不再是纯白页 -->
+<view class="err" wx:else>
+  <view class="err-icon">🏙</view>
+  <view class="err-t">{{error || '城市数据加载失败'}}</view>
+  <button class="err-btn" bindtap="goHome">返回城市名录</button>
+</view>

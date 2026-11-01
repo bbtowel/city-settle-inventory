@@ -56,3 +56,41 @@ page {
 .field-value .na {
   color: #B0B7C3;
 }
+
+/* ---- 按钮（首页 + 结果页共用）---- */
+.btn-main {
+  width: 100%;
+  box-sizing: border-box;
+  height: 96rpx;
+  line-height: 96rpx;
+  margin: 24rpx 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 16rpx;
+  background: #002FA7;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+  box-shadow: 0 10rpx 28rpx rgba(0, 47, 167, .24);
+}
+.btn-main::after { border: none; }
+.btn-main.button-hover { background: #00258A; }
+
+.btn-ghost {
+  width: 100%;
+  box-sizing: border-box;
+  height: 88rpx;
+  line-height: 84rpx;
+  margin: 16rpx 0 0;
+  padding: 0;
+  border: 2rpx solid rgba(0, 47, 167, .3);
+  border-radius: 16rpx;
+  background: transparent;
+  color: #002FA7;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.btn-ghost::after { border: none; }
+.btn-ghost.button-hover { background: rgba(0, 47, 167, .06); }
+

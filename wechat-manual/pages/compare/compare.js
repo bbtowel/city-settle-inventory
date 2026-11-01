@@ -6,6 +6,7 @@ Page({
   data: {
     cities: [],      // 已选城市对象数组 (1-3)
     matrix: [],      // [{dimKey, dimName, rows: [{label, key, vals:[v1,v2,v3], units:[...], best:-1}]}]
+    isEmpty: true,   // 空态标记: 在 JS 里算好, WXML 不做比较 (避免 < 被模板解析器截断导致分支失效)
     slots: 3,
   },
 
@@ -14,21 +15,26 @@ Page({
   },
 
   build() {
-    const picked = app.compare.map(p => CITIES.find(c => c.pinyin === p)).filter(Boolean);
+    const picked = (app.compare || [])
+      .map(p => CITIES.find(c => c.pinyin === p))
+      .filter(Boolean);
     const matrix = [];
-    if (picked.length >= 2) {
-      const DIM_ORDER = picked[0].dims.map(d => ({ key: d.key, name: d.name }));
+    // 兜底: 取第一个结构完整的城市作为维度基准, 避免某个城市缺 dims 时整页白屏
+    const base = picked.find(c => Array.isArray(c.dims) && c.dims.length) || null;
+    if (picked.length >= 2 && base) {
+      const DIM_ORDER = base.dims.map(d => ({ key: d.key, name: d.name }));
       for (const d of DIM_ORDER) {
-        const fields = picked[0].dims.find(x => x.key === d.key).fields;
+        const baseDim = base.dims.find(x => x.key === d.key);
+        const fields = (baseDim && baseDim.fields) || [];
         const rows = [];
         for (const f of fields) {
           const vals = picked.map(c => {
-            const cd = c.dims.find(x => x.key === d.key);
+            const cd = (c.dims || []).find(x => x.key === d.key);
             const cf = cd ? cd.fields.find(x => x.key === f.key) : null;
             return cf ? cf.value : null;
           });
           const units = picked.map(c => {
-            const cd = c.dims.find(x => x.key === d.key);
+            const cd = (c.dims || []).find(x => x.key === d.key);
             const cf = cd ? cd.fields.find(x => x.key === f.key) : null;
             return cf ? cf.unit : '';
           });
@@ -37,7 +43,7 @@ Page({
         matrix.push({ dimKey: d.key, dimName: d.name, rows });
       }
     }
-    this.setData({ cities: picked, matrix });
+    this.setData({ cities: picked, matrix, isEmpty: picked.length < 2 });
   },
 
   remove(e) {
