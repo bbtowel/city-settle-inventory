@@ -9,7 +9,7 @@ const DIM = { ambition: '事业雄心', lifestyle: '生活偏好', family: '家�
 const fmt = n => (n == null || Number.isNaN(n)) ? '—' : Math.round(n * 1000) / 1000;
 
 Page({
-  data: { profile: null, dims: [], top3: [], sharePath: '' },
+  data: { profile: null, dims: [], top3: [], sharePath: '', birdClass: '' },
 
   onLoad() {
     if (!pay.isPaid()) {           // 未支付绕过 → 弹回首页
@@ -29,7 +29,6 @@ Page({
     // 画像卡左侧的鸟剪影: WXSS 里 .bird-20/.bird-21... 由 build-wechat.mjs 生成
     const birdClass = 'bird-' + String(profile.key || '1,1').replace(',', '');
     this.setData({ profile, dims, top3, birdClass });
-    this._result = { profile, top3names: top3.map(t => t.name) };
   },
 
   onShareAppMessage() {

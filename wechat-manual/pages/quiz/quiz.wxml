@@ -4,7 +4,7 @@
   <view class="card">
     <view class="qdim">{{dimName}}{{q.reverse ? ' · 逆向题' : ''}}</view>
     <view class="qtext">{{q.text}}</view>
-    <button wx:for="{{options}}" wx:key="index" class="opt {{selected === index ? 'selected' : ''}}"
+    <button wx:for="{{options}}" wx:key="*this" class="opt {{selected === index ? 'selected' : ''}}"
             data-i="{{index}}" bindtap="pick">{{item}}</button>
   </view>
   <view class="nav">

@@ -7,7 +7,7 @@
 
   <!-- 层级过滤 -->
   <scroll-view class="filter-bar" scroll-x enhanced show-scrollbar="{{false}}">
-    <view class="filter-item {{filter === t ? 'on' : ''}}"
+    <view class="filter-item {{filter === item ? 'on' : ''}}"
           wx:for="{{tiers}}" wx:key="*this"
           data-tier="{{item}}" bindtap="onFilter">
       {{item === 'all' ? '全部' : item}}

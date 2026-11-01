@@ -3,9 +3,12 @@
   background: linear-gradient(160deg, #002FA7, #1A4DC4);
   padding: 40rpx 32rpx;
 }
+/* 左侧名字列可压缩, 右侧对比按钮不被挤压 */
+.head-left { flex: 1 1 auto; min-width: 0; }
 .head-name { color: #fff; font-size: 48rpx; font-weight: 800; }
 .head-tier { color: rgba(255,255,255,.75); font-size: 24rpx; margin-top: 8rpx; }
 .head-cmp {
+  flex: 0 0 auto;
   color: #fff; font-size: 24rpx; padding: 12rpx 24rpx;
   border: 2rpx solid rgba(255,255,255,.5); border-radius: 999rpx;
 }
