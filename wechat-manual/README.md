@@ -65,6 +65,10 @@ cloudfunctions/virtualPaymentNotify/  发货推送接收（验签、幂等）
 - `devMode: false`：走真实链路，需先完成下面五项配置。
 - `strictServerConfirm`：保持 `true`，解锁必须经服务端查单确认（官方要求前端回调不作为发货依据）。
 
+**`devMode` 有环境护栏**（`utils/pay.js` 的 `devModeActive()`）：它会读 `wx.getAccountInfoSync().miniProgram.envVersion`，
+一旦当前是**体验版（trial）或正式版（release）**，即使 `devMode` 还是 `true` 也强制走真实支付，
+并在控制台打 `console.error`。避免「忘了关开关 → 所有用户点一下就白拿」这类事故。
+
 重置解锁态：`wx.removeStorageSync('guichao_paid')`，或在开发工具「清缓存」。
 
 ### 切真实支付的前置条件
@@ -92,12 +96,17 @@ signature = hex(hmac_sha256(sessionKey, signData))
 ## 测试
 
 ```bash
+node test/wechat-bind.cjs    # 静态: 事件函数/模板变量/class 样式/app.json 页面与 tabBar/云函数文件
+node test/wechat-render.cjs  # 渲染: 调官方 wcc 编译器, 6 个页面用真实数据渲染并断言关键节点
 node test/pay-smoke.cjs      # 支付分支：devMode / 低版本 / iOS 门槛 / 取消 / 查单延迟 / 云函数完整性
 node test/pay-server.cjs     # 服务端：signData 结构、签名固定向量、查单请求、推送解析与验签
 node test/wechat-smoke.mjs   # 测评四路径 + 分享卡
 node test/manual-smoke.cjs   # 手册 37 城完整性 + 对比矩阵 + bestOf 逻辑
 node test/smoke.mjs          # Web 版测评链路
 ```
+
+`wechat-render.cjs` 依赖微信开发者工具自带的 `wcc.exe`，默认从常见安装路径查找，
+装在别处时用 `WCC_PATH=/path/to/wcc.exe node test/wechat-render.cjs` 指定；找不到会自动跳过。
 
 ## 接入 Web 分享卡二维码
 

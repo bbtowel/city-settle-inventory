@@ -48,6 +48,28 @@ function isPaid() {
   return wx.getStorageSync(PAID_KEY) === true;
 }
 
+/**
+ * devMode 是否真的生效。
+ *
+ * devMode 只是本地联调开关（点了直接解锁、不扣钱）。一旦代码上传成体验版/正式版，
+ * 忘了关就会让所有用户白拿 —— 这种事故排查成本极高，所以这里用 envVersion 再兜一层：
+ * 只要不是开发版，devMode 一律失效，强制走真实支付。
+ */
+function devModeActive() {
+  if (!config.devMode) return false;
+  try {
+    const info = wx.getAccountInfoSync && wx.getAccountInfoSync();
+    const env = info && info.miniProgram && info.miniProgram.envVersion;
+    if (env === 'trial' || env === 'release') {
+      console.error('[pay] pay.config.js 的 devMode=true 在 ' + env + ' 环境已忽略，改走真实支付');
+      return false;
+    }
+  } catch (e) {
+    // 取不到环境信息（旧基础库）时按开发环境处理
+  }
+  return true;
+}
+
 /** 记账：本地订单流水只留最近 20 条，方便自测与对账 */
 function markPaid(order) {
   wx.setStorageSync(PAID_KEY, true);
@@ -232,7 +254,7 @@ function syncPending() {
 function pay(cb) {
   cb = cb || function () {};
 
-  if (config.devMode) {
+  if (devModeActive()) {
     markPaid({ mock: true, outTradeNo: 'DEV' + Date.now() });
     cb(true, { mock: true });
     return;
@@ -348,6 +370,7 @@ module.exports = {
   canPay,
   checkIosWx,
   syncPending,
+  devModeActive,
   errText,
   newOutTradeNo,
   PAID_KEY,
