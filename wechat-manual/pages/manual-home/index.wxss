@@ -15,13 +15,26 @@
   background: #fff; border-radius: 16rpx; padding: 24rpx 28rpx; margin-bottom: 14rpx;
   box-shadow: 0 2rpx 8rpx rgba(0,47,167,.05);
 }
-.city-item.in-compare { outline: 3rpx solid #002FA7; outline-offset: -3rpx; }
+/* 已加入对比: 卡片淡蓝底 + 细边, 视觉权重让位给右侧深色按钮 */
+.city-item.in-compare {
+  background: #F3F7FF;
+  outline: 2rpx solid rgba(0,47,167,.22); outline-offset: -2rpx;
+}
 .ci-name { font-size: 32rpx; font-weight: 600; }
 .ci-tier { font-size: 22rpx; color: #8A8F99; margin-left: 14rpx; }
 .ci-cmp {
-  font-size: 22rpx; color: #002FA7; padding: 8rpx 20rpx;
-  border: 2rpx solid rgba(0,47,167,.3); border-radius: 999rpx;
+  font-size: 22rpx; line-height: 1.35; color: #002FA7; padding: 8rpx 22rpx;
+  background: #fff; border: 2rpx solid rgba(0,47,167,.3); border-radius: 999rpx;
+  min-width: 88rpx; text-align: center;   /* 两态等宽, 切换时不抖 */
+  transition: background-color .16s ease, color .16s ease, border-color .16s ease;
 }
+/* 选中态: 深色实心, 与未选中的浅色描边形成明确反差 */
+.ci-cmp.on {
+  background: #002FA7; border-color: #002FA7; color: #fff;
+  font-weight: 600; letter-spacing: .5rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0,47,167,.24);
+}
+.ci-cmp-hover { opacity: .78; }
 
 .cmp-bar {
   position: fixed; left: 20rpx; right: 20rpx; bottom: 40rpx;

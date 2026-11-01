@@ -1,6 +1,7 @@
 // 结果页渲染: 三磁体画像卡 + Top3 城市 + 对比表 + canvas 分享卡
 import { matchAll } from './scoring.js';
 import { QUESTIONS } from './questions.js';
+import { birdSvg } from './bird-art.js';
 
 export function renderResult(answers, rootEl) {
   const { userDims, profile, weights, results } = matchAll(answers, QUESTIONS);
@@ -15,7 +16,13 @@ export function renderResult(answers, rootEl) {
     <div class="result">
       <div class="profile-card" id="profileCard">
         <div class="pc-badge">你的三磁体画像</div>
-        <div class="pc-name">${profile.name}</div>
+        <div class="pc-head">
+          <div class="pc-bird">${birdSvg(profile.key, 104)}</div>
+          <div class="pc-id">
+            <div class="pc-name">${profile.name}</div>
+            <div class="pc-en">${profile.en} · ${(profile.traits || []).join(' / ')}</div>
+          </div>
+        </div>
         <div class="pc-tagline">「${profile.tagline}」</div>
         <div class="pc-3lines">
           <p><b>你是谁</b> — ${profile.who}</p>

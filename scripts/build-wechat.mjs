@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { BIRD_ART, BIRD_VIEWBOX } from '../src/bird-art.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'wechat-manual', 'utils');
@@ -29,4 +30,16 @@ c = c.replace(/^export const (\w+)/gm, 'const $1');
 c += '\nmodule.exports = { CITIES };\n';
 writeFileSync(join(OUT, 'cities.js'), c);
 
+// ---- bird-art.js: 九型鸟剪影 -> 结果页 WXSS (小程序 WXML 不能内联 svg, 转 base64 背景图) ----
+const birds = Object.entries(BIRD_ART).map(([key, art]) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${BIRD_VIEWBOX}" fill="#F8B500">${art.replace(/currentColor/g, '#F8B500')}</svg>`;
+  const b64 = Buffer.from(svg, 'utf8').toString('base64');
+  return `.bird-${key.replace(',', '')}{background-image:url("data:image/svg+xml;base64,${b64}")}`;
+}).join('\n');
+writeFileSync(
+  join(ROOT, 'wechat-manual/pages/result/bird-art.wxss'),
+  `/* 由 scripts/build-wechat.mjs 生成, 勿手改 \u2014 源文件 src/bird-art.js */\n${birds}\n`
+);
+
 console.log('wechat-manual/utils/: scoring.js questions.js cities.js 生成完毕');
+console.log('wechat-manual/pages/result/bird-art.wxss: 9 型剪影生成完毕');

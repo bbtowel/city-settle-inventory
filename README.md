@@ -27,7 +27,8 @@ python3 -m http.server 8765
 │   ├── questions.json  # 题库源 (LLM 出题 + 人工审校, 含 maps_to 数据流)
 │   └── cities/         # 8 城原始数据 (每字段带官方来源, 双源交叉验证)
 ├── docs/               # 提纲/题库设计/数据流程/增长手册
-└── test/smoke.mjs      # 算法冒烟测试 (node test/smoke.mjs)
+└── test/smoke.mjs      # 算法冒烟测试 (node test/smoke.mjs          # Web 版测评链路
+node test/bird-art.cjs       # 九型画像 ↔ 剪影 ↔ 小程序 WXSS 一致性)
 ```
 
 ## 数据流
@@ -39,6 +40,29 @@ python3 -m http.server 8765
 ```
 
 题库每题的 `maps_to` 字段声明其数据流向（`weight_*` 权重 / `filter_*` 过滤 / `profile_only` 画像文案），见 `docs/question-design.md`。
+
+### 九型鸟类画像
+
+事业雄心 × 生活偏好 3×3，每型对应一种鸟（定义在 `src/scoring.js` 的 `PROFILES`）：
+
+| | 生活低 | 生活中 | 生活高 |
+|---|---|---|---|
+| **事业高** | 游隼 | 蜂鸟 | 鸿雁 |
+| **事业中** | 麻雀 | 喜鹊 | 燕子 |
+| **事业低** | 斑鸠 | 鸳鸯 | 白鹭 |
+
+改画像名只需改 `PROFILES` 的文案字段；匹配逻辑按 `key`（`"事业档,生活档"`）判断，不依赖名字。改完跑 `node scripts/build-wechat.mjs` 同步到小程序端。
+
+每型还配一个**代码绘制的剪影**（`src/bird-art.js`，纯几何拼装，无图片资源）。姿态本身有语义：俯冲=只要机会、悬停=两头都要、迁徙=哪好去哪、栖枝=求稳、水面=讲体面、涉水站立=挑环境。
+
+- web：`birdSvg(key)` 直接输出内联 `<svg>`，颜色交给 CSS 的 `currentColor`
+- 小程序：WXML 不能内联 svg，`build-wechat.mjs` 把 9 个剪影转成 base64 写进 `pages/result/bird-art.wxss`（`.bird-20`…），页面只绑 `birdClass`
+
+看效果不用手动点：
+
+```bash
+node scripts/preview-result.mjs out.png 3 0   # 高事业+低生活 → 游隼, 输出结果页截图
+```
 
 ## 数据更新
 
@@ -53,7 +77,8 @@ node scripts/build-data.mjs   # data/*.json → src/*.js
 ## 测试
 
 ```bash
-node test/smoke.mjs
+node test/smoke.mjs          # Web 版测评链路
+node test/bird-art.cjs       # 九型画像 ↔ 剪影 ↔ 小程序 WXSS 一致性
 # 模拟 5 类典型用户(高事业/低预算/家庭型/数字游民/求稳), 验证画像与 Top3 合理性
 ```
 

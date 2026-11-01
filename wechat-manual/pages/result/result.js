@@ -16,7 +16,9 @@ Page({
       wx.reLaunch({ url: '/pages/index/index' });
       return;
     }
-    const { userDims, profile, results } = matchAll(app.answers, QUESTIONS);
+    const { userDims, profile: raw, results } = matchAll(app.answers, QUESTIONS);
+    // 鸟类画像: 英文名 + 三个习性标签拼一行 (wxml 里无法 join)
+    const profile = { ...raw, traitLine: (raw.traits || []).join(' · ') };
     const top3 = results.slice(0, 3).map((r, i) => ({
       rank: i + 1, name: r.city.name, tier: r.city.tier, match: r.match,
       meta: `房价 ${fmt(r.city.avg_price_per_sqm)} 元/m² · 收入比 ${fmt(r.city.price_to_income_ratio)} 倍 · 落户难度 ${r.city.hukou_difficulty_score}/100`,
@@ -24,7 +26,9 @@ Page({
       warn: r.filterReasons.join('；') || null,
     }));
     const dims = Object.entries(DIM).map(([k, n]) => ({ n, v: userDims[k] }));
-    this.setData({ profile, dims, top3 });
+    // 画像卡左侧的鸟剪影: WXSS 里 .bird-20/.bird-21... 由 build-wechat.mjs 生成
+    const birdClass = 'bird-' + String(profile.key || '1,1').replace(',', '');
+    this.setData({ profile, dims, top3, birdClass });
     this._result = { profile, top3names: top3.map(t => t.name) };
   },
 

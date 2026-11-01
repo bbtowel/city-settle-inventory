@@ -64,6 +64,7 @@ function loadPage(relpath, extra) {
   const src = require('fs').readFileSync(WM + '/' + relpath, 'utf8');
   const page = { setData(d) { Object.assign(this.data, d); }, data: {}, ...extra };
   new Function('getApp', 'require', 'Page', src)(globalThis.getApp, (name) => {
+    if (name.includes('manual-cities')) return require(WM + '/utils/manual-cities.js');
     if (name.includes('questions')) return require(WM + '/utils/questions.js');
     if (name.includes('scoring')) return require(WM + '/utils/scoring.js');
     if (name.includes('pay.config')) return require(WM + '/pay.config.js');
@@ -176,20 +177,66 @@ ok(Object.keys(app.answers).length === 33, 'quiz: 33 题全部作答');
 // ---- result 页 ----
 const resultPage = loadPage('pages/result/result.js');
 resultPage.onLoad();
-ok(resultPage.data.profile?.name === '园丁', `result: 画像园丁 (got ${resultPage.data.profile?.name})`);
+ok(resultPage.data.profile?.name === '白鹭', `result: 画像白鹭 (got ${resultPage.data.profile?.name})`);
+ok(resultPage.data.profile?.en === 'Egret', `result: 英文名 (got ${resultPage.data.profile?.en})`);
+ok(resultPage.data.birdClass === 'bird-02', `result: 剪影 class=bird-02 (got ${resultPage.data.birdClass})`);
+ok(!!resultPage.data.profile?.traitLine, `result: 习性标签行 (got ${resultPage.data.profile?.traitLine})`);
 const t1 = resultPage.data.top3[0];
 ok(t1.name === '重庆' && t1.chips.some(c => c.n === '离家近' && c.v === 100), `result: 重庆Top1+离家近100 (got ${t1.name})`);
 ok(JSON.stringify(resultPage.data.top3.map(t => t.name)) === JSON.stringify(['重庆', '贵阳', '昆明']) || true, `result: Top3=${resultPage.data.top3.map(t => t.name).join('/')}`);
 
 // 分享
 const share = resultPage.onShareAppMessage();
-ok(share.title.includes('园丁') && share.path === '/pages/index/index', `share: ${share.title}`);
+ok(share.title.includes('白鹭') && share.path === '/pages/index/index', `share: ${share.title}`);
 resultPage.shareCard();
-ok(calls.setClipboardData[0]?.includes('园丁'), 'shareCard: 剪贴板含画像名');
+ok(calls.setClipboardData[0]?.includes('白鹭'), 'shareCard: 剪贴板含画像名');
 
 // 重置
 resultPage.restart();
 ok(Object.keys(globalThis.getApp().answers).length === 0 && calls.reLaunch[0] === '/pages/index/index', 'restart: 清空+回首页');
+
+// ---- 城市名录页: 对比按钮选中态 ----
+const fsMod = require('fs');
+const mh = loadPage('pages/manual-home/index.js');
+globalThis.getApp().compare = [];
+mh.onLoad();
+ok(mh.data.cities.length === 37, `名录: 全部 37 城 (got ${mh.data.cities.length})`);
+ok(mh.data.cities.every((c) => c.picked === false), '名录: 初始未选任何城');
+ok(mh.data.count === 0, '名录: count=0 不显示浮条');
+
+const tapCmp = (p) => mh.toggleCompare({ currentTarget: { dataset: { pinyin: p } } });
+const findCity = (p) => mh.data.cities.find((c) => c.pinyin === p);
+
+tapCmp('beijing');
+ok(findCity('beijing').picked === true, '名录: 选中后 picked=true (按钮置深色)');
+ok(mh.data.count === 1, `名录: count=1 (got ${mh.data.count})`);
+ok(globalThis.getApp().compare.join() === 'beijing', '名录: 写入全局对比池');
+
+tapCmp('beijing');
+ok(findCity('beijing').picked === false, '名录: 再点取消 picked=false');
+ok(mh.data.count === 0 && globalThis.getApp().compare.length === 0, '名录: 取消后对比池清空');
+
+// 上限 3 城: 第 4 城只提示, 不入池
+['beijing', 'shanghai', 'guangzhou', 'shenzhen'].forEach(tapCmp);
+ok(globalThis.getApp().compare.length === 3, `名录: 最多 3 城 (got ${globalThis.getApp().compare.length})`);
+ok(mh.data.cities.filter((c) => c.picked).length === 3, '名录: 只有 3 项 picked');
+ok((calls.toast || []).some((t) => t.indexOf('最多对比3城') >= 0), '名录: 上限 toast 提示');
+
+// 层级筛选后仍保留选中态
+mh.onFilter({ currentTarget: { dataset: { tier: '一线' } } });
+ok(mh.data.cities.every((c) => c.tier === '一线'), '名录: 筛选只留一线');
+ok(mh.data.cities.filter((c) => c.picked).length === 3, '名录: 筛选不丢选中态');
+
+// 结构 & 样式断言
+const mhWxml = fsMod.readFileSync(WM + '/pages/manual-home/index.wxml', 'utf8');
+const mhWxss = fsMod.readFileSync(WM + '/pages/manual-home/index.wxss', 'utf8');
+ok(!mhWxml.includes('indexOf'), '名录 wxml: 模板内不再调 indexOf');
+ok(/class="ci-cmp \{\{item\.picked \? 'on' : ''\}\}"/.test(mhWxml), '名录 wxml: 按钮绑定 on 类');
+ok(/class="city-item \{\{item\.picked \? 'in-compare' : ''\}\}"/.test(mhWxml), '名录 wxml: 卡片绑定 in-compare');
+const onRule = (mhWxss.match(/\.ci-cmp\.on\s*\{[^}]*\}/) || [''])[0];
+ok(/background:\s*#002FA7/.test(onRule), '名录 wxss: 选中态深色底');
+ok(/color:\s*#fff/.test(onRule), '名录 wxss: 选中态白字');
+ok(/font-weight:\s*600/.test(onRule), '名录 wxss: 选中态加粗');
 
 console.log(fails === 0 ? '\n✅ 小程序逻辑冒烟全部通过' : `\n❌ ${fails} 项失败`);
 process.exit(fails ? 1 : 0);

@@ -2,7 +2,13 @@
   <!-- 画像卡 -->
   <view class="pcard">
     <view class="badge">你的三磁体画像</view>
-    <view class="pname">{{profile.name}}</view>
+    <view class="phead">
+      <view class="pbird {{birdClass}}"></view>
+      <view class="pid">
+        <view class="pname">{{profile.name}}</view>
+        <view class="pen">{{profile.en}}{{profile.traitLine ? ' · ' + profile.traitLine : ''}}</view>
+      </view>
+    </view>
     <view class="ptag">「{{profile.tagline}}」</view>
     <view class="p3">
       <view class="p3row"><text class="k">你是谁</text><text class="v">{{profile.who}}</text></view>

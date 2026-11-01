@@ -71,11 +71,16 @@ body {
 .result h3 { margin: 28px 0 14px; }
 .profile-card {
   background: var(--blue); color: #fff; border-radius: var(--radius);
-  padding: 36px 28px; text-align: center;
+  padding: 32px 28px; text-align: center;
 }
 .pc-badge { font-size: 13px; letter-spacing: 2px; opacity: .8; }
-.pc-name { font-size: 56px; font-weight: 700; margin: 8px 0; }
-.pc-tagline { color: var(--amber); font-size: 18px; margin-bottom: 20px; }
+.pc-head { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 10px 0 12px; }
+.pc-bird { color: var(--amber); line-height: 0; flex: 0 0 auto; }
+.pc-bird .bird-svg { width: 104px; height: 104px; display: block; }
+.pc-id { text-align: left; }
+.pc-name { font-size: 52px; font-weight: 700; line-height: 1.1; }
+.pc-en { font-size: 12px; letter-spacing: 1.4px; opacity: .65; margin-top: 6px; text-transform: uppercase; }
+.pc-tagline { color: var(--amber); font-size: 19px; margin-bottom: 20px; }
 .pc-3lines { text-align: left; background: rgba(255,255,255,.10); border-radius: 12px; padding: 16px 20px; font-size: 14px; line-height: 2; }
 .pc-3lines b { color: var(--amber); }
 
