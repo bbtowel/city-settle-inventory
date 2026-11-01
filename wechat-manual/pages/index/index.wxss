@@ -22,6 +22,29 @@
   margin-top: 48rpx; background: #fff; border-radius: 20rpx;
   padding: 40rpx 36rpx 36rpx; box-shadow: 0 6rpx 40rpx rgba(26,31,54,.08);
 }
-.pay-price { font-size: 72rpx; font-weight: 800; color: #002FA7; }
-.pay-desc { font-size: 24rpx; color: #6B7085; margin: 12rpx 0 8rpx; }
-.pay-btn { margin-top: 24rpx; }
+.pay-title { font-size: 34rpx; font-weight: 700; color: #1F2329; letter-spacing: 1rpx; }
+.pay-desc { font-size: 24rpx; color: #6B7085; margin-top: 12rpx; }
+
+/* 支付按钮：两行排版 —— 上行「支付 ¥2」，下行「开始测评」 */
+.pay-btn {
+  height: auto;
+  line-height: 1.2;
+  margin-top: 32rpx;
+  padding: 24rpx 0 22rpx;
+}
+.pay-btn-pay {
+  display: block;
+  font-size: 38rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+.pay-btn-go {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  opacity: .85;
+  letter-spacing: 4rpx;
+}
+.pay-btn-hover { background: #00258A; }
+

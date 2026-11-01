@@ -1,0 +1,9 @@
+{
+  "name": "virtualPaymentSign",
+  "version": "1.0.0",
+  "description": "归巢测评虚拟支付签名（paySig + signature）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

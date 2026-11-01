@@ -12,9 +12,12 @@
   <!-- 未支付: ¥2 解锁 -->
   <block wx:if="{{!paid}}">
     <view class="paybox">
-      <view class="pay-price">{{priceLabel}}</view>
-      <view class="pay-desc">解锁完整测评 · 一次付费永久使用</view>
-      <button class="btn-main pay-btn" bindtap="start">支付 {{priceLabel}} · 开始测评</button>
+      <view class="pay-title">一次付费 · 永久解锁</view>
+      <view class="pay-desc">33 道题 · 5 分钟出结果</view>
+      <button class="btn-main pay-btn" bindtap="start" hover-class="pay-btn-hover">
+        <text class="pay-btn-pay">{{paying ? '正在拉起支付' : '支付 ' + priceLabel}}</text>
+        <text class="pay-btn-go">{{paying ? '请稍候…' : '开始测评 →'}}</text>
+      </button>
     </view>
   </block>
 

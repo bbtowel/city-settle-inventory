@@ -28,7 +28,7 @@
 |---|---|
 | GitHub 账号 | SSH key 已认证（`~/.ssh/id_ed25519`），直接 push |
 | 邮箱 | git commit 用 `teaho2015@users.noreply.github.com`（防本地泄邮箱） |
-| 微信小程序账号 | https://mp.weixin.qq.com/ 注册，主体选**个体户**或**企业**（个人主体无法开通虚拟支付） |
+| 微信小程序账号 | https://mp.weixin.qq.com/ 注册。**个人主体现在也能开通虚拟支付**（需类目含「工具」+ 认证备案 + 月限额 10 万，见 [personal-payment-guide.md](personal-payment-guide.md)）；个体户/企业则无此限额 |
 | Node.js 18+ | `node --version` 验证 |
 
 **项目结构**

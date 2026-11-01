@@ -8,6 +8,7 @@ Page({
     answered: 0,
     total: 0,
     paid: false,
+    paying: false,          // 支付进行中：按钮切文案 + 拦重复点击
     priceLabel: config.priceLabel,
   },
 
@@ -20,10 +21,14 @@ Page({
     this.setData({
       answered: Object.keys(app.answers).length,
       paid: pay.isPaid(),
+      paying: false,
     });
+    // 补偿：上次支付成功但服务端查单没跟上，这里静默补确认
+    pay.syncPending();
   },
 
   start() {
+    if (this.data.paying) return;
     if (!pay.isPaid()) {
       this.doPay();
       return;
@@ -32,9 +37,12 @@ Page({
   },
 
   doPay() {
+    const that = this;
+    this.setData({ paying: true });
     pay.pay((ok) => {
+      that.setData({ paying: false });
       if (ok) {
-        this.setData({ paid: true });
+        that.setData({ paid: true });
         wx.navigateTo({ url: '/pages/quiz/quiz' });
       }
     });

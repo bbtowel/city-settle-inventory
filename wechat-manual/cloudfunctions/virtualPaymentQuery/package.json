@@ -1,0 +1,9 @@
+{
+  "name": "virtualPaymentQuery",
+  "version": "1.0.0",
+  "description": "虚拟支付查单确认（/xpay/query_order）+ 定时兜底",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

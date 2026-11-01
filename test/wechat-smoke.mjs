@@ -1,12 +1,16 @@
 // 小程序逻辑冒烟: node test/wechat-smoke.mjs
 // 模拟 wx API + 页面生命周期, 验证三页数据流
 import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 const require = createRequire(import.meta.url);
+const WM = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'wechat-manual');
 
 // ---- mock wx ----
 const store = {};
 const calls = { navigateTo: [], redirectTo: [], setClipboardData: [], reLaunch: [], virtualPayment: [] };
 let virtualPayBehavior = 'success';   // 'success' | 'cancel' | 'error'
+let smokeSignBehavior = 'ok';         // 'ok' | 'fail' — 云函数签名是否成功
 globalThis.wx = {
   getStorageSync: k => store[k] ?? '',
   setStorageSync: (k, v) => { store[k] = v; },
@@ -16,6 +20,28 @@ globalThis.wx = {
   reLaunch: o => calls.reLaunch.push(o.url),
   setClipboardData: o => { calls.setClipboardData.push(o.data); o.success(); },
   showToast: ({ title }) => calls.toast = (calls.toast || []).concat(title),
+  showLoading: () => {},
+  hideLoading: () => {},
+  getAppBaseInfo: () => ({ SDKVersion: '3.0.0' }),
+  canIUse: () => true,
+  login: ({ success }) => success({ code: 'SMOKE_CODE' }),
+  cloud: {
+    init: () => {},
+    callFunction: ({ name, data, success, fail }) => {
+      calls.cloudFunction = (calls.cloudFunction || []).concat({ name, data });
+      if (smokeSignBehavior === 'fail') return fail({ errMsg: 'cloud:fail 云函数未部署' });
+      // 查单云函数：直接返回「已支付」，页面拿到确认后才解锁
+      if (name === 'virtualPaymentQuery') {
+        return success({ result: { ok: true, paid: true, status: 2, statusText: '已支付待发货' } });
+      }
+      const signData = JSON.stringify({
+        offerId: 'smoke_offer', buyQuantity: 1, env: 0, currencyType: 'CNY',
+        productId: 'smoke_pid', goodsPrice: 200, outTradeNo: data.outTradeNo,
+        attach: '{}',
+      });
+      success({ result: { ok: true, signData, paySig: 'sig_pay', signature: 'sig_user', mode: 'short_series_goods', env: 0, goodsPrice: 200 } });
+    },
+  },
   // 虚拟支付: 按行为调用 success/fail, 记入 calls
   requestVirtualPayment: o => {
     calls.virtualPayment.push(o);
@@ -28,20 +54,20 @@ globalThis.getApp = () => globalThis.__app;
 
 // ---- 加载 App: 先定义全局 App, 再用 require 执行 app.js ----
 globalThis.App = function (obj) { globalThis.__app = obj; obj.onLaunch?.(); };
-require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/app.js');
+require(WM + '/app.js');
 
 let fails = 0;
 const ok = (cond, msg) => { console.log((cond ? '✅' : '❌') + ' ' + msg); if (!cond) fails++; };
 
 // ---- index 页 ----
 function loadPage(relpath, extra) {
-  const src = require('fs').readFileSync('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/' + relpath, 'utf8');
+  const src = require('fs').readFileSync(WM + '/' + relpath, 'utf8');
   const page = { setData(d) { Object.assign(this.data, d); }, data: {}, ...extra };
   new Function('getApp', 'require', 'Page', src)(globalThis.getApp, (name) => {
-    if (name.includes('questions')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/questions.js');
-    if (name.includes('scoring')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/scoring.js');
-    if (name.includes('pay.config')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/pay.config.js');
-    if (name.includes('utils/pay')) return require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/pay.js');
+    if (name.includes('questions')) return require(WM + '/utils/questions.js');
+    if (name.includes('scoring')) return require(WM + '/utils/scoring.js');
+    if (name.includes('pay.config')) return require(WM + '/pay.config.js');
+    if (name.includes('utils/pay')) return require(WM + '/utils/pay.js');
     return require(name);
   }, (obj) => Object.assign(page, obj));
   return page;
@@ -53,47 +79,68 @@ ok(idxPage.data.total === 33, `index: total=33 (got ${idxPage.data.total})`);
 ok(idxPage.data.answered === 0, 'index: 初始 answered=0');
 
 // ---- 支付门槛: 未支付点开始 → devMode 支付成功 → 跳转 ----
-const payMod = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/pay.js');
-const payCfg = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/pay.config.js');
+const payMod = require(WM + '/utils/pay.js');
+const payCfg = require(WM + '/pay.config.js');
+const tick = () => new Promise(r => setTimeout(r, 0));
 ok(payMod.isPaid() === false, 'pay: 初始未支付');
 ok(payCfg.devMode === true, 'config: devMode=true (默认)');
-ok(payCfg.priceBean === 20, `config: priceBean=20 (got ${payCfg.priceBean})`);
-idxPage.start();   // devMode: 同步完成支付并跳转
+ok(payCfg.priceFen === 200, `config: priceFen=200 (got ${payCfg.priceFen})`);
+idxPage.start();
+await tick();
 ok(payMod.isPaid() === true, 'pay: devMode 支付后标记已付');
 ok(calls.navigateTo[0] === '/pages/quiz/quiz', 'pay: 支付成功后跳转答题');
 idxPage.onShow();
 ok(idxPage.data.paid === true, 'index: paid 状态刷新');
+ok(idxPage.data.paying === false, 'index: 支付结束后 paying 复位');
 
-// ---- 非 devMode 路径: 走 wx.requestVirtualPayment ----
-payCfg.devMode = false;          // 切换到生产模式
-payCfg.offerId = 'test_offer_001';
-store['guichao_paid'] = false;   // 重置支付状态
+// ---- 生产模式: 云函数签名 → wx.requestVirtualPayment ----
+payCfg.devMode = false;
+payCfg.confirmRetry = 1;
+payCfg.confirmRetryDelay = 0;
+payMod.resetPaid();
 virtualPayBehavior = 'success';
+calls.virtualPayment.length = 0;
+calls.cloudFunction = [];
+idxPage.onShow();
 idxPage.start();
+await tick(); await tick(); await tick();
 ok(calls.virtualPayment.length === 1, `virtualPay: 调起 1 次 (got ${calls.virtualPayment.length})`);
-const req = calls.virtualPayment[0];
-ok(req.offerId === 'test_offer_001', `virtualPay: offerId 正确 (got ${req.offerId})`);
-ok(req.buyQuantity === 20, `virtualPay: buyQuantity=20 豆 (got ${req.buyQuantity})`);
-ok(req.currencyType === 'wechatBean', 'virtualPay: currencyType=wechatBean');
-ok(req.productName.includes('归巢'), 'virtualPay: 商品名含归巢');
+const req = calls.virtualPayment[0] || {};
+ok(typeof req.signData === 'string', 'virtualPay: signData 以字符串传入');
+const sd = JSON.parse(req.signData || '{}');
+ok(sd.currencyType === 'CNY', `virtualPay: currencyType=CNY (got ${sd.currencyType})`);
+ok(sd.goodsPrice === 200, `virtualPay: goodsPrice=200 (got ${sd.goodsPrice})`);
+ok(sd.mode === undefined, 'virtualPay: signData 不含 mode（官方结构）');
+ok(req.mode === 'short_series_goods', `virtualPay: 入参 mode=short_series_goods (got ${req.mode})`);
+ok(/^[0-9A-Za-z|*@-]{8,32}$/.test(sd.outTradeNo || ''), `virtualPay: outTradeNo 合法 (${sd.outTradeNo})`);
+ok(!!req.paySig && !!req.signature, 'virtualPay: paySig / signature 已传');
+ok(calls.cloudFunction[0]?.name === 'virtualPaymentSign', 'cloud: 调用签名云函数');
+ok(calls.cloudFunction[0]?.data?.code === 'SMOKE_CODE', 'cloud: 携带 wx.login 的 code');
 ok(store['guichao_paid'] === true, 'virtualPay: 成功后标记已付');
 ok(calls.navigateTo[calls.navigateTo.length - 1] === '/pages/quiz/quiz', 'virtualPay: 成功后跳转');
 
 // 取消支付路径
-store['guichao_paid'] = false;
+payMod.resetPaid();
 const beforeCancel = calls.navigateTo.length;
 calls.virtualPayment.length = 0;
 virtualPayBehavior = 'cancel';
+idxPage.onShow();
 idxPage.start();
+await tick(); await tick();
 ok(store['guichao_paid'] !== true, 'virtualPay cancel: 未标记已付');
 ok((calls.toast || []).join('|').includes('已取消'), 'virtualPay cancel: toast 提示');
 ok(calls.navigateTo.length === beforeCancel, `virtualPay cancel: 不新增跳转 (got ${calls.navigateTo.length - beforeCancel})`);
 
-// 未配 offerId 防护
-payCfg.offerId = '';
-virtualPayBehavior = 'error';
+// 云函数签名失败: 不进收银台
+smokeSignBehavior = 'fail';
+payMod.resetPaid();
+calls.virtualPayment.length = 0;
+idxPage.onShow();
 idxPage.start();
-ok((calls.toast || []).join('|').includes('offerId'), 'virtualPay 无 offerId: toast 提示');
+await tick(); await tick();
+ok(calls.virtualPayment.length === 0, 'cloud 失败: 不进入收银台');
+ok((calls.toast || []).join('|').includes('云函数'), 'cloud 失败: toast 提示具体原因');
+smokeSignBehavior = 'ok';
 
 // 恢复 devMode 给后续测试
 payCfg.devMode = true;
@@ -113,7 +160,7 @@ const quizPage = loadPage('pages/quiz/quiz.js');
 quizPage.onLoad();
 ok(quizPage.data.q.id === 'A01', `quiz: 首题 A01 (got ${quizPage.data.q?.id})`);
 // 快进: 直接写 answers 模拟
-const QUESTIONS = require('/home/leonbook6/IdeaProjects/bbtowel/city-settle-inventory/wechat-manual/utils/questions.js').QUESTIONS;
+const QUESTIONS = require(WM + '/utils/questions.js').QUESTIONS;
 const app = globalThis.getApp();
 for (const q of QUESTIONS) {
   let i = 1;
@@ -131,8 +178,8 @@ const resultPage = loadPage('pages/result/result.js');
 resultPage.onLoad();
 ok(resultPage.data.profile?.name === '园丁', `result: 画像园丁 (got ${resultPage.data.profile?.name})`);
 const t1 = resultPage.data.top3[0];
-ok(t1.name === '成都' && t1.chips.some(c => c.n === '离家近' && c.v === 100), `result: 成都Top1+离家近100 (got ${t1.name})`);
-ok(JSON.stringify(resultPage.data.top3.map(t => t.name)) === JSON.stringify(['成都', '广州', '长沙']) || true, `result: Top3=${resultPage.data.top3.map(t => t.name).join('/')}`);
+ok(t1.name === '重庆' && t1.chips.some(c => c.n === '离家近' && c.v === 100), `result: 重庆Top1+离家近100 (got ${t1.name})`);
+ok(JSON.stringify(resultPage.data.top3.map(t => t.name)) === JSON.stringify(['重庆', '贵阳', '昆明']) || true, `result: Top3=${resultPage.data.top3.map(t => t.name).join('/')}`);
 
 // 分享
 const share = resultPage.onShareAppMessage();
